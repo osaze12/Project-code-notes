@@ -644,3 +644,19 @@ add type="image/x-icon"
 <link rel="icon" href="%PUBLIC_URL%/favicon.ico" type="image/x-icon" />
 
 
+————————————————————————————————————
+
+# Change nav bar color when user scroll to x position
+
+useEffect(() => {
+    let myNav = document.getElementsByClassName("nav_bar")[0];
+    window.onscroll = function () {
+      if (window.pageYOffset >= 150) {
+        myNav.style.backgroundColor = "#E4F3F6";
+      } else {
+        myNav.style.backgroundColor = "transparent";
+      }
+    };
+  }, []);
+
+
