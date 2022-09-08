@@ -1,5 +1,6 @@
 # Project-code-notes
 These is where i document things i have learnt, or found on the internet that are not easily findable
+https://github.com/30-seconds/30-seconds-of-code
 
 
 # —TO GET ALL DAYS IN A MONTH
