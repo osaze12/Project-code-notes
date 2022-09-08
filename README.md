@@ -666,24 +666,24 @@ useEffect(() => {
 
 # Overlay text on an image using css grid
 
-   <Stack
+   <div
       display="grid"
       gridTemplateColumns="repeat (5, 20%)"
       gridTemplateRows="repeat (5, 20%)"
       columnGap="10px"
     >
-      <Img
+      <img
         w="100%"
-        src={uxReasearch1}
+        src=""
         alt="imgage"
         zIndex="444"
       />
-      <Stack position={"absolute"} zIndex="555" gridColumn="1">
-        <Text>WE FOCUS ON GATHERING DATA THAT ENHANCE USER EXPERIENCE</Text>
-        <Text>
+      <div position={"absolute"} zIndex="555" gridColumn="1">
+        <p>WE FOCUS ON GATHERING DATA THAT ENHANCE USER EXPERIENCE</p>
+        <p>
           Our mission is to analyze and solve the strategic or routine IT
-        </Text>
-      </Stack>
-    </Stack>
+        </p>
+      </div>
+    </div>
 
 
