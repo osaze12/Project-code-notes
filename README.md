@@ -690,7 +690,8 @@ useEffect(() => {
     
 ————————————————————————————————————
 
-# Dotloading animation svg
+# Dot loading animation svg
 
+https://codepen.io/nikhil8krishnan/pen/rVoXJa
 https://css-tricks.com/single-element-loaders-the-dots/
 
