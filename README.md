@@ -686,5 +686,11 @@ useEffect(() => {
         </p>
       </div>
     </div>
+    
+    
+————————————————————————————————————
 
+# Dotloading animation svg
+
+https://css-tricks.com/single-element-loaders-the-dots/
 
