@@ -721,4 +721,25 @@ useEffect(() => {
 }
 
 
+ ————————————————————————————————————
+
+# Scroll forward/backward with a button/arrow
+
+const scrollRight = () => {
+    let obj = document.getElementById("review-scroll");
+    obj.scrollBy(400, 0);
+    console.log(obj);
+  };
+  const scrollLeft = () => {
+    let obj = document.getElementById("review-scroll");
+    obj.scrollBy(-400, 0);
+  };
+  
+  <div
+  overflowX="scroll"
+  id="review-scroll"
+  scrollBehavior={"smooth"}>
+  </div>
+
+
 
