@@ -700,8 +700,25 @@ https://css-tricks.com/single-element-loaders-the-dots/
 # Animation library for react
 "aos": "^2.3.4",
 useEffect(() => {
-  Aos.init({ duration: 1000 });
-}, []);
+  Aos.init({ duration: 1000 })
+}, [])
   
-<Box data-aos="fade-right"></Box>
+<div data-aos="fade-right"></div>
+
+ ————————————————————————————————————
+
+# Hide Scrollbars But Keep Functionality
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.example::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.example {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+
 
