@@ -695,3 +695,13 @@ useEffect(() => {
 https://codepen.io/nikhil8krishnan/pen/rVoXJa
 https://css-tricks.com/single-element-loaders-the-dots/
 
+ ————————————————————————————————————
+
+# Animation library for react
+"aos": "^2.3.4",
+useEffect(() => {
+  Aos.init({ duration: 1000 });
+}, []);
+  
+<Box data-aos="fade-right"></Box>
+
