@@ -740,6 +740,21 @@ const scrollRight = () => {
   id="review-scroll"
   scrollBehavior={"smooth"}>
   </div>
+  
+  
+ ————————————————————————————————————
+
+# allow html formatting in a string, inner html
+  
+  const App = () => {
+  const data = `lorem ipsum <img src="" onerror="alert('message');" />`;
+
+  return (
+    <div
+      dangerouslySetInnerHTML={{__html: data}}
+    />
+  );
+}
 
 
 
