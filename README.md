@@ -755,6 +755,14 @@ const scrollRight = () => {
     />
   );
 }
+ ————————————————————————————————————
 
+# TYPES OF COMMENTS
+
+// ! critical comment
+// * hightlighted comment
+// TODO: todo comment
+// ? question comment
+// normal comment
 
 
