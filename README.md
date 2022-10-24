@@ -766,3 +766,14 @@ const scrollRight = () => {
 // normal comment
 
 
+
+ ————————————————————————————————————
+
+# ADD DAYS TO DATE
+function addDays(date, days) {
+    var result = new Date(date);
+    result.setDate(result.getDate() + days);
+    return result;
+}
+
+
