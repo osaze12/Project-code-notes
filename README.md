@@ -5,7 +5,10 @@ https://github.com/30-seconds/30-seconds-of-code
 
 # —TO GET ALL DAYS IN A MONTH
 
-  `function getAllDaysInMonth(year, month) 
+  
+  ```
+  function getAllDaysInMonth(year, month) 
+  
   {
   
     const date = new Date(year, month, 1);
@@ -25,7 +28,8 @@ https://github.com/30-seconds/30-seconds-of-code
   console.log(
     getAllDaysInMonth(date.getFullYear(), date.getMonth()),
     "<<<<<<<>>>>>>>>>>"
-  );`
+  );
+  ```
 —————————————————————————————
 
 
@@ -34,6 +38,7 @@ https://github.com/30-seconds/30-seconds-of-code
 
 //the last parameter, make sure users dont select time that is less than the specified datetime
 
+```
   const getTimes = (start, end, step = "30", date) => {
     if (!date) return [];
     const selectedDay = dayjs(date).format("YYYY-MM-DD");
@@ -81,10 +86,12 @@ https://github.com/30-seconds/30-seconds-of-code
       }
     }
   };
+  ```
 —————————————————————————————————
 
 # —TO GET TIMES BASED ON THE START TIME AND END TIME
 
+```
   // const getTimes = (start, end, step = "30") => {
   //   const dt = new Date(`December 17, 1995 ${start}`);
   //   const dc = new Date(`December 17, 1995 ${end}`);
@@ -95,11 +102,13 @@ https://github.com/30-seconds/30-seconds-of-code
   //   }
   //   return rc;
   // };
+  ```
 
 
 ————————————————————————————————————
 # — TO GROUP SIMILAR VALUES IN AN ARRAY
 
+```
 var cars = [{date: "2022-06-27"},{date: "2022-06-27"}, {date: "2022-06-28"}],
 
 response=>
@@ -113,6 +122,8 @@ response=>
         r[a.date].push(a);
         return r
     }, Object.create(null));
+    
+    ```
 
 ————————————————————————————————————
 # CUSTOM MONTH NAVIGATION RENDERER FOR REACT-DAY-PICKER
@@ -122,6 +133,8 @@ https://github.com/hypeserver/react-date-range/issues/222
 ————————————————————————————————————
 
 # CHANGE NAV BACKGROUND COLOR WHEN SCROLL POSITION IS GREATER THAN X VALUE
+
+```
 
   useEffect(() => {
     let myNav = document.getElementsByClassName("nav_bar")[0];
@@ -133,10 +146,14 @@ https://github.com/hypeserver/react-date-range/issues/222
       }
     };
   }, []);
+  
+  ```
 
 ————————————————————————————————————
 
 # Base64 string to image file
+
+```
 
 fetch(image)
     .then(res => res.blob())
@@ -145,6 +162,7 @@ fetch(image)
       console.log(file, "Hello")
       setImage(file)
     })
+    ```
 
 ————————————————————————————————————
 
@@ -162,7 +180,7 @@ https://itnext.io/react-push-notifications-with-hooks-d293d36f4836
 
 # Loading an image and getting width and height
 
-
+```
 let image = new Image()
       image.onload = e => {
         let width = image.width
@@ -172,6 +190,7 @@ let image = new Image()
         dispatch("PAYLOAD", { img, imgWidth: width, imgHeight: height })
       }
       image.src = img
+      ```
 
 
 ————————————————————————————————————
@@ -185,19 +204,22 @@ https://mmehdinasiri.github.io/react-calendar-datetime-picker/docs/examples/
 
 # Having cors issues, add  "Access-Control-Allow-Headers": "Content-Type" to =>
 
- 
+ ```
 headers: {
     Accept: "application/json, text/plain, */*",
     "Content-Type": "application/json ",
     "Access-Control-Allow-Headers": "Content-Type",
   },
 })
+```
 
 ————————————————————————————————————
 
 # From 1200 to 12:00 code =>
+```
 
 mystring = mystring.replace(/(..)/g, '$1:').slice(0,-1)
+```
 
 
 ————————————————————————————————————
@@ -206,6 +228,7 @@ mystring = mystring.replace(/(..)/g, '$1:').slice(0,-1)
 
 ["9:30 AM","10:0 AM","10:30 AM","11:0 AM","11:30 AM","12:0 PM","12:30 PM","1:0 PM","1:30 PM","2:0 PM","2:30 PM","3:0 PM","3:30 PM","4:0 PM","4:30 PM","5:0 PM","5:30 PM","6:0 PM","6:30 PM","7:0 PM","7:30 PM","8:0 PM","8:30 PM","9:0 PM","9:30 PM","10:0 PM","10:30 PM"]
 
+```
 export const getTimes = (start, end) => {
   if (!start || !end) return
   start = parseInt(start) * 2 + (+start.slice(-2) > 0)
@@ -217,13 +240,14 @@ export const getTimes = (start, end) => {
     `${h % 12 || 12}:${m} ${"AP"[+(h > 11)]}M`.replace(/bdb/g, "0$&")
   )
 }
+```
 https://www.tutorialguruji.com/javascript/javascript-generate-an-array-of-times-based-on-a-start-and-an-end/
 
 ————————————————————————————————————
 
 # Check if user is authenticated
 
-
+```
 useEffect(() => {
     // Handle user state changes
     const getAuthData = async obj => {
@@ -249,7 +273,7 @@ useEffect(() => {
     return deleteTokenAndKickUserOut()
   }, [checkingStatus, dispatch])
 
-
+```
 ————————————————————————————————————
 
 # How to implement web workers
@@ -262,8 +286,9 @@ https://blog.logrocket.com/real-time-processing-web-workers/
 
 # HOW TO SET UP WEB WORKERS
 
-
+```
 // in App.js
+
   useEffect(() => {
     const notification = setInterval(function () {
       textAnalyzer.postMessage("start")
@@ -305,11 +330,13 @@ self.addEventListener("message", event => {
   }
 })
 
-
+```
 ————————————————————————————————————
 
 # Updated web worker code 1
 
+```
+
 async function getNotificationsData(obj) {
   const { adminId, companyCode, token, baseURL } = obj || {}
   const response = fetch(
@@ -343,11 +370,12 @@ self.addEventListener("message", event => {
     })
     .catch(() => console.log("error Fetching notification"))
 })
-
+```
 
 ————————————————————————————————————
 
 # Updated web worker code 2
+```
 
 async function getNotificationsData(obj) {
   const { adminId, companyCode, token, baseURL } = obj || {}
@@ -382,7 +410,7 @@ self.addEventListener("message", event => {
     })
     .catch(() => console.log("error Fetching notification"))
 })
-
+```
 
 ————————————————————————————————————
 
@@ -394,13 +422,15 @@ self.addEventListener("message", event => {
 ————————————————————————————————————
 
 # To get last day of month
+```
 
 dayjs().endOf("month").date(),  of the month
+```
 
 ————————————————————————————————————
 
 # To get the current month dates, eg= [2021-01-01, 2021-01-02, 2021-01-03]
-
+```
 
 const getAllDatesForCurrentMonth = () => {
     var date = new Date()
@@ -432,12 +462,14 @@ const getAllDatesForCurrentMonth = () => {
     })
     return formattedDates
   }
+  ```
 
 ————————————————————————————————————
 
 # Better and optimised
 ["9:00 AM","12:00 PM","3:00 PM","6:00 PM","9:00 PM"]
 
+```
 
 function generateTime(start, end, step) {
         const dt = new Date(`December 17, 1995 ${start}`);
@@ -450,16 +482,19 @@ function generateTime(start, end, step) {
         return rc;
     }
 console.log(generateTime("9:00", "23:00", 180))
+```
 
 ————————————————————————————————————
 
 # To have a lighter color
+```
 
  _hover={{ bg: `${bg}80` }}
-
+```
 ————————————————————————————————————
 
 # Display something else when screen is idle for 15 seconds
+```
 
 const [isIdle, setIsIdle] = useState(false)
 useEffect(() => {
@@ -481,12 +516,13 @@ useEffect(() => {
       }
     }
   }, [])
+  ```
 
 ————————————————————————————————————
 
 # To have 3 box in a row
 
-
+```
 .Row {
     display: table;
     width: 100%; /*Optional*/
@@ -504,22 +540,24 @@ useEffect(() => {
     <div class="Column">C2</div>
     <div class="Column">C3</div>
 </div>
-
+```
 
 ————————————————————————————————————
 
 # To  auto play video, in a loop, in react
+```
 
 <video autoPlay loop muted playsInline style={{ width: "100vw" }}>
   <source src={idleVideo} type="video/mp4" />
   Your browser does not support the video tag.
  </video>
-
+```
 ————————————————————————————————————
 
 # Javascript convert to boolean, doesn't work, eg: Boolean("false") === true
 
 //right way \|/
+```
 
 const bool =
       e.toLowerCase() === "true"
@@ -527,6 +565,7 @@ const bool =
         : e.toLowerCase() === "false"
         ? false
         : e.toLowerCase()
+ ```
 
 
 ————————————————————————————————————
@@ -558,17 +597,17 @@ https://eligrey.com/blog/saving-generated-files-on-the-client-side/
 
 # To remove time icon from input
 
- 
+ ```
 const OVERRIDE_TIME_STYLE = `input[type="time"]::-webkit-calendar-picker-indicator {
 //     display: none !important;
 // }
 // }`
-
+```
 ————————————————————————————————————
 
 # JavaScript program to run a function in a separate thread by using a Web Worker, allowing long running functions to not block the UI.
 
-
+```
 //https://www.w3resource.com/javascript-exercises/fundamental/javascript-fundamental-exercise-151.php
 
 const runAsync = fn => {
@@ -603,12 +642,12 @@ runAsync(longRunningFunction).then(console.log); // 209685000000
 runAsync(() => 10 ** 3).then(console.log); // 1000
 let outsideVariable = 50;
 runAsync(() => typeof outsideVariable).then(console.log); // 'undefined'
-
+```
 ————————————————————————————————————
 
 # Best web worker to use in react
 
-
+```
 //https://www.npmjs.com/package/web-worker-hooks#installation
 
 import { useWorker } from "web-worker-hooks"
@@ -636,21 +675,23 @@ const [tableValues, setTableValues] = useState([])
     //eslint-disable-next-line
   }, [getData])
 
-
+```
 ————————————————————————————————————
 
 # To remove white background from favicon
 
-
+```
 add type="image/x-icon"
 
 <link rel="icon" href="%PUBLIC_URL%/favicon.ico" type="image/x-icon" />
 
-
+```
 ————————————————————————————————————
 
 # Change nav bar color when user scroll to x position
 
+
+```
 useEffect(() => {
     let myNav = document.getElementsByClassName("nav_bar")[0];
     window.onscroll = function () {
@@ -661,6 +702,7 @@ useEffect(() => {
       }
     };
   }, []);
+  ```
 
 
 
@@ -668,7 +710,7 @@ useEffect(() => {
 ————————————————————————————————————
 
 # Overlay text on an image using css grid
-
+```
    <div
       display="grid"
       gridTemplateColumns="repeat (5, 20%)"
@@ -688,6 +730,7 @@ useEffect(() => {
         </p>
       </div>
     </div>
+    ```
     
     
 ————————————————————————————————————
@@ -701,15 +744,18 @@ https://css-tricks.com/single-element-loaders-the-dots/
 
 # Animation library for react
 "aos": "^2.3.4",
+```
 useEffect(() => {
   Aos.init({ duration: 1000 })
 }, [])
   
 <div data-aos="fade-right"></div>
+```
 
  ————————————————————————————————————
 
 # Hide Scrollbars But Keep Functionality
+```
 
 /* Hide scrollbar for Chrome, Safari and Opera */
 .example::-webkit-scrollbar {
@@ -721,11 +767,14 @@ useEffect(() => {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+```
 
 
  ————————————————————————————————————
 
 # Scroll forward/backward with a button/arrow
+
+```
 
 const scrollRight = () => {
     let obj = document.getElementById("review-scroll");
@@ -742,11 +791,13 @@ const scrollRight = () => {
   id="review-scroll"
   scrollBehavior={"smooth"}>
   </div>
+  ```
   
   
  ————————————————————————————————————
 
 # allow html formatting in a string, inner html
+```
   
   const App = () => {
   const data = `lorem ipsum <img src="" onerror="alert('message');" />`;
@@ -757,6 +808,7 @@ const scrollRight = () => {
     />
   );
 }
+```
  ————————————————————————————————————
 
 # TYPES OF COMMENTS
@@ -771,11 +823,14 @@ const scrollRight = () => {
 
  ————————————————————————————————————
 
-# ADD DAYS TO DATE
+# ADD DAYS TO DATE, 1 Mon 2022 => 2 Tue 2022 => 3 Wed 2022
+
+```
 function addDays(date, days) {
     var result = new Date(date);
     result.setDate(result.getDate() + days);
     return result;
 }
+```
 
 
