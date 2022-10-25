@@ -5,7 +5,7 @@ https://github.com/30-seconds/30-seconds-of-code
 
 # —TO GET ALL DAYS IN A MONTH
 
-  function getAllDaysInMonth(year, month) {
+  `function getAllDaysInMonth(year, month) {
     const date = new Date(year, month, 1);
 
     const dates = [];
@@ -23,7 +23,7 @@ https://github.com/30-seconds/30-seconds-of-code
   console.log(
     getAllDaysInMonth(date.getFullYear(), date.getMonth()),
     "<<<<<<<>>>>>>>>>>"
-  );
+  );`
 —————————————————————————————
 
 
