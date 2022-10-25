@@ -123,7 +123,7 @@ response=>
         return r
     }, Object.create(null));
     
-    ```
+```
 
 ————————————————————————————————————
 # CUSTOM MONTH NAVIGATION RENDERER FOR REACT-DAY-PICKER
@@ -147,7 +147,7 @@ https://github.com/hypeserver/react-date-range/issues/222
     };
   }, []);
   
-  ```
+```
 
 ————————————————————————————————————
 
@@ -162,7 +162,7 @@ fetch(image)
       console.log(file, "Hello")
       setImage(file)
     })
-    ```
+```
 
 ————————————————————————————————————
 
@@ -190,7 +190,7 @@ let image = new Image()
         dispatch("PAYLOAD", { img, imgWidth: width, imgHeight: height })
       }
       image.src = img
-      ```
+```
 
 
 ————————————————————————————————————
@@ -730,7 +730,7 @@ useEffect(() => {
         </p>
       </div>
     </div>
-    ```
+```
     
     
 ————————————————————————————————————
@@ -791,7 +791,7 @@ const scrollRight = () => {
   id="review-scroll"
   scrollBehavior={"smooth"}>
   </div>
-  ```
+```
   
   
  ————————————————————————————————————
