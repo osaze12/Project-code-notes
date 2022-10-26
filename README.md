@@ -3,6 +3,32 @@ These is where i document things i have learnt, or found on the internet that ar
 https://github.com/30-seconds/30-seconds-of-code
 
 
+
+
+# —CHANGING REACT-CALENDAR DAY VIEW & CUSTOM CONTROL LINK
+
+```
+<Calendar
+  onChange={setDate}
+  value={date}
+  maxDate={new Date()}
+  formatDay ={
+    (ff, date) => new Intl.DateTimeFormat(
+      locale, 
+      {
+        year: "numeric", 
+        month: "2-digit", 
+        day: "2-digit"
+      }).format(date)
+    }
+   />
+   
+   https://codesandbox.io/s/react-calendar-with-custom-controls-qe99x?file=/src/ClosingDateField.js
+   
+   https://codesandbox.io/s/adoring-franklin-zvmti?file=/src/App.js:262-703
+   
+```
+
 # —TO GET ALL DAYS IN A MONTH
 
   
