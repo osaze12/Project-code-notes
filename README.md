@@ -834,3 +834,14 @@ function addDays(date, days) {
 ```
 
 
+
+ ————————————————————————————————————
+
+# Ux for mobile keyboard to the next input
+
+```
+enterKeyhint="next"
+enterKeyhint="done"
+```
+
+
