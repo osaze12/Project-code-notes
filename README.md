@@ -3,7 +3,27 @@ These is where i document things i have learnt, or found on the internet that ar
 https://github.com/30-seconds/30-seconds-of-code
 
 
+# ["7:00 AM - 7:30 AM","7:30 AM - 8:00 AM","8:00 AM - 8:30 AM","8:30 AM - 9:00 AM","9:00 AM - 9:30 AM","9:30 AM - 10:00 AM"]
+```
+ const getTimes = (start, end, step = 30) => {
+    const dt = new Date(`December 17, 1995 ${start}`);
+    const dc = new Date(`December 17, 1995 ${end}`);
+    const rc = [];
+    while (dt < dc) {
+      //let newTime = dt.setMinutes(dt.getMinutes() + Number(step));
+      let firstTime = dt.toLocaleTimeString("en-US", { timeStyle: "short" });
+      let newTime = dt.setMinutes(dt.getMinutes() + Number(step));
+      rc.push(
+        `${firstTime} - ${new Date(newTime).toLocaleTimeString("en-US", { timeStyle: "short" })}`);}
+   
+    return rc;
+  };
+
+console.log(getTimes('7:00 am', '10:00 am', "30"))
+```
+
 # CONVERT 24 HRS TO 12 HRS
+
 ```
 function tConvert (time) {
   // Check correct time format and split into components
