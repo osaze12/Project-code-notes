@@ -3,6 +3,25 @@ These is where i document things i have learnt, or found on the internet that ar
 https://github.com/30-seconds/30-seconds-of-code
 
 
+#SENDING CV FORMAT TO HR
+```
+Dear Hiring Manager,
+
+Please find attached a copy of my CV for the advertised role. 
+
+I have two years experience in branding and marketing. 
+
+My core skills include ...
+
+I look forward to hearing from you. 
+
+Thank you for your time and consideration.
+
+Kind regards,
+
+(full name)
+```
+
 # ["7:00 AM - 7:30 AM","7:30 AM - 8:00 AM","8:00 AM - 8:30 AM","8:30 AM - 9:00 AM","9:00 AM - 9:30 AM","9:30 AM - 10:00 AM"]
 ```
  const getTimes = (start, end, step = 30) => {
