@@ -3,7 +3,24 @@ These is where i document things i have learnt, or found on the internet that ar
 https://github.com/30-seconds/30-seconds-of-code
 
 
-#SENDING CV FORMAT TO HR
+
+# REACT CLONING REACT COMPONENT AND INJECTING DATA INTO IT
+```
+  <Box>
+    {!Array.isArray(children)
+      ? React.Children.map(children, (child, index) =>
+          React.cloneElement(child, {
+            id: index,
+            update,
+            dataResponse,
+            loading,
+          })
+        )
+      : children}
+  </Box>
+```
+
+# SENDING CV FORMAT TO HR
 ```
 Dear Hiring Manager,
 
