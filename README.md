@@ -3,6 +3,97 @@ These is where i document things i have learnt, or found on the internet that ar
 https://github.com/30-seconds/30-seconds-of-code
 
 
+# WHEN IDLE FOR X SECONDS, SHOW A VIDEO, & WHEN THERE'S A MOUSE EVENT, RESTART THE COUNTER
+```
+  useEffect(() => {
+    var IDLE_TIMEOUT = 15; //seconds
+    var _idleSecondsCounter = 0;
+
+    document.addEventListener("mousemove", () => {
+      _idleSecondsCounter = 0;
+      setIsIdle(false);
+    });
+
+    const interval = setInterval(CheckIdleTime, 1000);
+
+    function CheckIdleTime() {
+      _idleSecondsCounter++;
+
+      if (_idleSecondsCounter >= IDLE_TIMEOUT) {
+        setIsIdle(true);
+      }
+    }
+
+    return () => clearInterval(interval);
+  }, [isIdle]);
+```
+
+# ASK USER FOR PERMISSION & SUBSCRIBE FOR PUSH NOTIFICATION SERVICE
+
+### In public folder, a created sw.js file
+```
+self.addEventListener("push", e => {
+  const { title, description } = e?.data?.json() || {}
+
+  const options = {
+    body: description,
+    vibrate: [200, 100, 200],
+    requireInteraction: true,
+  }
+
+  self.registration.showNotification(title, options)
+})
+
+```
+
+### In App.js 
+```
+  //register service worker
+  useEffect(() => {
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", async () => {
+        await navigator.serviceWorker.register("./sw.js");
+      });
+    }
+  }, []);
+```
+```
+
+  function askPermission() {
+    return new Promise(function (resolve, reject) {
+      const permissionResult = Notification.requestPermission(function (result) {
+        resolve(result);
+      });
+
+      if (permissionResult) {
+        permissionResult.then(resolve, reject);
+      }
+    }).then(function (permissionResult) {
+      if (permissionResult !== "granted") {
+        throw new Error("We weren't granted permission.");
+      }
+    });
+  }
+  
+ askPermission().then((d) => {
+      navigator.serviceWorker.ready.then((swreg) => {
+        const push = swreg.pushManager.subscribe({
+          userVisibleOnly: true,
+          applicationServerKey: urlBase64ToUint8Array(WEB_PUSH_KEY),
+        });
+
+        push.then((res) => {
+          const payload = {
+            ...formValues,
+            pushSubscription: res,
+          };
+
+          setLoading(true);
+          companyLogin(payload, setLoading);
+        });
+      });
+    });
+```
 
 # REACT CLONING REACT COMPONENT AND INJECTING DATA INTO IT
 ```
