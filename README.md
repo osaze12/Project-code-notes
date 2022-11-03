@@ -3,6 +3,17 @@ These is where i document things i have learnt, or found on the internet that ar
 https://github.com/30-seconds/30-seconds-of-code
 
 
+
+# Cover letter
+```
+I've built software solutions that cut across Education, E-commerce, Health care, e.t.c for companies/clients.
+
+ I have the required skill & experience to bring to reality your dreams 😎.
+
+Let me know more about this project. I am confident I'll be an excellent fit and addition.
+```
+
+
 # WHEN IDLE FOR X SECONDS, SHOW A VIDEO, & WHEN THERE'S A MOUSE EVENT, RESTART THE COUNTER
 ```
   useEffect(() => {
