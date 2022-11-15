@@ -13,6 +13,15 @@ I've built software solutions that cut across Education, E-commerce, Health care
 Let me know more about this project. I am confident I'll be an excellent fit and addition.
 ```
 
+# Convering string to array/object
+
+```
+let object = {"name": "osas"}
+
+use eval(object) if JSON.parse(object) doesnt work
+```
+
+
 # Create a persistent countdown timer
 
 ### Install react-countdown library
