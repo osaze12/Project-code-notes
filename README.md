@@ -1082,6 +1082,59 @@ useEffect(() => {
 ```
 
  ————————————————————————————————————
+ # scroll on Drag for users with older laptops
+ ### index.css
+ ```
+ .items {
+  display: flex;
+  overflow: scroll;
+  /* scroll-behavior: smooth; */
+}
+ ```
+ ### index.html
+ ```
+ <div class="items">
+    <div class="item item1"></div>
+    <div class="item item2"></div>
+    <div class="item item3"></div>
+    <div class="item item4"></div>
+    <div class="item item5"></div>
+  </div>
+ ```
+ 
+ ### index.js
+ 
+ ```
+ const slider = document.querySelector(".items");
+let isDown = false;
+let startX;
+let scrollLeft;
+
+slider.addEventListener("mousedown", (e) => {
+  isDown = true;
+  slider.classList.add("active");
+  startX = e.pageX - slider.offsetLeft;
+  scrollLeft = slider.scrollLeft;
+});
+slider.addEventListener("mouseleave", () => {
+  isDown = false;
+  slider.classList.remove("active");
+});
+slider.addEventListener("mouseup", () => {
+  isDown = false;
+  slider.classList.remove("active");
+});
+slider.addEventListener("mousemove", (e) => {
+  if (!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - slider.offsetLeft;
+  const walk = (x - startX) * 3; //scroll-fast
+  slider.scrollLeft = scrollLeft - walk;
+  console.log(walk);
+});
+
+ ```
+ 
 
 # Hide Scrollbars But Keep Functionality
 ```
