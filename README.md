@@ -13,9 +13,19 @@ I've built software solutions that cut across Education, E-commerce, Health care
 Let me know more about this project. I am confident I'll be an excellent fit and addition.
 ```
 
+# If you have problem converting string to object using JSON.parse()
+```javascript
+
+  let jsonStr = String(r).replace(/(\w+:)|(\w+ :)/g, function (matchedStr) {
+      return '"' + matchedStr.substring(0, matchedStr.length - 1) + '":';
+    });
+    
+    JSON.parse(jsonStr)
+```
+
 # Convering string to array/object
 
-```
+```javascript
 let object = {"name": "osas"}
 
 use eval(object) if JSON.parse(object) doesnt work
@@ -25,11 +35,11 @@ use eval(object) if JSON.parse(object) doesnt work
 # Create a persistent countdown timer
 
 ### Install react-countdown library
-```
+```javascript
 import Countdown from "react-countdown";
 ```
 
-```
+```javascript
 import Countdown from "react-countdown";
 
 import { BOOKING_TIMER_IN_SECONDS } from "../app/constants";
@@ -144,7 +154,7 @@ export default PersistentCountdownTimer;
 
 
 # WHEN IDLE FOR X SECONDS, SHOW A VIDEO, & WHEN THERE'S A MOUSE EVENT, RESTART THE COUNTER
-```
+```javascript
   useEffect(() => {
     var IDLE_TIMEOUT = 15; //seconds
     var _idleSecondsCounter = 0;
@@ -171,7 +181,7 @@ export default PersistentCountdownTimer;
 # ASK USER FOR PERMISSION & SUBSCRIBE FOR PUSH NOTIFICATION SERVICE
 
 ### In public folder, a created sw.js file
-```
+```javascript
 self.addEventListener("push", e => {
   const { title, description } = e?.data?.json() || {}
 
@@ -187,7 +197,7 @@ self.addEventListener("push", e => {
 ```
 
 ### In App.js 
-```
+```javascript
   //register service worker
   useEffect(() => {
     if ("serviceWorker" in navigator) {
@@ -197,7 +207,7 @@ self.addEventListener("push", e => {
     }
   }, []);
 ```
-```
+```javascript
 
   function askPermission() {
     return new Promise(function (resolve, reject) {
@@ -236,7 +246,7 @@ self.addEventListener("push", e => {
 ```
 
 # REACT CLONING REACT COMPONENT AND INJECTING DATA INTO IT
-```
+```javascript
   <Box>
     {!Array.isArray(children)
       ? React.Children.map(children, (child, index) =>
@@ -271,7 +281,7 @@ Kind regards,
 ```
 
 # ["7:00 AM - 7:30 AM","7:30 AM - 8:00 AM","8:00 AM - 8:30 AM","8:30 AM - 9:00 AM","9:00 AM - 9:30 AM","9:30 AM - 10:00 AM"]
-```
+```javascript
  const getTimes = (start, end, step = 30) => {
     const dt = new Date(`December 17, 1995 ${start}`);
     const dc = new Date(`December 17, 1995 ${end}`);
@@ -291,7 +301,7 @@ console.log(getTimes('7:00 am', '10:00 am', "30"))
 
 # CONVERT 24 HRS TO 12 HRS
 
-```
+```javascript
 function tConvert (time) {
   // Check correct time format and split into components
   time = time.toString ().match (/^([01]\d|2[0-3])(:)([0-5]\d)(:[0-5]\d)?$/) || [time];
@@ -310,7 +320,7 @@ tConvert ('18:00:00');
 
 # —CHANGING REACT-CALENDAR DAY VIEW & CUSTOM CONTROL LINK
 
-```
+```javascript
 <Calendar
   onChange={setDate}
   value={date}
@@ -335,7 +345,7 @@ tConvert ('18:00:00');
 # —TO GET ALL DAYS IN A MONTH
 
   
-  ```
+  ```javascript
   function getAllDaysInMonth(year, month) 
   
   {
@@ -367,7 +377,7 @@ tConvert ('18:00:00');
 
 //the last parameter, make sure users dont select time that is less than the specified datetime
 
-```
+```javascript
   const getTimes = (start, end, step = "30", date) => {
     if (!date) return [];
     const selectedDay = dayjs(date).format("YYYY-MM-DD");
@@ -420,7 +430,7 @@ tConvert ('18:00:00');
 
 # —TO GET TIMES BASED ON THE START TIME AND END TIME
 
-```
+```javascript
   // const getTimes = (start, end, step = "30") => {
   //   const dt = new Date(`December 17, 1995 ${start}`);
   //   const dc = new Date(`December 17, 1995 ${end}`);
@@ -437,7 +447,7 @@ tConvert ('18:00:00');
 ————————————————————————————————————
 # — TO GROUP SIMILAR VALUES IN AN ARRAY
 
-```
+```javascript
 var cars = [{date: "2022-06-27"},{date: "2022-06-27"}, {date: "2022-06-28"}],
 
 response=>
@@ -463,7 +473,7 @@ https://github.com/hypeserver/react-date-range/issues/222
 
 # CHANGE NAV BACKGROUND COLOR WHEN SCROLL POSITION IS GREATER THAN X VALUE
 
-```
+```javascript
 
   useEffect(() => {
     let myNav = document.getElementsByClassName("nav_bar")[0];
@@ -482,7 +492,7 @@ https://github.com/hypeserver/react-date-range/issues/222
 
 # Base64 string to image file
 
-```
+```javascript
 
 fetch(image)
     .then(res => res.blob())
@@ -509,7 +519,7 @@ https://itnext.io/react-push-notifications-with-hooks-d293d36f4836
 
 # Loading an image and getting width and height
 
-```
+```javascript
 let image = new Image()
       image.onload = e => {
         let width = image.width
@@ -533,7 +543,7 @@ https://mmehdinasiri.github.io/react-calendar-datetime-picker/docs/examples/
 
 # Having cors issues, add  "Access-Control-Allow-Headers": "Content-Type" to =>
 
- ```
+ ```javascript
 headers: {
     Accept: "application/json, text/plain, */*",
     "Content-Type": "application/json ",
@@ -545,7 +555,7 @@ headers: {
 ————————————————————————————————————
 
 # From 1200 to 12:00 code =>
-```
+```javascript
 
 mystring = mystring.replace(/(..)/g, '$1:').slice(0,-1)
 ```
@@ -557,7 +567,7 @@ mystring = mystring.replace(/(..)/g, '$1:').slice(0,-1)
 
 ["9:30 AM","10:0 AM","10:30 AM","11:0 AM","11:30 AM","12:0 PM","12:30 PM","1:0 PM","1:30 PM","2:0 PM","2:30 PM","3:0 PM","3:30 PM","4:0 PM","4:30 PM","5:0 PM","5:30 PM","6:0 PM","6:30 PM","7:0 PM","7:30 PM","8:0 PM","8:30 PM","9:0 PM","9:30 PM","10:0 PM","10:30 PM"]
 
-```
+```javascript
 export const getTimes = (start, end) => {
   if (!start || !end) return
   start = parseInt(start) * 2 + (+start.slice(-2) > 0)
@@ -576,7 +586,7 @@ https://www.tutorialguruji.com/javascript/javascript-generate-an-array-of-times-
 
 # Check if user is authenticated
 
-```
+```javascript
 useEffect(() => {
     // Handle user state changes
     const getAuthData = async obj => {
@@ -615,7 +625,7 @@ https://blog.logrocket.com/real-time-processing-web-workers/
 
 # HOW TO SET UP WEB WORKERS
 
-```
+```javascript
 // in App.js
 
   useEffect(() => {
@@ -664,7 +674,7 @@ self.addEventListener("message", event => {
 
 # Updated web worker code 1
 
-```
+```javascript
 
 async function getNotificationsData(obj) {
   const { adminId, companyCode, token, baseURL } = obj || {}
@@ -704,7 +714,7 @@ self.addEventListener("message", event => {
 ————————————————————————————————————
 
 # Updated web worker code 2
-```
+```javascript
 
 async function getNotificationsData(obj) {
   const { adminId, companyCode, token, baseURL } = obj || {}
@@ -751,7 +761,7 @@ self.addEventListener("message", event => {
 ————————————————————————————————————
 
 # To get last day of month
-```
+```javascript
 
 dayjs().endOf("month").date(),  of the month
 ```
@@ -759,7 +769,7 @@ dayjs().endOf("month").date(),  of the month
 ————————————————————————————————————
 
 # To get the current month dates, eg= [2021-01-01, 2021-01-02, 2021-01-03]
-```
+```javascript
 
 const getAllDatesForCurrentMonth = () => {
     var date = new Date()
@@ -798,7 +808,7 @@ const getAllDatesForCurrentMonth = () => {
 # Better and optimised
 ["9:00 AM","12:00 PM","3:00 PM","6:00 PM","9:00 PM"]
 
-```
+```javascript
 
 function generateTime(start, end, step) {
         const dt = new Date(`December 17, 1995 ${start}`);
@@ -816,14 +826,14 @@ console.log(generateTime("9:00", "23:00", 180))
 ————————————————————————————————————
 
 # To have a lighter color
-```
+```javascript
 
  _hover={{ bg: `${bg}80` }}
 ```
 ————————————————————————————————————
 
 # Display something else when screen is idle for 15 seconds
-```
+```javascript
 
 const [isIdle, setIsIdle] = useState(false)
 useEffect(() => {
@@ -851,7 +861,7 @@ useEffect(() => {
 
 # To have 3 box in a row
 
-```
+```css
 .Row {
     display: table;
     width: 100%; /*Optional*/
@@ -874,7 +884,7 @@ useEffect(() => {
 ————————————————————————————————————
 
 # To  auto play video, in a loop, in react
-```
+```javascript
 
 <video autoPlay loop muted playsInline style={{ width: "100vw" }}>
   <source src={idleVideo} type="video/mp4" />
@@ -886,7 +896,7 @@ useEffect(() => {
 # Javascript convert to boolean, doesn't work, eg: Boolean("false") === true
 
 //right way \|/
-```
+```javascript
 
 const bool =
       e.toLowerCase() === "true"
@@ -926,7 +936,7 @@ https://eligrey.com/blog/saving-generated-files-on-the-client-side/
 
 # To remove time icon from input
 
- ```
+ ```javascript
 const OVERRIDE_TIME_STYLE = `input[type="time"]::-webkit-calendar-picker-indicator {
 //     display: none !important;
 // }
@@ -936,7 +946,7 @@ const OVERRIDE_TIME_STYLE = `input[type="time"]::-webkit-calendar-picker-indicat
 
 # JavaScript program to run a function in a separate thread by using a Web Worker, allowing long running functions to not block the UI.
 
-```
+```javascript
 //https://www.w3resource.com/javascript-exercises/fundamental/javascript-fundamental-exercise-151.php
 
 const runAsync = fn => {
@@ -976,7 +986,7 @@ runAsync(() => typeof outsideVariable).then(console.log); // 'undefined'
 
 # Best web worker to use in react
 
-```
+```javascript
 //https://www.npmjs.com/package/web-worker-hooks#installation
 
 import { useWorker } from "web-worker-hooks"
@@ -1009,7 +1019,7 @@ const [tableValues, setTableValues] = useState([])
 
 # To remove white background from favicon
 
-```
+```html
 add type="image/x-icon"
 
 <link rel="icon" href="%PUBLIC_URL%/favicon.ico" type="image/x-icon" />
@@ -1020,7 +1030,7 @@ add type="image/x-icon"
 # Change nav bar color when user scroll to x position
 
 
-```
+```javascript
 useEffect(() => {
     let myNav = document.getElementsByClassName("nav_bar")[0];
     window.onscroll = function () {
@@ -1039,7 +1049,7 @@ useEffect(() => {
 ————————————————————————————————————
 
 # Overlay text on an image using css grid
-```
+```html
    <div
       display="grid"
       gridTemplateColumns="repeat (5, 20%)"
@@ -1073,7 +1083,7 @@ https://css-tricks.com/single-element-loaders-the-dots/
 
 # Animation library for react
 "aos": "^2.3.4",
-```
+```javascript
 useEffect(() => {
   Aos.init({ duration: 1000 })
 }, [])
@@ -1084,7 +1094,7 @@ useEffect(() => {
  ————————————————————————————————————
  # scroll on Drag for users with older laptops
  ### index.css
- ```
+ ```css
  .items {
   display: flex;
   overflow: scroll;
@@ -1104,7 +1114,7 @@ useEffect(() => {
  
  ### index.js
  
- ```
+ ```javascript
  const slider = document.querySelector(".items");
 let isDown = false;
 let startX;
@@ -1137,7 +1147,7 @@ slider.addEventListener("mousemove", (e) => {
  
 
 # Hide Scrollbars But Keep Functionality
-```
+```css
 
 /* Hide scrollbar for Chrome, Safari and Opera */
 .example::-webkit-scrollbar {
@@ -1156,7 +1166,7 @@ slider.addEventListener("mousemove", (e) => {
 
 # Scroll forward/backward with a button/arrow
 
-```
+```javascript
 
 const scrollRight = () => {
     let obj = document.getElementById("review-scroll");
@@ -1179,7 +1189,7 @@ const scrollRight = () => {
  ————————————————————————————————————
 
 # allow html formatting in a string, inner html
-```
+```javascript
   
   const App = () => {
   const data = `lorem ipsum <img src="" onerror="alert('message');" />`;
@@ -1207,7 +1217,7 @@ const scrollRight = () => {
 
 # ADD DAYS TO DATE, 1 Mon 2022 => 2 Tue 2022 => 3 Wed 2022
 
-```
+```javascript
 function addDays(date, days) {
     var result = new Date(date);
     result.setDate(result.getDate() + days);
@@ -1228,7 +1238,7 @@ enterKeyhint="done"
 
 
 # Paginated table code
-```
+```javascript
 const limit = DATA_ROWS.LIMIT;
 
 export const PaginatedTable = ({
