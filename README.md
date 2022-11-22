@@ -3,6 +3,13 @@ These is where i document things i have learnt, or found on the internet that ar
 https://github.com/30-seconds/30-seconds-of-code
 
 
+# if .gitignore isnt ignoring your file/folders
+```
+Just remove the initial git configuration from your folder by rm -rf .git. 
+Use the created .gitignore file and add all the file you want to add. 
+Then reinitialize the git configuration in your folder with git init. This will solve your problem.
+```
+
 
 # Cover letter
 ```
