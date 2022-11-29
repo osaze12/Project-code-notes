@@ -10,6 +10,26 @@ Use the created .gitignore file and add all the file you want to add.
 Then reinitialize the git configuration in your folder with git init. This will solve your problem.
 ```
 
+# convert image file e.target.files[0] to a base url
+```javascript
+
+ onChange={async (e) => {
+   setPreviewImg(await readURL(e.target.files?.[0]));
+ }}
+              
+
+// convert file to a base64 url
+
+const readURL = file => {
+  return new Promise((res, rej) => {
+      const reader = new FileReader();
+      reader.onload = e => res(e.target.result);
+      reader.onerror = e => rej(e);
+      reader.readAsDataURL(file);
+  });
+};
+```
+
 # scroll to a particular position/box using the id
 ```javascript
 import { ScrollMenu} from "react-horizontal-scrolling-menu";
