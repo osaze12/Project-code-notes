@@ -10,6 +10,65 @@ Use the created .gitignore file and add all the file you want to add.
 Then reinitialize the git configuration in your folder with git init. This will solve your problem.
 ```
 
+# scroll to a particular position/box using the id
+```javascript
+import { ScrollMenu} from "react-horizontal-scrolling-menu";
+
+
+ const apiRef = React.useRef({});
+ 
+  const scrollToStart = () => {
+    apiRef?.current?.scrollToItem(
+      apiRef?.current.getItemByIndex(activeIndex - 1),
+      "smooth",
+      "start"
+    );
+  };
+  
+    useEffect(() => {
+    scrollToStart();
+  }, [activeIndex, apiRef?.current]);
+  
+
+   <ScrollMenu
+   apiRef={apiRef}
+   LeftArrow={
+     <IoIosArrowBack
+       cursor={"pointer"}
+       onClick={() => apiRef?.current?.scrollPrev()}
+     />
+   }
+   RightArrow={
+     <IoIosArrowForward
+       cursor={"pointer"}
+       onClick={() => apiRef?.current?.scrollNext()}
+     />
+   }
+ >
+   {getAllDaysInMonth(
+     getCurrentDate?.getFullYear(),
+     getCurrentDate?.getMonth()
+   ).map((data, i) => {
+     let addOneToLoopIndex = i + 1;
+
+     return (
+       <DateCard
+         itemId={addOneToLoopIndex}
+         id={addOneToLoopIndex}
+         onClick={(date) => {
+           console.log(date, "Date clicked");
+           getSchedule(date);
+           setClickedDate(date);
+           setActiveIndex(addOneToLoopIndex);
+         }}
+         isActive={activeIndex === addOneToLoopIndex ? true : false}
+       />
+     );
+   })}
+ </ScrollMenu>
+
+```
+
 
 # Cover letter
 ```
