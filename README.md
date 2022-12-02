@@ -10,6 +10,30 @@ Use the created .gitignore file and add all the file you want to add.
 Then reinitialize the git configuration in your folder with git init. This will solve your problem.
 ```
 
+# To observe changes of an html element, e.g the div width
+```javascript
+
+  useEffect(() => {
+  
+    setParentWidth(ref.current.offsetWidth);
+    
+    const resize = () => {
+      console.log("Is resize");
+      setParentWidth(ref?.current?.offsetWidth);
+    };
+    
+
+    const resizeObserver = new ResizeObserver((entries) => {
+      console.log("yesss");
+      resize();
+    });
+    
+
+    resizeObserver.observe(document.getElementsByClassName("chat-area")[0]);
+    
+  }, []);
+```
+
 # convert image file e.target.files[0] to a base url
 ```javascript
 
