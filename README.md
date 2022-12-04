@@ -10,6 +10,50 @@ Use the created .gitignore file and add all the file you want to add.
 Then reinitialize the git configuration in your folder with git init. This will solve your problem.
 ```
 
+# project you have built
+```
+I've built software solutions that cut across Education, E-commerce, Health care, e.t.c for companies.
+
+I've worked in a team, to build a software solution that manages communication between doctors and patients, so patients can easily communicate the issue he/she is having without leaving the his/her home, and payments for the service are easily deducted.
+
+Technologies used:
+1. Javascript/ReactJs library
+2. HTML & CSS3
+3. Chakra UI library
+4. Github version control
+
+Role : member of the team
+
+
+i've also built an  e-commerce (women care products) website for a client, where people can buy easily buy products and pay.
+
+Technologies used:
+1. Javascript/ReactJs library
+2. HTML & CSS3
+3. Chakra UI library
+4. Paystack payment method
+5.  Github version control
+
+Role: 
+Lead
+
+
+I have successfully created a javascript (ReactJs) library that has 318 monthly downloads (November 2022), on node package manager(npm) website.
+https://www.npmjs.com/package/@osaze12/bootstrapped-form
+
+Technologies used:
+1. Javascript/ReactJs library
+2. Typescript
+3. HTML & CSS3
+4. Github version control
+
+Role: 
+Lead
+
+
+And many other project...
+```
+
 # To observe changes of an html element, e.g the div width
 ```javascript
 
