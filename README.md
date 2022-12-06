@@ -10,6 +10,53 @@ Use the created .gitignore file and add all the file you want to add.
 Then reinitialize the git configuration in your folder with git init. This will solve your problem.
 ```
 
+#  Customize website's scrollbar like Mac OS
+```css
+
+/* Not supports in Firefox and IE */
+
+/* total width */
+body::-webkit-scrollbar {
+    background-color: #fff;
+    width: 16px;
+}
+
+/* background of the scrollbar except button or resizer */
+body::-webkit-scrollbar-track {
+    background-color: #fff;
+}
+
+/* scrollbar itself */
+body::-webkit-scrollbar-thumb {
+    background-color: #babac0;
+    border-radius: 16px;
+    border: 4px solid #fff;
+}
+
+/* set button(top and bottom of the scrollbar) */
+body::-webkit-scrollbar-button {
+    display:none;
+}
+
+/* Scrollbar is not getting auto hidden after scroll. Is there any way we can achieve that as well ?*/
+
+.scrollbar::-webkit-scrollbar-thumb {
+    background-color: rgba(0,0,0,0);
+    border-radius:16px;
+    border:5px solid #fff;
+}
+
+.scrollbar:hover::-webkit-scrollbar-thumb {
+  background-color: #a0a0a5;
+}
+
+.scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color:#a0a0a5;
+    border:4px solid #f4f4f4
+}
+```
+
+
 # project you have built
 ```
 I've built software solutions that cut across Education, E-commerce, Health care, e.t.c for companies.
