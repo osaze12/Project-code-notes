@@ -15,45 +15,47 @@ Then reinitialize the git configuration in your folder with git init. This will 
 
 /* Not supports in Firefox and IE */
 
+.scroll-container {
+  overflow: overlay;
+}
+
 /* total width */
-body::-webkit-scrollbar {
-    background-color: #fff;
-    width: 16px;
+.scroll-container::-webkit-scrollbar {
+  background-color: rgba(0, 0, 0, 0);
+  width: 16px;
+  height: 16px;
+  z-index: 999999;
 }
 
 /* background of the scrollbar except button or resizer */
-body::-webkit-scrollbar-track {
-    background-color: #fff;
+.scroll-container::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0);
 }
 
 /* scrollbar itself */
-body::-webkit-scrollbar-thumb {
-    background-color: #babac0;
-    border-radius: 16px;
-    border: 4px solid #fff;
+.scroll-container::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 16px;
+  border: 0px solid #fff;
 }
 
 /* set button(top and bottom of the scrollbar) */
-body::-webkit-scrollbar-button {
-    display:none;
+.scroll-container::-webkit-scrollbar-button {
+  display: none;
 }
 
-/* Scrollbar is not getting auto hidden after scroll. Is there any way we can achieve that as well ?*/
-
-.scrollbar::-webkit-scrollbar-thumb {
-    background-color: rgba(0,0,0,0);
-    border-radius:16px;
-    border:5px solid #fff;
-}
-
-.scrollbar:hover::-webkit-scrollbar-thumb {
+/* scrollbar when element is hovered */
+.scroll-container:hover::-webkit-scrollbar-thumb {
   background-color: #a0a0a5;
+  border: 4px solid #fff;
 }
 
-.scrollbar::-webkit-scrollbar-thumb:hover {
-    background-color:#a0a0a5;
-    border:4px solid #f4f4f4
+/* scrollbar when scrollbar is hovered */
+.scroll-container::-webkit-scrollbar-thumb:hover {
+  background-color: #a0a0a5;
+  border: 4px solid #f4f4f4;
 }
+
 ```
 
 
