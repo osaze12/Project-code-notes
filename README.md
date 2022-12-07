@@ -10,7 +10,25 @@ Use the created .gitignore file and add all the file you want to add.
 Then reinitialize the git configuration in your folder with git init. This will solve your problem.
 ```
 
-#  Customize website's scrollbar like Mac OS
+# Customize website's scrollbar like Mac OS (doesnt hide scroll on leave)
+```css
+body::-webkit-scrollbar-track, .scroll-container::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: ${scrollBgColor};
+}
+
+body::-webkit-scrollbar, .scroll-container::-webkit-scrollbar {
+  width: 4px;
+  background-color: #f5f5f5;
+}
+
+body::-webkit-scrollbar-thumb, .scroll-container::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: ${scrollThumbColor};
+}
+```
+
+#  Customize website's scrollbar like Mac OS (hide scroll on leave)
 ```css
 
 /* Not supports in Firefox and IE */
