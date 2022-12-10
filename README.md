@@ -28,6 +28,14 @@ body::-webkit-scrollbar-thumb, .scroll-container::-webkit-scrollbar-thumb {
 }
 ```
 
+# scroll to bottom smoothly
+```javascript
+  //auto scroll to bottom
+  document
+    .getElementById("messages")
+    .scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
+```
+
 #  Customize website's scrollbar like Mac OS (hide scroll on leave)
 ```css
 
