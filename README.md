@@ -10,6 +10,16 @@ Use the created .gitignore file and add all the file you want to add.
 Then reinitialize the git configuration in your folder with git init. This will solve your problem.
 ```
 
+# error with socket IO chat failing 
+```
+WebSocket connection failed: Error during WebSocket handshake: Unexpected response code: 400
+______
+SOLUTION
+_________
+https://stackoverflow.com/questions/41381444/websocket-connection-failed-error-during-websocket-handshake-unexpected-respon
+
+```
+
 # play a sound when notification arrives
 ```javascript
    socketClient.on("in-app-notification", (data) => {
