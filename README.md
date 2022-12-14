@@ -10,6 +10,16 @@ Use the created .gitignore file and add all the file you want to add.
 Then reinitialize the git configuration in your folder with git init. This will solve your problem.
 ```
 
+# play a sound when notification arrives
+```javascript
+   socketClient.on("in-app-notification", (data) => {
+      //play sound when a new notification comes in
+      const audio = new Audio(bellSound);
+      audio?.play();
+    });
+```
+
+
 # Customize website's scrollbar like Mac OS (doesnt hide scroll on leave)
 ```css
 body::-webkit-scrollbar-track, .scroll-container::-webkit-scrollbar-track {
