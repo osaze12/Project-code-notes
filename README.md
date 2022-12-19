@@ -29,6 +29,15 @@ https://stackoverflow.com/questions/41381444/websocket-connection-failed-error-d
     });
 ```
 
+# how to get the width of an html element
+```javascript
+  useEffect(() => {
+    let p = document.getElementsByClassName("zz")[0];
+    setSize(window.getComputedStyle(p).width);
+  }, []);
+
+```
+
 
 # Customize website's scrollbar like Mac OS (doesnt hide scroll on leave)
 ```css
