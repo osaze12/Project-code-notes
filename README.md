@@ -38,6 +38,12 @@ https://stackoverflow.com/questions/41381444/websocket-connection-failed-error-d
 
 ```
 
+# convert px to number
+```javascript
+ parseFloat("12px")
+ parseInt("12px")
+```
+
 
 # Customize website's scrollbar like Mac OS (doesnt hide scroll on leave)
 ```css
