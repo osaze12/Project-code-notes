@@ -733,6 +733,11 @@ response=>
 
 https://github.com/hypeserver/react-date-range/issues/222
 
+
+# selecting multiple dates on react calendar
+```javascript
+https://stackoverflow.com/questions/60446117/how-to-mark-particular-dates-in-react-calender
+```
 ————————————————————————————————————
 
 # CHANGE NAV BACKGROUND COLOR WHEN SCROLL POSITION IS GREATER THAN X VALUE
