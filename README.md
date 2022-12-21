@@ -74,47 +74,44 @@ body::-webkit-scrollbar-thumb, .scroll-container::-webkit-scrollbar-thumb {
 #  Customize website's scrollbar like Mac OS (hide scroll on leave)
 ```css
 
-/* Not supports in Firefox and IE */
+ body{
+    overflow-y: ${
+      url === "/messaging" || /\/trading-group/gm.test(url) //if url is /trading-group/[0-9] return true
+        ? "hidden"
+        : "initial"
+    };
+    overflow-x: hidden;
+  }
+     .scroll-container{
+   overflow-x:hidden !important;
+     }
 
-.scroll-container {
-  overflow: overlay;
+  body::-webkit-scrollbar-track, 
+  .scroll-container::-webkit-scrollbar-track,
+ {
+    border-radius: 10px;
+    background-color: ${scrollBgColor};
+   
+  }
+
+  body::-webkit-scrollbar, .scroll-container::-webkit-scrollbar {
+    width: 4px;
+    background-color: #f5f5f5;
+  }
+
+  body::-webkit-scrollbar-thumb, .scroll-container::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: ${scrollThumbColor};
+  }
+
+  body::-webkit-scrollbar-track-piece:end, .scroll-container::-webkit-scrollbar-track-piece:end {
+    background: ${scrollTrackColor};
+    margin-bottom: 0px; 
 }
 
-/* total width */
-.scroll-container::-webkit-scrollbar {
-  background-color: rgba(0, 0, 0, 0);
-  width: 16px;
-  height: 16px;
-  z-index: 999999;
-}
-
-/* background of the scrollbar except button or resizer */
-.scroll-container::-webkit-scrollbar-track {
-  background-color: rgba(0, 0, 0, 0);
-}
-
-/* scrollbar itself */
-.scroll-container::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0);
-  border-radius: 16px;
-  border: 0px solid #fff;
-}
-
-/* set button(top and bottom of the scrollbar) */
-.scroll-container::-webkit-scrollbar-button {
-  display: none;
-}
-
-/* scrollbar when element is hovered */
-.scroll-container:hover::-webkit-scrollbar-thumb {
-  background-color: #a0a0a5;
-  border: 4px solid #fff;
-}
-
-/* scrollbar when scrollbar is hovered */
-.scroll-container::-webkit-scrollbar-thumb:hover {
-  background-color: #a0a0a5;
-  border: 4px solid #f4f4f4;
+body::-webkit-scrollbar-track-piece:start, .scroll-container::-webkit-scrollbar-track-piece:start {
+    background: ${scrollTrackColor};
+    margin-top: 0px;
 }
 
 ```
