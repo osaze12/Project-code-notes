@@ -271,11 +271,13 @@ import { ScrollMenu} from "react-horizontal-scrolling-menu";
 
 # Cover letter
 ```
-I've built software solutions that cut across Education, E-commerce, Health care, e.t.c for companies/clients.
-
- I have the required skill & experience to bring to reality your dreams 😎.
-
-Let me know more about this project. I am confident I'll be an excellent fit and addition.
+I've built software solutions that cut across Ecommerce, Healthcare, etc. 
+I've gained the required experience to add value to the company, the following below are some of the project i've worked on:
+https://www.howbodi.io/
+A health care web application where doctors can schedule doctors & have conversations via video/voice call or text chat, right on the app.
+More can be found on my portfolio at https://tinyurl.com/osas-portfolio
+And i've also attached my CV
+Hope to hear from you soon
 ```
 
 # If you have problem converting string to object using JSON.parse()
