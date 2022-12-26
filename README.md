@@ -7,6 +7,12 @@ https://github.com/30-seconds/30-seconds-of-code
 https://linguinecode.com/post/integrate-stripe-payment-form-with-react
 ```
 
+
+# Add dark background on image
+```css
+  background:`linear-gradient(90deg, rgb(0 0 0 / 63%) 0%, rgb(0 0 0 / 63%) 51%), url(${previewImg})`
+```
+
 # if .gitignore isnt ignoring your file/folders
 ```
 Just remove the initial git configuration from your folder by rm -rf .git. 
