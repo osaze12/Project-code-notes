@@ -8,6 +8,11 @@ https://linguinecode.com/post/integrate-stripe-payment-form-with-react
 ```
 
 
+# How to preserve line breaks from text areas to p tag, just add that to p tag
+```css
+white-space: pre-wrap;
+```
+
 # Add dark background on image
 ```css
   background:`linear-gradient(90deg, rgb(0 0 0 / 63%) 0%, rgb(0 0 0 / 63%) 51%), url(${previewImg})`
