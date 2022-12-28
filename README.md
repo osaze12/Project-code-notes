@@ -7,6 +7,21 @@ https://github.com/30-seconds/30-seconds-of-code
 https://linguinecode.com/post/integrate-stripe-payment-form-with-react
 ```
 
+# My details
+```
+My name is Osaze Agbi, I’m from Nigeria
+I’m a frontend engineer, focused in react library, I have been building frontend app/ library for 4 years now, all through the years I have gain skill and tricks that many people are not aware of, and may not be easily find on the internet, which I will be teaching if I’m chosen
+I have written a documentation of the react package library I coded, which helps developers create forms with just few lines of code https://www.npmjs.com/package/@osaze12/bootstrapped-form, this shows my goal aligns with yours, which which is to teach people.
+I also have a very short post on LinkedIn making the package library known to people 
+https://www.linkedin.com/posts/osaze-agbi-b68328176_react-library-developers-ugcPost-6999720518215970816-qrdX?utm_source=share&utm_medium=member_desktop
+
+How to observe changes of an html element width or height
+
+How to display a video when the screen is idle after 15 seconds, just like how your bank’s Automated Teller Machine does it
+
+This is a link to my portfolio where you would be able to see what I have created https://tinyurl.com/osas-portfolio
+```
+
 
 # How to preserve line breaks from text areas to p tag, just add that to p tag
 ```css
