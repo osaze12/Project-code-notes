@@ -7,6 +7,26 @@ https://github.com/30-seconds/30-seconds-of-code
 https://linguinecode.com/post/integrate-stripe-payment-form-with-react
 ```
 
+# Do something when video has loaded
+```javascript
+ useEffect(() => {
+    if (isVideo === false) return;
+    props?.pause();
+
+    const videoElement = document?.getElementById("_video");
+
+    videoElement?.addEventListener("loadeddata", (e) => {
+      //Video should now be loaded but we can add a second check
+
+      if (videoElement.readyState >= 3) {
+        props?.resume();
+        console.log("code has resumed");
+        //your code goes here
+      }
+    });
+  }, [isVideo]);
+```
+
 # My details
 ```
 My name is Osaze Agbi, I’m from Nigeria
