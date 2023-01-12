@@ -7,6 +7,94 @@ https://github.com/30-seconds/30-seconds-of-code
 https://linguinecode.com/post/integrate-stripe-payment-form-with-react
 ```
 
+# take live photo
+Link to tutorial (video) == https://usefulangle.com/post/354/javascript-record-video-from-camera
+Link to tutorial (photo) == https://usefulangle.com/post/352/javascript-capture-image-from-camera
+
+```javascript
+ let stream;
+  const videoRef = useRef();
+
+  useEffect(() => {
+    if (!props.open) return;
+
+    setTimeout(async () => {
+      stream = await navigator.mediaDevices.getUserMedia({
+        video: true,
+        audio: false,
+      });
+      videoRef.current.srcObject = stream;
+    }, 3000);
+  }, [props?.open]);
+
+  const handleImage = () => {
+    let canvas = document.querySelector("#canvas");
+
+    canvas
+      .getContext("2d")
+      .drawImage(videoRef.current, 0, 0, canvas.width, canvas.height);
+    canvas.toBlob((blob) => {
+      let file = new File([blob], "user_image.jpg", { type: "image/jpeg" });
+      console.log(file);
+
+      closeVideo();
+
+      props?.onFinish(file);
+    }, "image/jpeg");
+
+  };
+
+  const closeVideo = async () => {
+    if (!stream) return;
+
+    await stream.getTracks().forEach(function (track) {
+      if (track.readyState == "live") {
+        track.stop();
+      }
+    });
+    return true;
+  };
+  
+ 
+```
+### the html code
+```html
+ <video
+            style={{ border: "1px solid red", height: "300px" }}
+            ref={videoRef}
+            id="video"
+            width="320"
+            height="340"
+            autoPlay
+          ></video>
+          <Stack direction={"row"} mt="20px">
+            <Button
+              size={"xs"}
+              bg="#07900C"
+              color="#fff"
+              onClick={() => handleImage()}
+            >
+              Take Photo
+            </Button>
+            <Button
+              size={"xs"}
+              border="1px solid #80808030"
+              bg="transparent"
+              onClick={() => {
+                closeVideo().then(() => props.close());
+              }}
+            >
+              Cancel
+            </Button>
+          </Stack>
+          <canvas
+            id="canvas"
+            width="320"
+            height="240"
+            style={{ display: "none" }}
+          ></canvas>
+```
+
 
 # Formatting number to have 1k, 2.5M
 ```javascript
