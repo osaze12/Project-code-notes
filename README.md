@@ -6,6 +6,10 @@ https://github.com/30-seconds/30-seconds-of-code
 ```
 https://linguinecode.com/post/integrate-stripe-payment-form-with-react
 ```
+# Dots animations
+```
+https://codepen.io/nzbin/pen/GGrXbp
+```
 
 # Center an absolute item
 ```
