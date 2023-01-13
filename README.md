@@ -7,6 +7,11 @@ https://github.com/30-seconds/30-seconds-of-code
 https://linguinecode.com/post/integrate-stripe-payment-form-with-react
 ```
 
+# Center an absolute item
+```
+https://stackoverflow.com/questions/7720730/how-to-align-absolutely-positioned-element-to-center#:~:text=If%20you%20set%20both%20left,center%20an%20absolutely%20positioned%20element.
+```
+
 # Convert Blob to file
 ```javascript
 function blobToFile(theBlob, fileName){
