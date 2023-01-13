@@ -7,6 +7,22 @@ https://github.com/30-seconds/30-seconds-of-code
 https://linguinecode.com/post/integrate-stripe-payment-form-with-react
 ```
 
+# Convert Blob to file
+```javascript
+function blobToFile(theBlob, fileName){
+    //A Blob() is almost a File() - it's just missing the two properties below which we will add
+    theBlob.lastModifiedDate = new Date();
+    theBlob.name = fileName;
+    return theBlob;
+}
+
+var myBlob = new Blob();
+
+//do stuff here to give the blob some data...
+
+var myFile = blobToFile(myBlob, "my-image.png");
+```
+
 # take live photo
 Link to tutorial (video) == https://usefulangle.com/post/354/javascript-record-video-from-camera
 Link to tutorial (photo) == https://usefulangle.com/post/352/javascript-capture-image-from-camera
