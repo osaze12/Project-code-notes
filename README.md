@@ -28,7 +28,7 @@ Link to tutorial (photo) == https://usefulangle.com/post/352/javascript-capture-
   }, [props?.open]);
 
   const handleImage = () => {
-    let canvas = document.querySelector("#canvas");
+    let canvas = document.querySelector("#canvas")
 
     canvas
       .getContext("2d")
