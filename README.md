@@ -6,6 +6,29 @@ https://github.com/30-seconds/30-seconds-of-code
 ```
 https://linguinecode.com/post/integrate-stripe-payment-form-with-react
 ```
+
+# How to add svg image directly to css
+```javascript
+  let w = ` <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
+      fill="currentColor"
+      class="bi bi-chevron-left"
+      viewBox="0 0 16 16"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+      />
+    </svg>`;
+
+  let p = window.btoa(w);
+  
+ let style = `
+  background: url(data:image/svg+xml;base64,${p});
+ `
+```
 # Dots animations
 ```
 https://codepen.io/nzbin/pen/GGrXbp
