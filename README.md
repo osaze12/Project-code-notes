@@ -9,6 +9,9 @@ https://linguinecode.com/post/integrate-stripe-payment-form-with-react
 
 # How to add svg image directly to css
 ```javascript
+
+link to icons https://fontawesomeicons.com/svg/icons/circle-chevron-left
+
   let w = ` <svg
       xmlns="http://www.w3.org/2000/svg"
       width="16"
