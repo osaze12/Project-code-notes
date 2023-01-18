@@ -6,6 +6,253 @@ https://github.com/30-seconds/30-seconds-of-code
 ```
 https://linguinecode.com/post/integrate-stripe-payment-form-with-react
 ```
+# Take a live photo from webcam and save photo file
+```javascript
+ useEffect(() => {
+    if (!props?.openModal?.open) return;
+
+    setTimeout(async () => {
+      await navigator.mediaDevices
+        .getUserMedia({
+          video: true,
+          audio: false,
+        })
+        .then((stream) => {
+          videoRef.current.srcObject = stream;
+          setLoading(false);
+
+          document
+            .getElementById("take-photo")
+            .addEventListener("click", async () => {
+              let canvas = document.querySelector("#canvas");
+
+              canvas
+                .getContext("2d")
+                .drawImage(videoRef.current, 0, 0, canvas.width, canvas.height);
+              canvas.toBlob(async (blob) => {
+                let file = new File([blob], "user_image.jpg", {
+                  type: "image/jpeg",
+                });
+
+                // close the video and send image file
+
+                await stream?.getTracks().forEach((track) => {
+                  track.stop();
+                });
+                videoRef.current.srcObject = null;
+
+                props?.onFinish(file);
+              }, "image/jpeg");
+            });
+
+          document
+            .getElementById("cancel")
+            .addEventListener("click", async () => {
+              await stream?.getTracks().forEach((track) => {
+                track.stop();
+              });
+              videoRef.current.srcObject = null;
+              props.close();
+            });
+        });
+    }, 3000);
+  }, []);
+
+  return (
+    <Stack
+      position={"relative"}
+      justifyContent="center"
+      alignItems={"center"}
+      py="20px"
+      spacing={"20px"}
+    >
+      {loading && <VideoLoadingAnimation />}
+      <video
+        ref={videoRef}
+        id="video"
+        width="520"
+        height="340"
+        autoPlay
+      ></video>
+      <Stack direction={"row"} mt="20px">
+        <Button
+          disabled={loading}
+          id="take-photo"
+          p="20px"
+          size={"xs"}
+          bg="#07900C"
+          color="#fff"
+          _hover={{ background: "#07900C" }}
+        >
+          Take Photo
+        </Button>
+        <Button
+          disabled={loading}
+          id={"cancel"}
+          p="20px"
+          size={"xs"}
+          border="1px solid #80808030"
+          bg="transparent"
+          _hover={{ background: "transparent" }}
+        >
+          Cancel
+        </Button>
+      </Stack>
+      <canvas
+        id="canvas"
+        width="320"
+        height="240"
+        style={{ display: "none" }}
+      ></canvas>
+    </Stack>
+```
+
+# Record a live video with a stop timer & save video file 
+```javascript
+ useEffect(() => {
+    if (!props?.openModal?.open) return;
+
+    setTimeout(async () => {
+      navigator.mediaDevices
+        .getUserMedia({
+          video: true,
+          audio: true,
+        })
+        .then((stream) => {
+          videoRef.current.srcObject = stream;
+          setLoading(false);
+
+          document
+            .getElementById("start-video")
+            .addEventListener("click", async () => {
+              setDisableBtn(true);
+              // set MIME type of recording as video/webm
+              media_recorder = await new MediaRecorder(stream, {
+                mimeType: "video/webm",
+              });
+              console.log(media_recorder, "here");
+              media_recorder.start();
+              setCountStarted(true);
+
+              // event : new recorded video blob available
+              media_recorder.addEventListener("dataavailable", function (e) {
+                blobs_recorded.push(e.data);
+              });
+
+              // event : recording stopped & all blobs sent
+              media_recorder.addEventListener("stop", async function () {
+                // create local object URL from the recorded video blobs
+                let video_local = URL.createObjectURL(
+                  new Blob(blobs_recorded, { type: "video/webm" })
+                );
+
+                const blob = new Blob(blobs_recorded, { type: "video/webm" });
+                const myFile = blobToFile(blob, "my-video.webm");
+                console.log("THE END", myFile);
+                setCountStarted(false);
+                props?.onFinish(myFile);
+              });
+            });
+
+          document
+            .getElementById("cancel")
+            .addEventListener("click", async () => {
+              await stream.getTracks().forEach((track) => {
+                track.stop();
+              });
+
+              videoRef.current.srcObject = null;
+              props.close();
+            });
+        });
+    }, 3000);
+  }, [props?.openModal?.open]);
+  console.log(videoCountDown);
+
+  useEffect(() => {
+    let interval;
+
+    if (!countStarted) return;
+
+    if (parseInt(videoCountDown) < 1) {
+      clearInterval(interval);
+      media_recorder.stop();
+      cancelRef.current.click();
+
+      return;
+    }
+    interval = setInterval(() => {
+      setVideoCountDown(videoCountDown - 1);
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, [countStarted, videoCountDown]);
+
+  return (
+    <Stack
+      position={"relative"}
+      justifyContent="center"
+      alignItems={"center"}
+      py="20px"
+      spacing={"20px"}
+    >
+      {loading && <VideoLoadingAnimation />}
+
+      <video
+        ref={videoRef}
+        id="video"
+        width="520"
+        height="340"
+        autoPlay
+      ></video>
+      <Text fontSize={".76em"} textAlign="center">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio
+        reiciendis distinctio molestias nisi tempora perspiciatis, quam
+        consequuntur ut ducimus
+      </Text>
+      <Stack
+        direction={"row"}
+        // mt="30px !important"
+        alignItems={"center"}
+        spacing="20px"
+      >
+        <Button
+          id="start-video"
+          disabled={loading || disableBtn}
+          p="20px"
+          size={"xs"}
+          bg="#00157E"
+          _hover={{ background: "#00157E" }}
+          color="#fff"
+          // onClick={() => handleVideo()}
+        >
+          Start Video
+        </Button>
+
+        <Button
+          ref={cancelRef}
+          disabled={loading}
+          id="cancel"
+          p="20px"
+          size={"xs"}
+          border="1px solid #80808030"
+          bg="transparent"
+          _hover={{ background: "transparent" }}
+
+          // onClick={() => {
+          //   // closeVideo().then(() => props.close());
+          // }}
+        >
+          Cancel
+        </Button>
+        <CircularProgress value={videoCountDown * 10} color="green.400">
+          <CircularProgressLabel>
+            {videoCountDown} <span style={{ fontSize: ".8em" }}>sec</span>
+          </CircularProgressLabel>
+        </CircularProgress>
+      </Stack>
+    </Stack>
+```
 
 # How to add svg image directly to css
 ```javascript
