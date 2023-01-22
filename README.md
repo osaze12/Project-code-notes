@@ -6,7 +6,17 @@ https://github.com/30-seconds/30-seconds-of-code
 ```
 https://linguinecode.com/post/integrate-stripe-payment-form-with-react
 ```
+
+# Respond when a user leaves the screen
+```javascript
+  useEffect(() => {
+    document.addEventListener("visibilitychange", () => {
+      setEnableChatTone(true);
+    });
+  }, []);
+```
 # Take a live photo from webcam and save photo file
+
 ```javascript
  useEffect(() => {
     if (!props?.openModal?.open) return;
