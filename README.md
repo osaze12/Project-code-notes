@@ -7,6 +7,168 @@ https://github.com/30-seconds/30-seconds-of-code
 https://linguinecode.com/post/integrate-stripe-payment-form-with-react
 ```
 
+# Plot graph with custom numbers
+```javascript
+export const MyGraph = ({ data }) => {
+  const { labels, datasets } = data || {};
+
+  useEffect(() => {
+    const data = {
+      labels,
+      datasets,
+    };
+
+    //graph configuration
+    const config = {
+      type: "bar",
+      data: data,
+      options: {
+        scales: {
+          y: {
+            min: 0,
+            max: 10000,
+            ticks: {
+              callback: function (value, index, ticks) {
+                function convert(value) {
+                  if (value >= 1000000) {
+                    let divided = value / 1000000;
+                    value = divided.toFixed(1) + "M";
+                  } else if (value >= 1000) {
+                    let divided = value / 1000;
+                    value = divided?.toFixed(1) + "K";
+                  }
+                  return value;
+                }
+
+                if (String(value).length < 4) {
+                  return value;
+                } else {
+                  return convert(value);
+                }
+              },
+              beginAtZero: true,
+              steps: 0,
+              stepSize: 100,
+              //   max: 8000,
+            },
+          },
+        },
+      },
+    };
+
+    var graph = new Chart(
+      document.getElementById("graph").getContext("2d"),
+      config
+    );
+
+    return () => {
+      graph.destroy();
+    };
+  }, []);
+
+  return (
+    <Box p={["1", "4"]} borderRadius={5} h={[600]} w={["100%"]}>
+      <canvas height="450px" id="graph"></canvas>
+    </Box>
+  );
+};
+```
+## BarChart.jsx
+```javascript
+const BarChart = ({ doctorEarningByService }) => {
+
+ const labels = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sept",
+  "Oct",
+  "Nov",
+  "Dec",
+];
+
+  const arrayData = doctorEarningByService?.wellnessCheckupArray?.map(
+    (item) => {
+      const keys = Object.keys(item);
+      return item[keys[1]];
+    }
+  );
+
+  const physicalConsultationArrayData =
+    doctorEarningByService?.physicalConsultation?.map((item) => {
+      const keys = Object.keys(item);
+      return item[keys[1]];
+    });
+
+  const virtualConsultationArrayData =
+    doctorEarningByService?.virtualConsultation?.map((item) => {
+      const keys = Object.keys(item);
+
+      return item[keys[1]];
+    });
+
+  const privateChatArrayData = doctorEarningByService?.privateChat?.map(
+    (item) => {
+      const keys = Object.keys(item);
+      return item[keys[1]];
+    }
+  );
+  console.log(privateChatArrayData, doctorEarningByService, "PPPP");
+  const data = {
+    labels,
+    datasets: [
+      {
+        label: "Virtual Consultations",
+        data: virtualConsultationArrayData,
+        backgroundColor: "rgba(25, 165, 176)",
+        borderWidth: 2,
+        borderRadius: 9,
+        borderSkipped: false,
+        barThickness: 10,
+      },
+      {
+        label: "Physical Consultations",
+        data: physicalConsultationArrayData,
+        backgroundColor: "rgba(234, 111, 6, 1)",
+        borderWidth: 2,
+        borderRadius: 9,
+        borderSkipped: false,
+        barThickness: 10,
+      },
+      {
+        label: "Wellness CheckUp",
+        data: arrayData,
+        backgroundColor: "rgba(154,187,46)",
+        borderWidth: 2,
+        borderRadius: 9,
+        borderSkipped: false,
+        barThickness: 10,
+      },
+      {
+        label: "Private Chats",
+        data: privateChatArrayData,
+        backgroundColor: "rgba(111, 25, 172, 1)",
+        borderWidth: 2,
+        borderRadius: 9,
+        borderSkipped: false,
+        barThickness: 10,
+      },
+    ],
+  };
+
+  return (
+    <Box bg="#fff" p={["1", "4"]} borderRadius={5} h={[600]} w={["100%"]}>
+      <MyGraph data={data} />
+    </Box>
+  );
+};
+```
+
 # Respond when a user leaves the screen
 ```javascript
   useEffect(() => {
