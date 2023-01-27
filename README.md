@@ -22,6 +22,15 @@ var merged = [].concat.apply([], arrays);
 console.log(merged);
 
 ```
+
+# Remove duplicate from an array
+```javascript
+// usage example:
+var myArray = ['a', 1, 'a', 2, '1'];
+var unique = myArray.filter((v, i, a) => a.indexOf(v) === i);
+
+console.log(unique); // unique is ['a', 1, 2, '1']
+```
 # Plot graph with custom numbers
 ```javascript
 export const MyGraph = ({ data }) => {
