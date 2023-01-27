@@ -6,7 +6,22 @@ https://github.com/30-seconds/30-seconds-of-code
 ```
 https://linguinecode.com/post/integrate-stripe-payment-form-with-react
 ```
+# remove array of array
+```javascript
+var arrays = [
+  ["$6"],
+  ["$12"],
+  ["$25"],
+  ["$25"],
+  ["$18"],
+  ["$22"],
+  ["$10"]
+];
+var merged = [].concat.apply([], arrays);
 
+console.log(merged);
+
+```
 # Plot graph with custom numbers
 ```javascript
 export const MyGraph = ({ data }) => {
