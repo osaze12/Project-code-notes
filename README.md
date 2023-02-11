@@ -6,6 +6,30 @@ https://github.com/30-seconds/30-seconds-of-code
 ```
 https://linguinecode.com/post/integrate-stripe-payment-form-with-react
 ```
+
+# Format bytes
+```javascript
+function formatBytes(bytes, decimals = 2) {
+    if (!+bytes) return '0 Bytes'
+
+    const k = 1024
+    const dm = decimals < 0 ? 0 : decimals
+    const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB']
+
+    const i = Math.floor(Math.log(bytes) / Math.log(k))
+
+    return `${parseFloat((bytes / Math.pow(k, i)).toFixed(dm))} ${sizes[i]}`
+}
+
+// formatBytes(bytes, decimals)
+
+formatBytes(1024)       // 1 KB
+formatBytes('1024')     // 1 KB
+formatBytes(1234)       // 1.21 KB
+formatBytes(1234, 3)    // 1.205 KB
+formatBytes(0)          // 0 Bytes
+formatBytes('0')        // 0 Bytes
+```
 # remove array of array
 ```javascript
 var arrays = [
