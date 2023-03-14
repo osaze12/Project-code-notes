@@ -2,6 +2,11 @@
 These is where i document things i have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+# if you're having issues with react showing error when it tries building the app on AWS/other platform
+# add --openssl-legacy-provider to your package.json file
+```javascript
+  "start": "react-scripts start --openssl-legacy-provider",
+```
 # Good stripe tutorial
 ```
 https://linguinecode.com/post/integrate-stripe-payment-form-with-react
