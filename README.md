@@ -7,6 +7,12 @@ https://github.com/30-seconds/30-seconds-of-code
 ```javascript
   "start": "react-scripts start --openssl-legacy-provider",
 ```
+# Clone from a specific branch on github
+```javascipt
+git clone --branch <branchname> <remote-repo-url>
+or git clone -b <branchname> <remote-repo-url>
+```
+
 # Good stripe tutorial
 ```
 https://linguinecode.com/post/integrate-stripe-payment-form-with-react
