@@ -2,6 +2,18 @@
 These is where i document things i have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+# cover letter
+```html
+Hello,
+I am applying for this job because I met some criteria, and our mission or goals align.
+
+my goal is to build products that solve problems for organizations and help them grow their revenues quickly.
+
+I've built a product, called In-cert, which helps people generate 100s of digital certificates in seconds, here's a link, https://in-cert.netlify.app/
+
+I've also built a react library, which helps developers create a fully functional form with just 5 lines of code, here's a link, https://www.npmjs.com/package/@osaze12/bootstrapped-form
+```
+
 # if you're having issues with react showing error when it tries building the app on AWS/other platform
 # add --openssl-legacy-provider to your package.json file
 ```javascript
