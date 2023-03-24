@@ -7,6 +7,27 @@ https://github.com/30-seconds/30-seconds-of-code
 https://www.freecodecamp.org/news/git-undo-merge-how-to-revert-the-last-merge-commit-in-git/
 ```
 
+# download file from link
+```javascript
+  const downloadURI = async (url, filename) => {
+    const data = await fetch(url);
+    const blob = await data.blob();
+    const objectUrl = URL.createObjectURL(blob);
+
+    const link = document.createElement("a");
+
+    link.setAttribute("href", objectUrl);
+    link.setAttribute("download", filename);
+    link.style.display = "none";
+
+    document.body.appendChild(link);
+
+    link.click();
+
+    document.body.removeChild(link);
+  };
+```
+
 # cover letter
 ```html
 Hello,
