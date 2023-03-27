@@ -2,7 +2,7 @@
 These is where i document things i have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
-# to get the title or text of the select option
+# to get the title or text or option name of the select option
 ```javascript
   onChange={(e) => {
   console.log(
