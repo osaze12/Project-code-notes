@@ -2,6 +2,15 @@
 These is where i document things i have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+# to get the title or text of the select option
+```javascript
+  onChange={(e) => {
+  console.log(
+    e.target.options[e.target.selectedIndex].text,
+    "J"
+  );
+```
+
 # how to undo merge
 ```html
 https://www.freecodecamp.org/news/git-undo-merge-how-to-revert-the-last-merge-commit-in-git/
