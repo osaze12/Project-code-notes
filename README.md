@@ -11,6 +11,33 @@ https://github.com/30-seconds/30-seconds-of-code
   );
 ```
 
+# Add csv button and functionality
+```javascript
+import { creatCsvFile, downloadFile } from "download-csv";
+
+  const csvColumns = {
+    date: "Date",
+    rating: "Rating",
+    review: "Review",
+    department: "Department",
+  };
+  
+  
+   const csvData =
+    review?.feedback?.map((data) => ({
+      date: dayjs(data?.createdAt).format("DD-MMM-YYYY"),
+      rating: parseInt(data?.rating),
+      review: data?.review,
+      host: data?.host,
+      department: data?.department,
+    }));
+
+  const handleCsvDownload = () => {
+    const csvFile = creatCsvFile(csvData, csvColumns);
+    downloadFile(csvFile);
+  };
+```
+
 # Area chart customization (REChart)
 ```javascript
 const data = [
