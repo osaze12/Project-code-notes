@@ -11,6 +11,32 @@ https://github.com/30-seconds/30-seconds-of-code
   );
 ```
 
+# set up google analytics
+```javascript
+import ReactGA from "react-ga";
+
+export const useAnalytics = () => {
+  const [initialized, setInitialized] = useState(true);
+  const location = useLocation();
+  const GOOGLE_ANALYTICS_ID = process.env.REACT_APP_GA_ID;
+
+  useEffect(() => {
+    setInitialized(true);
+  }, []);
+
+  useEffect(() => {
+    if (initialized) {
+      ReactGA.initialize(GOOGLE_ANALYTICS_ID);
+      ReactGA.pageview(location.pathname + location.search);
+    }
+  }, [initialized, location, GOOGLE_ANALYTICS_ID]);
+
+  return null;
+};
+
+  useAnalytics();
+```
+
 # Add csv button and functionality
 ```javascript
 import { creatCsvFile, downloadFile } from "download-csv";
