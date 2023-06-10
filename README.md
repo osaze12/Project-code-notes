@@ -15,6 +15,9 @@ https://github.com/30-seconds/30-seconds-of-code
 ```javascript
 import ReactGA from "react-ga";
 
+
+
+
 export const useAnalytics = () => {
   const [initialized, setInitialized] = useState(true);
   const location = useLocation();
@@ -23,6 +26,7 @@ export const useAnalytics = () => {
   useEffect(() => {
     setInitialized(true);
   }, []);
+ 
 
   useEffect(() => {
     if (initialized) {
@@ -35,6 +39,26 @@ export const useAnalytics = () => {
 };
 
   useAnalytics();
+  
+  
+  
+   // to track a specific event(action, like button action)
+  export const Event = (category, action, label) => {
+ ReactGA.event({
+  category: category,
+  action: action,
+  label: label
+ });
+};
+
+const handleClickPhone = () => {
+  Event("KALENDER", "MODAL BTN TRANSAKSI", "TELEPON");
+};
+
+/* inside the render you must create onClick func to detect if the user clicked it or not */
+<Button onClick={handleClickPhone}>
+  Phone
+</Button>
 ```
 
 # Add csv button and functionality
