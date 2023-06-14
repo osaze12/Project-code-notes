@@ -2,6 +2,43 @@
 These is where i document things i have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+
+# to add font family to react app from asset folder/google font
+
+# from asset folder
+```javascript
+@font-face {
+  font-family: Trenda-regular;
+  src: url("./assets/font/LatinotypeTrendaRegular.woff");
+}
+
+@font-face {
+  font-family: Trenda-bold;
+  src: url("./assets/font/LatinotypeTrendaBold.woff");
+}
+@font-face {
+  font-family: Trenda-heavy;
+  src: url("./assets/font/LatinotypeTrendaHeavy.otf");
+}
+
+body {
+  margin: 0;
+  font-family: Trenda-regular, Trenda-bold, Trenda-heavy, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+```
+
+# from google font
+```html
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+```
+
 # to get the title or text or option name of the select option
 ```javascript
   onChange={(e) => {
