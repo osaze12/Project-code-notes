@@ -2,6 +2,15 @@
 These is where i document things i have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+# truncate text
+```javascript
+export const trunc = (text, length = 10, showDot = true) => {
+  if (!text) return "";
+  if (text?.length <= length) return text;
+  return `${text?.substring(0, length)}${showDot ? "..." : ""}`;
+};
+
+```
 
 # to add font family to react app from asset folder/google font
 
