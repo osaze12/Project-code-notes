@@ -2,6 +2,14 @@
 These is where i document things i have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+# scroll to top
+```javascript
+  useEffect(() => {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  }, []);
+```
+
 # truncate text
 ```javascript
 export const trunc = (text, length = 10, showDot = true) => {
