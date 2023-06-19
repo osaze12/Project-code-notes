@@ -2,6 +2,72 @@
 These is where i document things i have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+# mobile hambuger navigation
+```javascript
+import { Box, Flex, Text } from "@chakra-ui/react";
+import { useState } from "react";
+import { FaTimes } from "react-icons/fa";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { Link } from "react-router-dom";
+
+function MobileHamBugerNav() {
+  const [show, setShow] = useState(false);
+
+  return (
+    <>
+      <GiHamburgerMenu
+        onClick={() => setShow((prev) => !prev)}
+        fontSize={"2em"}
+      />
+      {show && (
+        <Box
+          data-aos="fade-left"
+          position="fixed"
+          bottom={"0"}
+          left="0"
+          right="0"
+          top="0"
+          w="100vw"
+          bg="#000"
+          zIndex={1022}
+        >
+          <Flex
+            flexDir={"column"}
+            justifyContent="center"
+            alignItems={"center"}
+            w="100%"
+            p="20px"
+          >
+            <FaTimes
+              style={{ alignSelf: "flex-end" }}
+              fontSize="1.5em"
+              cursor={"pointer"}
+              onClick={() => setShow(false)}
+            />
+            <Flex
+              flexDir={"column"}
+              alignItems="center"
+              justifyContent="center"
+            >
+              <Link to={"/pricing"} onClick={() => setShow(false)}>
+                <Text>Pricing</Text>
+              </Link>
+
+              <Link to={"/tests"} onClick={() => setShow(false)}>
+                <Text>Tests</Text>
+              </Link>
+            </Flex>
+          </Flex>
+        </Box>
+      )}{" "}
+    </>
+  );
+}
+
+export default MobileHamBugerNav;
+
+```
+
 # scroll to top
 ```javascript
   useEffect(() => {
