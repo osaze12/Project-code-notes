@@ -2,7 +2,16 @@
 These is where i document things i have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
-# bes easy webworker library
+# How to make un-equal image's width and height equal
+```css
+.photos img {
+	width: 15%;
+	aspect-ratio: 3/2;
+	object-fit: contain;
+	mix-blend-mode: color-burn;
+}
+```
+# best easy webworker library
 ```javascript
 import workerize from "workerize";
 
