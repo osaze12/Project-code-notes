@@ -2,6 +2,36 @@
 These is where i document things i have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+# bes easy webworker library
+```javascript
+import workerize from "workerize";
+
+let worker = workerize(`
+	export function add(a, b) {
+
+ return fetch(
+      "https://api.flutterwave.com/v3/subscriptions?email=osazeagbi@gmail.com",
+      {
+        method: "GET",
+        headers: {
+          // content-type: "ja"
+          "content-type": "application/json",
+          Authorization: "Bearer FLWSECK_TEST-5d9a72afc39854cbb8015beccf30d18b-X",
+        }
+      }
+    )
+
+  }
+   
+`);
+
+  useEffect(() => {
+    (async () => {
+      console.log("3 + 9 = ", await worker.add(3, 9));
+      console.log("1 + 2 = ", await worker.add(1, 2));
+    })();
+  }, []);
+```
 # mobile hambuger navigation
 ```javascript
 import { Box, Flex, Text } from "@chakra-ui/react";
