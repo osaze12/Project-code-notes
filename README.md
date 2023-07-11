@@ -2,6 +2,53 @@
 These is where i document things i have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+# Generate random values from list without duplicate
+```javascrupt
+let haveIt = [];
+
+function generateUniqueRandom(maxNr) {
+    //Generate random number
+    let random = (Math.random() * maxNr).toFixed();
+
+    //Coerce to number by boxing
+    random = Number(random);
+
+    if(!haveIt.includes(random)) {
+        haveIt.push(random);
+        return random;
+    } else {
+        if(haveIt.length < maxNr) {
+          //Recursively generate number
+         return  generateUniqueRandom(maxNr);
+        } else {
+          console.log('No more numbers available.')
+          return false;
+        }
+    }
+}
+
+
+console.log(generateUniqueRandom(10));
+console.log(generateUniqueRandom(10));
+console.log(generateUniqueRandom(10));
+console.log(generateUniqueRandom(10));
+console.log(generateUniqueRandom(10));
+
+console.log(generateUniqueRandom(10));
+
+
+console.log(generateUniqueRandom(10));
+console.log(generateUniqueRandom(10));
+console.log(generateUniqueRandom(10));
+console.log(generateUniqueRandom(10));
+console.log(generateUniqueRandom(10));
+console.log(generateUniqueRandom(10));
+console.log(generateUniqueRandom(10));
+
+
+console.log('Unique random numbers:' ,haveIt);
+```
+
 # How to make un-equal image's width and height equal
 ```css
 .photos img {
