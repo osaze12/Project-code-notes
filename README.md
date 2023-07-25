@@ -4,7 +4,7 @@ https://github.com/30-seconds/30-seconds-of-code
 
 # stop height value from being more than the view height number(100vh++) on any screen size
 ```css
-   maxHeight: `calc(100vh - ${screen.height - 100})`,
+   maxHeight: `calc(screen.height.toString() - ${(screen.height - 100).toString()})`,
 ```
 
 # Generate random values from list without duplicate
