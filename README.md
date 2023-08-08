@@ -371,6 +371,74 @@ export default function App() {
     </AreaChart>
   );
 ```
+# more chart customization with shadow (Rechart)
+```javascript
+  <Flex w="90%" h="50%" flexDir={"column"}>
+      <Flex justifyContent={"space-between"} alignItems="center">
+        <Flex flexDir={"column"}>
+          <Text>Weekly Earning</Text>
+          <Flex flexDir={"row"} alignItems="center">
+            <Text>Last 7 Days</Text>
+            <FaAngleDown color={_BLACKER} />
+          </Flex>
+        </Flex>
+
+        <ImArrowUpRight2 />
+      </Flex>
+
+      <Flex alignItems={"center"} justifyContent="space-between" mt="20px">
+        <Text fontFamily={"Nunito"} fontWeight={"800"} fontSize={"2em"}>
+          $894.39
+        </Text>
+        <CustomBtn bg={_BLACKER}>
+          <Text color="#fff">Withdraw</Text>
+        </CustomBtn>
+      </Flex>
+
+      <ResponsiveContainer width="100%" height="100%">
+        <LineChart
+          width={500}
+          height={300}
+          data={_WEEKLY_CHART_DATA}
+          margin={{
+            top: 5,
+            right: 30,
+            left: 20,
+            bottom: 5,
+          }}
+        >
+          <CartesianGrid
+            strokeDasharray="3 3"
+            // verticalFill={""}
+            opacity={0.5}
+          />
+          <XAxis
+            tick={{ fill: _LIGHTER_BLACK }}
+            dataKey="name"
+            axisLine={false}
+            tickLine={false}
+          />
+          <YAxis
+            tick={{ fill: _LIGHTER_BLACK, display: "none" }}
+            axisLine={false}
+            tickLine={false}
+          />
+          <Tooltip />
+          {/* <Legend /> */}
+          <Line
+            type="linear"
+            style={{
+              filter: `drop-shadow(20px 10px 8px #6e6d7a)`,
+            }}
+            dataKey="pv"
+            stroke={_YELLOW}
+            activeDot={{ r: 8 }}
+            strokeWidth="3"
+          />
+        </LineChart>
+      </ResponsiveContainer>
+    </Flex>
+```
 
 # how to undo merge
 ```html
