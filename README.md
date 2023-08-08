@@ -371,46 +371,28 @@ export default function App() {
     </AreaChart>
   );
 ```
-# more chart customization with shadow (Rechart)
+# more chart customization with shadow, custom tooltip (Rechart)
 ```javascript
-  <Flex w="90%" h="50%" flexDir={"column"}>
-      <Flex justifyContent={"space-between"} alignItems="center">
-        <Flex flexDir={"column"}>
-          <Text>Weekly Earning</Text>
-          <Flex flexDir={"row"} alignItems="center">
-            <Text>Last 7 Days</Text>
-            <FaAngleDown color={_BLACKER} />
-          </Flex>
-        </Flex>
 
-        <ImArrowUpRight2 />
-      </Flex>
-
-      <Flex alignItems={"center"} justifyContent="space-between" mt="20px">
-        <Text fontFamily={"Nunito"} fontWeight={"800"} fontSize={"2em"}>
-          $894.39
-        </Text>
-        <CustomBtn bg={_BLACKER}>
-          <Text color="#fff">Withdraw</Text>
-        </CustomBtn>
-      </Flex>
-
-      <ResponsiveContainer width="100%" height="100%">
-        <LineChart
-          width={500}
-          height={300}
+ <LineChart
+          width={250}
+          height={150}
+          style={{
+            display: "flex",
+            alignItems: "flex-start",
+          }}
           data={_WEEKLY_CHART_DATA}
           margin={{
             top: 5,
             right: 30,
-            left: 20,
+            left: -55,
             bottom: 5,
           }}
         >
           <CartesianGrid
             strokeDasharray="3 3"
             // verticalFill={""}
-            opacity={0.5}
+            opacity={0.2}
           />
           <XAxis
             tick={{ fill: _LIGHTER_BLACK }}
@@ -423,8 +405,13 @@ export default function App() {
             axisLine={false}
             tickLine={false}
           />
-          <Tooltip />
-          {/* <Legend /> */}
+          <Tooltip
+            wrapperStyle={{ outline: "none" }}
+            content={(props) => <CustomToolbarContent {...props} />}
+            cursor={{
+              fill: "rgba(206, 206, 206, 0.2)",
+            }}
+          />
           <Line
             type="linear"
             style={{
@@ -436,8 +423,75 @@ export default function App() {
             strokeWidth="3"
           />
         </LineChart>
-      </ResponsiveContainer>
-    </Flex>
+
+
+ <BarChart
+          width={250}
+          height={150}
+          style={{
+            display: "flex",
+            alignItems: "flex-start",
+          }}
+          data={_WEEKLY_CHART_DATA}
+          margin={{
+            top: 5,
+            right: 30,
+            left: -55,
+            bottom: 5,
+          }}
+        >
+          <CartesianGrid
+            strokeDasharray="3 3"
+            // verticalFill={""}
+            opacity={0.2}
+          />
+          <XAxis
+            tick={{ fill: _LIGHTER_BLACK }}
+            dataKey="name"
+            axisLine={false}
+            tickLine={false}
+          />
+          <YAxis axisLine={false} tickLine={false} />
+          <Tooltip
+            wrapperStyle={{ outline: "none" }}
+            content={(props) => <CustomToolbarContent {...props} />}
+            cursor={{
+              fill: "rgba(206, 206, 206, 0.2)",
+              radius: [10, 10, 10, 10],
+            }}
+          />
+          <Bar fill={"red"} dataKey="pv" style={{ borderRadius: "10px" }}>
+            {_WEEKLY_CHART_DATA.map((entry, index) => (
+              <Cell
+                radius={[10, 10, 10, 10]}
+                key={`cell-${index}`}
+                fill={barColors[Math.floor(Math.random() * barColors.length)]}
+              />
+            ))}
+          </Bar>
+        </BarChart>
+
+
+
+export const CustomToolbarContent = ({ payload }) => {
+  console.log(payload);
+  return (
+    <Box
+      bg="#fff"
+      borderRadius={"5px"}
+      p="6px 20px"
+      boxShadow={"5px 4px 10px 1px #8080801c"}
+      textAlign="center"
+    >
+      <Text fontSize={"1.2em"} color={_BLACKER} fontWeight={"700"}>
+        {payload?.[0]?.value?.toLocaleString()}
+      </Text>
+      <Text fontSize={".8em"} color={_LIGHT_BLACK}>
+        {(parseInt(payload?.[0]?.value) / 10000) * 100}%
+      </Text>
+    </Box>
+  );
+};
 ```
 
 # how to undo merge
