@@ -2,6 +2,13 @@
 These is where i document things i have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+# center element with transform
+```css
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+```
+
 # stop height value from being more than the view height number(100vh++) on any screen size
 ```css
    maxHeight: `calc(screen.height.toString() - ${(screen.height - 100).toString()})`,
