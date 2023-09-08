@@ -13,6 +13,7 @@ info
 .map((data, idx) => (
   <option key={idx}>{data[filter]}</option>
 ))
+
 ```
 # center element with transform
 ```css
