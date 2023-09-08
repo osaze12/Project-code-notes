@@ -2,6 +2,10 @@
 These is where i document things i have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+# best react native chart library
+```javascript
+https://gifted-charts.web.app/barchart
+```
 
 # filter out duplicate from an array with object
 ```javascript
