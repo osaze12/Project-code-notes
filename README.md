@@ -2,6 +2,18 @@
 These is where i document things i have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+
+# filter out duplicate from an array with object
+```javascript
+info
+.filter(
+  (data, index, array) =>
+    array.findIndex((d) => d.id == data.id) === index
+)
+.map((data, idx) => (
+  <option key={idx}>{data[filter]}</option>
+))
+```
 # center element with transform
 ```css
     transform: translate(-50%, -50%);
