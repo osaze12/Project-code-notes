@@ -7,6 +7,24 @@ https://github.com/30-seconds/30-seconds-of-code
 https://gifted-charts.web.app/barchart
 ```
 
+# to customise React video player
+```javascript
+//Use the playIcon prop for the play button. This can be a JSX element.
+//Pass the poster image URL to light prop.
+//Example
+
+import ReactPlayer from "react-player";
+
+<ReactPlayer
+  url="https://vimeo.com/243556536"
+  width="100%"
+  height="500px"
+  playing
+  playIcon={<button>Play</button>}
+  light="https://i.stack.imgur.com/zw9Iz.png"
+/>
+```
+
 # filter out duplicate from an array with object
 ```javascript
 info
