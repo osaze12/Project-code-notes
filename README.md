@@ -246,6 +246,22 @@ body {
     />
 ```
 
+# Add font family to chakra provider
+```javascript
+const theme = extendTheme({
+  initialColorMode: "light",
+  useSystemColorMode: false,
+
+  styles: {
+    global: (props) => ({
+      body: {
+        fontFamily: "Trenda-regular",
+      },
+    }),
+  },
+});
+```
+
 # to get the title or text or option name of the select option
 ```javascript
   onChange={(e) => {
