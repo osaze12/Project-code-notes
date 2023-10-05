@@ -7,6 +7,16 @@ https://github.com/30-seconds/30-seconds-of-code
 https://gifted-charts.web.app/barchart
 ```
 
+# access object in another object using the dot notation
+```javascript
+var r = { a:1, b: {b1:11, b2: 99}};
+var s = "b.b2";
+
+var value = s.split('.').reduce((a, b) => a[b], r);
+
+console.log(value);
+```
+
 # to customise React video player
 ```javascript
 //Use the playIcon prop for the play button. This can be a JSX element.
