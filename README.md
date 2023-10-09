@@ -1,5 +1,5 @@
 # Project-code-notes
-These is where i document things i have learnt, or found on the internet that are not easily findable
+This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
 # best react native chart library
@@ -7,7 +7,13 @@ https://github.com/30-seconds/30-seconds-of-code
 https://gifted-charts.web.app/barchart
 ```
 
-# access object in another object using the dot notation
+
+# to fix flex box items (children) with different heights (fitting the content)
+```css
+align-items: "initial"
+```
+
+# Access object in another object using the dot notation
 ```javascript
 var r = { a:1, b: {b1:11, b2: 99}};
 var s = "b.b2";
@@ -17,7 +23,7 @@ var value = s.split('.').reduce((a, b) => a[b], r);
 console.log(value);
 ```
 
-# to customise React video player
+# to customize React video player
 ```javascript
 //Use the playIcon prop for the play button. This can be a JSX element.
 //Pass the poster image URL to light prop.
