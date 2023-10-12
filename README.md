@@ -7,6 +7,11 @@ https://github.com/30-seconds/30-seconds-of-code
 https://gifted-charts.web.app/barchart
 ```
 
+# to get next page (pagination) from backend,
+```javascript
+  const page = skip * limit=20;
+```
+
 
 # to fix flex box items (children) with different heights (fitting the content)
 ```css
