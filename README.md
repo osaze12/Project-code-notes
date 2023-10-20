@@ -7,6 +7,16 @@ https://github.com/30-seconds/30-seconds-of-code
 https://gifted-charts.web.app/barchart
 ```
 
+
+# to use the url for state management to avoid prop drilling
+## https://localhost:3000/movies?page=3&rowsCount=10
+
+```javascript
+const [searchParams, setSearchParams]= useSearchParams()
+const rowCount = searchParams.get("rowsCount")
+const page = searchParams.get("page")
+```
+
 # to get next page (pagination) from backend,
 ```javascript
   const page = skip * limit=20;
