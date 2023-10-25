@@ -7,6 +7,77 @@ https://github.com/30-seconds/30-seconds-of-code
 https://gifted-charts.web.app/barchart
 ```
 
+# filtering table data
+```javascript
+ <Filter
+  filters={["name", "tel", "add"]} // data you want to filter
+  filterBy={setFilterBy} //callback with data user wants to filter by
+  info={s} // the data array []
+
+/>
+
+function Filter({ filters = [], filterBy, info, mb, ...props }) {
+  const [defaultValueState, setDefaultValueState] = useState("");
+  return (
+    <>
+      { (
+        <Flex
+          flexDir={["column", "row"]}
+          alignItems={"center"}
+          gap="20px"
+          mb={mb ? mb : "40px"}
+        >
+          {filters.map((filter, idx) => (
+            <Selector
+              idx={idx}
+              filter={filter}
+              filterBy={filterBy}
+              defaultValueState={defaultValueState}
+              info={info}
+              keys={filters}
+            />
+          ))}
+
+          <Text
+            cursor={"pointer"}
+            w="100px"
+            fontSize={".8em"}
+            onClick={() => {
+              filterBy(null);
+              setDefaultValueState({});
+            }}
+          >
+            Clear filter
+          </Text>
+          {/* <SlReload
+            style={{ fontSize: "1.2em", width: "80px" }}
+            cursor={"pointer"}
+            onClick={() => {
+              filterBy(null);
+              setDefaultValueState({});
+            }}
+          /> */}
+        </Flex>
+      )}
+    </>
+  );
+}
+
+// the data table
+ <CustomTable head={r}>
+{s
+  ?.filter((data) => CustomTable.filterFunc(data, filterBy))
+  ?.map((data) => (
+    <Tr>
+    </Tr>
+))}
+
+// check if key value exist from data and check if key value (from data) and filterBy value is the same
+export const filterFunc = (data, filterBy) =>
+  data?.[filterBy?.key] ? data?.[filterBy?.key] === filterBy.value : data;
+
+```
+
 
 # to use the url for state management to avoid prop drilling
 ## https://localhost:3000/movies?page=3&rowsCount=10
