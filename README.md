@@ -6,6 +6,13 @@ https://github.com/30-seconds/30-seconds-of-code
 ```javascript
 https://gifted-charts.web.app/barchart
 ```
+# to revert to pervious commit
+```javascript
+git log --oneline  // shows all your commit with their unique IDs
+
+git reset 5914db0  // to revert back to code with a commit of ID 5914db0
+
+```
 
 # filtering table data
 ```javascript
