@@ -2,6 +2,20 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+
+# to get html element by position/x/y axis
+```javascript
+
+  // use effect is so that after component has mounted else you will get null or undefined from currentPosition
+  useEffect(() => {
+	//get element by the id
+	  const currentElPosition = document.querySelector('#vv').getBoundingClientRect()
+	    
+ 	  console.log(currentElPosition);
+  }, []);
+
+```
+
 # best react native chart library
 ```javascript
 https://gifted-charts.web.app/barchart
