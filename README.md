@@ -12,6 +12,17 @@ https://github.com/30-seconds/30-seconds-of-code
 	  const currentElPosition = document.querySelector('#vv').getBoundingClientRect()
 	    
  	  console.log(currentElPosition);
+// console returns
+{
+  "x": 713.625,
+  "y": 0,
+  "width": 12.7421875,
+  "height": 24,
+  "top": 0,
+  "right": 726.3671875,
+  "bottom": 24,
+  "left": 713.625
+}
   }, []);
 
 ```
