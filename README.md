@@ -10,8 +10,9 @@ https://github.com/30-seconds/30-seconds-of-code
   useEffect(() => {
 	//get element by the id
 	  const currentElPosition = document.querySelector('#vv').getBoundingClientRect()
-	    
- 	  console.log(currentElPosition);
+	  console.log(currentElPosition);
+  }, []);
+
 // console returns
 {
   "x": 713.625,
@@ -23,7 +24,6 @@ https://github.com/30-seconds/30-seconds-of-code
   "bottom": 24,
   "left": 713.625
 }
-  }, []);
 
 ```
 
