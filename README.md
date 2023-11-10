@@ -2,7 +2,7 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
-# to render just enough to fill the viewport
+# to render just enough to fill the viewport, and not all the list, (virtualized list)
 ```javascript
 //React window works by only rendering part of a large data set (just enough to fill the viewport).
 https://react-window.vercel.app/#/examples/list/fixed-size
