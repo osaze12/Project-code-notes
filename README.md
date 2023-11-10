@@ -6,6 +6,36 @@ https://github.com/30-seconds/30-seconds-of-code
 ```javascript
 //React window works by only rendering part of a large data set (just enough to fill the viewport).
 https://react-window.vercel.app/#/examples/list/fixed-size
+
+import { VariableSizeList as List } from 'react-window';
+
+// to get column/box size
+const columnSizes = new Array(1000)
+  .fill(true)
+  .map(() => x); // change x to change size of box/column
+
+
+// get index of a particular box by id
+const getItemSize = index => columnSizes[index];
+
+const Column = ({ index, style }) => (
+  <div className={index % 2 ? 'ListItemOdd' : 'ListItemEven'} style={style}>
+    Column {index}
+  </div>
+);
+
+const Example = () => (
+  <List
+    className="List"
+    height={300}
+    itemCount={1000}
+    itemSize={getItemSize}
+    layout="vertical"
+    width={300}
+  >
+    {Column}
+  </List>
+);
 ```
 
 #  dynamically import font 
