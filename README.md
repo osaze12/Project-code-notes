@@ -8,6 +8,7 @@ https://github.com/30-seconds/30-seconds-of-code
 https://react-window.vercel.app/#/examples/list/fixed-size
 
 import { VariableSizeList as List } from 'react-window';
+//  VariableSizeList means to set the box size base on the content, while fixedSizeList is constant
 
 // to get column/box size
 const columnSizes = new Array(1000)
