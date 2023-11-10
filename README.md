@@ -8,6 +8,35 @@ https://github.com/30-seconds/30-seconds-of-code
 https://react-window.vercel.app/#/examples/list/fixed-size
 ```
 
+#  dynamically import font 
+```javascript
+  {/* dynamically import font.
+      map font list and return url string, without commas (by using the join(" ")).
+      and then make it available to this app using font-face */}
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
+          ${state.fontList
+            .map(
+              (font) =>
+                ` @import url('https://fonts.googleapis.com/css2?family=${font}:wght@400;700;900&display=swap');`
+            )
+            .join(" ")}
+         
+          
+          @font-face {
+            font-family: ${[...new Set(state.fontList)]?.map(
+              (family) => `"${family}"`
+            )}
+    
+          }
+       
+       
+        `,
+        }}
+      />
+```
+
 # to get html element by position/x/y axis
 ```javascript
 
