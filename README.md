@@ -17,6 +17,21 @@ const copyToClipboard = (text) => {
   );
 };
 ```
+
+# to animate the recently added item/object in an array
+```javascript
+/you must give the object an id, so react would know which to update, and not rerender everything
+  <motion.div
+initial={{ scale: 0 }}
+animate={{ scale: 1 }}
+
+// to start from far down and animate to default position
+ initial={{ y: "200px" }}
+ animate={{ y: "0px" }}
+>
+ <p key={i}>{l}</p>
+</motion.div>
+```
 # to render just enough to fill the viewport, and not all the list, (virtualized list)
 ```javascript
 //React window works by only rendering part of a large data set (just enough to fill the viewport).
