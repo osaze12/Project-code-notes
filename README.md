@@ -1586,6 +1586,21 @@ body::-webkit-scrollbar-thumb, .scroll-container::-webkit-scrollbar-thumb {
     .getElementById("messages")
     .scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
 
+//OR ( this is the best)
+// Get a reference to the div you want to auto-scroll.
+var someElement = document.querySelector('.className');
+
+    function scrollToBottom() {
+      someElement.scrollTop = someElement.scrollHeight;
+    }
+
+
+// Create an observer and pass it a callback.
+var observer = new MutationObserver(scrollToBottom);
+// Tell it to look for new children that will change the height.
+var config = {childList: true};
+observer.observe(someElement, config);
+
 // OR
 
     function updateScroll() {
