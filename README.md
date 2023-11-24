@@ -2,6 +2,21 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+
+# copy to clip board
+```javascript
+const copyToClipboard = (text) => {
+  navigator.clipboard.writeText(text).then(
+    () => {
+      console.log("Content copied to clipboard");
+      successNotifier("Copied successfully");
+    },
+    () => {
+      errorNotifier("Faild to copy")
+    }
+  );
+};
+```
 # to render just enough to fill the viewport, and not all the list, (virtualized list)
 ```javascript
 //React window works by only rendering part of a large data set (just enough to fill the viewport).
