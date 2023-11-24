@@ -1585,6 +1585,14 @@ body::-webkit-scrollbar-thumb, .scroll-container::-webkit-scrollbar-thumb {
   document
     .getElementById("messages")
     .scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
+
+// OR
+
+    function updateScroll() {
+      var element = document.getElementById("scroll-container");
+      element.scrollTop = element.scrollHeight;
+    }
+    setInterval(updateScroll, 100);
 ```
 
 #  Customize website's scrollbar like Mac OS (hide scroll on leave)
