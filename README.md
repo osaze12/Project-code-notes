@@ -18,6 +18,16 @@ const copyToClipboard = (text) => {
 };
 ```
 
+# To center an element both vertically and horizontally:
+```javascript
+ position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+```
+
 # to animate the recently added item/object in an array
 ```javascript
 /you must give the object an id, so react would know which to update, and not rerender everything
