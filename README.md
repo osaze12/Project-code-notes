@@ -2,6 +2,49 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+
+# how to create a circle/round border, pie border, with a div & css
+```javascript
+
+ <style>
+        {`
+      .container {
+        position: relative;
+        padding: 30px; 
+        height: 200px;
+        width: 200px;
+        // @media (max-width: 1199px) {
+        //   height: 300px;
+        //   width: 300px;
+        // }
+        // @media (max-width: 991px) {
+        //   height: 100px;
+        //   width: 100px;
+        // }
+      }
+      .circle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: sans-serif;
+        color: #fff;
+        height: 100%;
+        width: 100%;
+        border-radius: 50%;
+        background: radial-gradient(ellipse at     center, 
+          rgba(255,113,12,0) 60%,
+          #000 51.5%);
+      }
+      
+      `}
+      </style>
+
+  <div className="container">
+          <div className="circle">
+	  </div>
+   </div>
+
+```
 # logic to group message in chat, by hiding the avatar
 ```javascript
   {/* if the author of the previous message is same with the current one, then hide the avatar,
