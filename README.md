@@ -3,8 +3,111 @@ This is where I document things I have learnt, or found on the internet that are
 https://github.com/30-seconds/30-seconds-of-code
 
 
+# How to create a custom progress pie round border with custom fill background color
+```javascript
 
-# how to create a progress pie border with Rechart
+import {
+  RadialBar,
+  PolarAngleAxis,
+  RadialBarChart,
+  ResponsiveContainer,
+} from "recharts";
+import { BiBowlRice } from "react-icons/bi";
+
+ const data = [{ name: "L1", value: 80 }];
+
+  const circleSize = 300;
+
+  const scale = ".3";
+
+  return (
+    <>
+      <style>
+        {`
+    .container {
+      position: relative;
+      padding: 0px;
+      height: ${circleSize};
+      width: ${circleSize};
+    }
+    .circle {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: sans-serif;
+      color: #fff;
+      height: 100%;
+      width: 100%;
+      border-radius: 50%;
+      background: #F4E9CD;
+    }
+
+    `}
+      </style>
+      <ResponsiveContainer width="100%" height="100%" style={{ scale }}>
+        <div className="container">
+          <BiBowlRice
+            fontSize="4em"
+            fill="#C89104"
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              margin: "auto",
+              zIndex: 1,
+            }}
+          />
+
+          <div
+            className="circle"
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              width: "189px",
+              height: "170px",
+              margin: "auto",
+            }}
+          ></div>
+
+          <RadialBarChart
+            width={circleSize}
+            height={circleSize}
+            cx={circleSize / 2}
+            cy={circleSize / 2}
+            innerRadius={130}
+            outerRadius={88}
+            barSize={19}
+            data={data}
+            startAngle={90}
+            endAngle={-270}
+          >
+            <PolarAngleAxis
+              type="number"
+              domain={[0, 100]}
+              angleAxisId={0}
+              tick={false}
+            />
+            <RadialBar
+              // background
+              // clockWise={true}
+              dataKey="value"
+              cornerRadius={circleSize / 2}
+              fill="#C89104"
+            />
+          </RadialBarChart>
+        </div>
+      </ResponsiveContainer>
+    </>
+  );
+
+```
+
+# How to create a progress pie round border with Rechart
 ```javascript
 
   const data = [{ name: "L1", value: 49 }];
