@@ -3,6 +3,50 @@ This is where I document things I have learnt, or found on the internet that are
 https://github.com/30-seconds/30-seconds-of-code
 
 
+
+# how to create a progress pie border with Rechart
+```javascript
+ <ResponsiveContainer width="100%" height="100%">
+    <RadialBarChart
+      width={circleSize}
+      height={circleSize}
+      cx={circleSize / 2}
+      cy={circleSize / 2}
+      innerRadius={100}
+      outerRadius={80}
+      barSize={18}
+      data={data}
+      startAngle={90}
+      endAngle={-270}
+    >
+      <PolarAngleAxis
+	type="number"
+	domain={[0, 100]}
+	angleAxisId={0}
+	tick={false}
+      />
+      <RadialBar
+	// background
+	// clockWise={true}
+	dataKey="value"
+	cornerRadius={circleSize / 2}
+	fill="red"
+      />
+      <text
+	x={circleSize / 2}
+	y={circleSize / 2}
+	textAnchor="middle"
+	dominantBaseline="middle"
+	className="progress-label"
+	fontSize="3em"
+	fontWeight="bold"
+	fill="#0466C8"
+      >
+	49%
+      </text>
+    </RadialBarChart>
+      </ResponsiveContainer>
+```
 # how to create a circle/round border, pie border, with a div & css
 ```javascript
 
