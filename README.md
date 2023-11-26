@@ -2,7 +2,20 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
-
+# logic to group message in chat, by hiding the avatar
+```javascript
+  {/* if the author of the previous message is same with the current one, then hide the avatar,
+             we have the same user then, and only show the chat */}
+        {name !== chats[id - 1]?.name ? (
+          <Avatar
+            loading="lazy"
+            src="https://fastly.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U"
+            alt="user pics"
+          />
+        ) : (
+          <Stack ml="35px" />
+        )}
+```
 # copy to clip board
 ```javascript
 const copyToClipboard = (text) => {
