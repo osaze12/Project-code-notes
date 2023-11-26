@@ -6,6 +6,12 @@ https://github.com/30-seconds/30-seconds-of-code
 
 # how to create a progress pie border with Rechart
 ```javascript
+
+  const data = [{ name: "L1", value: 49 }];
+
+  const circleSize = 200;
+
+
  <ResponsiveContainer width="100%" height="100%">
     <RadialBarChart
       width={circleSize}
