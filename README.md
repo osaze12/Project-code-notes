@@ -3,6 +3,18 @@ This is where I document things I have learnt, or found on the internet that are
 https://github.com/30-seconds/30-seconds-of-code
 
 
+
+# How to create custom element width length
+```css
+//also apply to custom height
+
+    width: 21px;
+    background-clip: content-box;
+
+    border-left: 5px solid black;// the thickness
+    border-image: linear-gradient(to right, #000 50%, rgba(0,0,0,0) 50%); // to (right/top), then increase/reduce 50%
+    border-image-slice: 1;
+```
 # How to create a custom progress pie round border with custom fill background color
 ```javascript
 
