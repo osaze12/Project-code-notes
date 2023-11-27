@@ -11,7 +11,7 @@ https://github.com/30-seconds/30-seconds-of-code
     width: 21px;
     background-clip: content-box;
 
-    border-left: 5px solid black;// the thickness
+    border-left: 5px solid black;// the height, remove to only have width
     border-image: linear-gradient(to right, #000 50%, rgba(0,0,0,0) 50%); // to (right/top), then increase/reduce 50%
     border-image-slice: 1;
 ```
