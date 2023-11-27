@@ -4,6 +4,19 @@ https://github.com/30-seconds/30-seconds-of-code
 
 
 
+# How to get browser width, when user resizes his/her browser
+```javascript
+  const [windowSize, setWindowSize] = useState<number | null>(null);
+
+  // to get browser width, when user resizes his/her browser
+  useEffect(() => {
+    addEventListener("resize", (event: UIEvent) => {
+      const size = event?.target as Window;
+      setWindowSize(size.outerWidth);
+    });
+  }, []);
+```
+
 # How to create custom element width length
 ```css
 //also apply to custom height
