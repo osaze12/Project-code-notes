@@ -3,6 +3,14 @@ This is where I document things I have learnt, or found on the internet that are
 https://github.com/30-seconds/30-seconds-of-code
 
 
+# to convert data url to image
+```javascript
+ const imgUrl = `data:image/png;base64, ${preview}`;
+
+  <Image src={previewImage} loading="lazy" alt="preview" />
+
+```
+
 
 # How to get browser width, when user resizes his/her browser
 ```javascript
