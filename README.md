@@ -11,7 +11,7 @@ https://github.com/30-seconds/30-seconds-of-code
 
 ```
 
-#base64 string to image file
+# base64 string to image file
 ```javascript
 
   var reader = new FileReader();
