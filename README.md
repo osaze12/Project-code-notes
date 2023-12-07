@@ -11,6 +11,19 @@ https://github.com/30-seconds/30-seconds-of-code
 
 ```
 
+#base64 string to image file
+```javascript
+
+  var reader = new FileReader();
+  reader.onload = function (f) {
+    var data = f.target.result;
+    setPreviewImage(data);
+  };
+  reader.readAsDataURL(base64Url);
+
+
+```
+
 
 # How to get browser width, when user resizes his/her browser
 ```javascript
