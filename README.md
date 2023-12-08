@@ -620,7 +620,7 @@ console.log('Unique random numbers:' ,haveIt);
 	mix-blend-mode: color-burn;
 }
 ```
-# best easy webworker library
+# best easy web worker library
 ```javascript
 import workerize from "workerize";
 
