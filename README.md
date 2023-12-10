@@ -3,6 +3,14 @@ This is where I document things I have learnt, or found on the internet that are
 https://github.com/30-seconds/30-seconds-of-code
 
 
+
+# Add one month to date to get the future end date (subscription)
+```javascript
+import { addMonths } from "https://cdn.jsdelivr.net/npm/date-fns/+esm";
+
+  const FutureSubscriptionEndDate = addMonths(new Date(created_at),1);
+```
+
 # to convert data url to image
 ```javascript
  const imgUrl = `data:image/png;base64, ${preview}`;
