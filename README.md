@@ -4,6 +4,14 @@ https://github.com/30-seconds/30-seconds-of-code
 
 
 
+# you can map through object
+```javascript
+
+for (let x in {one: 1, two: 2) {
+      console.log(x); // one, two
+    }
+```
+
 # Add one month to date to get the future end date (subscription)
 ```javascript
 import { addMonths } from "https://cdn.jsdelivr.net/npm/date-fns/+esm";
