@@ -3,6 +3,12 @@ This is where I document things I have learnt, or found on the internet that are
 https://github.com/30-seconds/30-seconds-of-code
 
 
+# cache website resources
+```javascript
+implementing a service worker for caching website resources, enabling offline functionality and improved performance for returning visitors
+
+https://web.facebook.com/photo/?fbid=323366160542162&set=gm.7144751595576025&idorvanity=411741268877125
+```
 
 # you can map through object
 ```javascript
