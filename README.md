@@ -2,6 +2,26 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+# scroll down to bottom of div when text/chat/<p/> is added
+```javascript
+  const [chatBoxRef, setChatBoxRef] = useState(null);
+
+  useEffect(() => {
+    if (chatBoxRef) {
+      chatBoxRef.scrollTop = chatBoxRef.scrollHeight;
+    }
+  }, [messages, chatBoxRef]);
+
+<Stack
+    ref={(ref) => ref && setChatBoxRef(ref)}
+    width="100%"
+    pb={5}
+    maxH={"55vh"}
+    overflow="auto"
+  >
+...
+</Stack>
+```
 
 # cache website resources
 ```javascript
