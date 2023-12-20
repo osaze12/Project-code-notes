@@ -12,6 +12,18 @@ https://github.com/30-seconds/30-seconds-of-code
     }
   }, [messages, chatBoxRef]);
 
+
+// for the message boxes
+  let messagesEnd = useRef(null);
+
+  const scrollToBottom = () => {
+    messagesEnd?.current?.scrollIntoView({ behavior: "smooth", block: "end" });
+  };
+  useEffect(() => {
+    scrollToBottom();
+    //eslint-disable-next-line
+  }, [chatBoxRef, updateScroll]);
+//end of for messages box
 <Stack
     ref={(ref) => ref && setChatBoxRef(ref)}
     width="100%"
@@ -19,6 +31,9 @@ https://github.com/30-seconds/30-seconds-of-code
     maxH={"55vh"}
     overflow="auto"
   >
+ {messages?.map((message) => (<Flex ref={messagesEnd}>)}
+
+</Flex>
 ...
 </Stack>
 ```
