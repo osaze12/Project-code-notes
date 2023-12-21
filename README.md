@@ -2,105 +2,6 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
-# persistent count down time  (save count down timer to localstorage)
-```javascript
-import Countdown from "react-countdown";
-
- const [data, setData] = useState(
-    { date: Number(new Date(countDownStartTime)), delay: seconds } //miliseconds
-  );
-  const wantedDelay = seconds;
-
-  const getSessionStorageValue = (s) => sessionStorage.getItem(s);
-
-  const Completionist = () => (
-    <p style={{ fontWeight: "bold " }}>Chat ended...</p>
-  );
-
-  // Renderer callback with condition
-  const renderer = ({ hours, minutes, seconds, completed }) => {
-    if (completed) {
-      if (sessionStorage.getItem(`end_date-${trackingId}`) != null) {
-        sessionStorage.removeItem(`end_date-${trackingId}`);
-
-        sessionStorage.removeItem("timerDetailsObject");
-      }
-      // Render a complete state
-
-      return <Completionist />;
-    } else {
-      // Render a countdown
-      return (
-        <Stack
-          background="black"
-          color="#fff"
-          padding="5px 7px"
-          borderRadius="5px"
-          direction={"row"}
-          fontWeight={"bold"}
-          fontSize="1.3em"
-        >
-          <Text>{hours} </Text>
-          <Text>:</Text>
-          <Text>{minutes}</Text>
-          <Text>:</Text>
-          <Text>{seconds}</Text>
-        </Stack>
-      );
-    }
-  };
-
-  //Code runs only one time after each reloading
-  useEffect(() => {
-    const savedDate = getSessionStorageValue(`end_date-${trackingId}`);
-    if (savedDate != null && !isNaN(savedDate)) {
-      const currentTime = Date.now();
-      const delta = parseInt(savedDate, 10) - currentTime;
-
-      //Do you reach the end?
-      if (delta > wantedDelay) {
-        //Yes we clear uour saved end date
-        if (sessionStorage.getItem(`end_date-${trackingId}`).length > 0)
-          sessionStorage.removeItem(`end_date-${trackingId}`);
-      } else {
-        //No update the end date
-        setData({ date: currentTime, delay: delta });
-      }
-    }
-    //eslint-disable-next-line
-  }, []);
-
-  if (!trackingId) return null;
-
-  return startTimer || getSessionStorageValue(`end_date-${trackingId}`) ? (
-    <div>
-      <Countdown
-        intervalDelay={0}
-        precision={3}
-        date={data.date + data.delay}
-        renderer={renderer}
-        onStart={(delta) => {
-          //Save the end date
-          if (sessionStorage.getItem(`end_date-${trackingId}`) === null)
-            sessionStorage.setItem(
-              `end_date-${trackingId}`,
-              JSON.stringify(data.date + data.delay)
-            );
-        }}
-        onComplete={() => {
-          if (sessionStorage.getItem(`end_date-${trackingId}`) !== null) {
-            sessionStorage.removeItem(`end_date-${trackingId}`);
-          }
-
-          setCountDownHasCompleted(true);
-          refreshOnCountDownComplete();
-        }}
-      />
-    </div>
-  ) : null;
-```
-
-
 
 # scroll down to bottom of div when text/chat/<p/> is added
 ```javascript
@@ -2286,7 +2187,7 @@ use eval(object) if JSON.parse(object) doesnt work
 ```
 
 
-# Create a persistent countdown timer
+# Create a persistent count down timer (store/save count down time to session/localstorage)
 
 ### Install react-countdown library
 ```javascript
