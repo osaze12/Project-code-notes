@@ -2,6 +2,144 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+# login, register/sign up, forgot/reset password code, for Firebase
+
+## frontend code
+```javascript
+  const [formValues, setFormValues] = useState({});
+  const { fullName, email, password, confirmPassword } = formValues || {};
+
+  const handleSubmit = () => {
+    switch (show) {
+      case "SIGN_IN":
+        if (!email || !password) {
+          errorNotifier("Some fields are empty");
+          return;
+        }
+
+        logInWithEmailAndPassword(email, password)
+          .then(() => {
+            goToNext && goToNext();
+            successNotifier("Successfully logged in");
+            setFormValues({});
+          })
+          .catch((er) => errorNotifier(er.message));
+
+        break;
+
+      case "REGISTER":
+        if (!email || !password || !fullName) {
+          errorNotifier("Some fields are empty");
+          return;
+        }
+        if (password !== confirmPassword) {
+          errorNotifier("Password doen't match");
+          return;
+        }
+
+        registerWithEmailAndPassword(fullName, email, password)
+          .then(() => {
+            goToNext && goToNext();
+            successNotifier("Successfully Registered");
+            // if user didnt add gotonext prop, then redirect to signin screen
+            !goToNext && setShow("SIGN_IN");
+          })
+          .catch((er) => errorNotifier(er.message));
+        break;
+
+      case "RESET_PASSWORD":
+        if (!email) {
+          errorNotifier("Some fields are empty");
+          return;
+        }
+
+        sendPasswordReset(email);
+
+        break;
+      default:
+        break;
+    }
+  };
+```
+## backend code
+```javascript
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+
+import {
+  GoogleAuthProvider,
+  getAuth,
+  signInWithPopup,
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+  sendPasswordResetEmail,
+  signOut,
+  updateProfile,
+} from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID,
+  measurementId: process.env.REACT_APP_MEASUREMENT_ID,
+};
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+
+const googleProvider = new GoogleAuthProvider();
+const signInWithGoogle = async () => {
+  try {
+    await signInWithPopup(auth, googleProvider);
+  } catch (err) {
+    throw new Error(err.message);
+  }
+};
+
+const logInWithEmailAndPassword = async (email, password) => {
+  try {
+    await signInWithEmailAndPassword(auth, email, password);
+  } catch (err) {
+    const readableCode = err.code?.split("/")?.[1]?.split("-")?.join(" ");
+
+    throw new Error(readableCode);
+  }
+};
+const registerWithEmailAndPassword = async (name, email, password) => {
+  try {
+    createUserWithEmailAndPassword(auth, email, password).then((userCred) => {
+      updateProfile(userCred.user, { displayName: name });
+    });
+  } catch (err) {
+    const readableCode = err.code?.split("/")?.[1]?.split("-")?.join(" ");
+
+    throw new Error(readableCode);
+  }
+};
+
+const sendPasswordReset = async (email) => {
+  try {
+    await sendPasswordResetEmail(auth, email);
+    alert("Password reset link sent!");
+  } catch (err) {
+    const readableCode = err.code?.split("/")?.[1]?.split("-")?.join(" ");
+
+    throw new Error(readableCode);
+  }
+};
+const logout = () => {
+  signOut(auth);
+};
+```
 
 # scroll down to bottom of div when text/chat/<p/> is added
 ```javascript
