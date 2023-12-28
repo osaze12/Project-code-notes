@@ -141,6 +141,13 @@ const logout = () => {
 };
 ```
 
+# linear gradient on text
+```css
+   background="linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(115,230,202,1) 58%)"
+    backgroundClip="text"
+   textFillColor="transparent"
+```
+
 # scroll down to bottom of div when text/chat/<p/> is added
 ```javascript
   const [chatBoxRef, setChatBoxRef] = useState(null);
