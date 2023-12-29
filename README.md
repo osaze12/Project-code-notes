@@ -2,6 +2,11 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+# Embed a dropbox video, using embed code
+```css
+https://support.whatfix.com/docs/embedding-a-dropbox-video-using-embed-code
+```
+
 # login, register/sign up, forgot/reset password code, for Firebase
 
 ## frontend code
