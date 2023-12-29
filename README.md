@@ -2,6 +2,28 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+# auto play video, with/without controls
+```javascript
+  <video
+    className="video-showcase"
+    controls
+    autoPlay
+    loop
+    muted
+    style={{
+      width: "1000px",
+      height: "700px",
+      borderRadius: "10px",
+    }}
+  >
+            <source
+              src="https://www.dropbox.com/scl/fi/kzqw537enawc15lbsozz8/Sample-Videos-_-Dummy-Videos-For-Demo-Use.mp4?raw=1&rlkey=otro2x2e8s6sgd37keod9hme2&dl=0&loop=1&autoplay=1&mute=1"
+              type="video/mp4"
+            />
+          </video>
+```
+
+
 # Embed a dropbox video, using embed code
 ```css
 https://support.whatfix.com/docs/embedding-a-dropbox-video-using-embed-code
