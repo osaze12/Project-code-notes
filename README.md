@@ -5,6 +5,8 @@ https://github.com/30-seconds/30-seconds-of-code
 # Embed a dropbox video, using embed code
 ```css
 https://support.whatfix.com/docs/embedding-a-dropbox-video-using-embed-code
+
+Helpful, but what worked for me was to leave text after the ? and add ?raw=1
 ```
 
 # login, register/sign up, forgot/reset password code, for Firebase
