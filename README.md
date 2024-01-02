@@ -2,6 +2,29 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+
+# custom ionic react tab
+```javascript
+<IonTabButton tab="tab1" href="/tab1">
+            <IonIcon icon={home} className="selected"></IonIcon>
+            <IonIcon icon={homeOutline} className="unselected"></IonIcon>
+            <IonLabel>Home</IonLabel>
+</IonTabButton>
+
+
+.tab-selected .unselected {
+  display: none;
+}
+
+.tab-selected .selected {
+  display: initial !important;
+}
+
+.selected {
+  display: none;
+}
+```
+
 # business logic to check if it's the scheduled date and also check if the scheduled date/time has elapsed/passed
 ```javascript
 //checking date and time, if it is the scheduled date
