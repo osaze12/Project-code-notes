@@ -4,6 +4,41 @@ https://github.com/30-seconds/30-seconds-of-code
 
 #
 ```javascript
+//checking date and time, if it is the scheduled date
+  const isScheduledDate = () => {
+    if (
+      new Date().setHours(0, 0, 0, 0) ===
+        new Date(scheduledDate).setHours(0, 0, 0, 0) &&
+      dayjs().format("HH:mm") >= dayjs(scheduledDate).format("HH:mm")
+    ) {
+      return true;
+    }
+    return false;
+  };
+
+// check if the scheduled date/time has elapsed/passed, by checking the current time against the end date
+const scheduleDateHasPassed = () => {
+    if (
+      new Date(scheduleEndDate).setHours(0, 0, 0, 0) >
+      new Date().setHours(0, 0, 0, 0)
+    ) {
+      return false;
+    } else if (
+      new Date().setHours(0, 0, 0, 0) <
+        new Date(scheduleEndDate).setHours(0, 0, 0, 0) ||
+      new Date().setHours(0, 0, 0, 0) !==
+        new Date(scheduleEndDate).setHours(0, 0, 0, 0) ||
+      dayjs().format("HH:mm") > dayjs(scheduleEndDate).format("HH:mm")
+    ) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+```
+
+# show changing/updating time, in real time
+```javascript
 const timeElement = document.getElementById("clock");
 
 function updateTime() {
