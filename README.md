@@ -2,7 +2,7 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
-# businedd logic to check if it's the scheduled date and also check if the scheduled date/time has elapsed/passed
+# business logic to check if it's the scheduled date and also check if the scheduled date/time has elapsed/passed
 ```javascript
 //checking date and time, if it is the scheduled date
   const isScheduledDate = () => {
