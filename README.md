@@ -3,6 +3,233 @@ This is where I document things I have learnt, or found on the internet that are
 https://github.com/30-seconds/30-seconds-of-code
 
 
+# React native: load fonts
+```javascript
+import { useFonts } from "expo-font";
+
+const [fontsLoaded] = useFonts({
+    "brevia-bold": require("./assets/font/BreviaBold.otf"),
+    "brevia-semi-bold": require("./assets/font/BreviaSemiBold.otf"),
+    "brevia-extra-bold": require("./assets/font/BreviaExtraBold.otf"),
+    "brevia-normal-bold": require("./assets/font/BreviaNormalBold.otf"),
+    "brevia-regular": require("./assets/font/BreviaRegular.otf"),
+  });
+
+  if (!fontsLoaded) {
+    console.log("unloaded");
+
+    return null;
+  }
+
+  const theme = extendTheme({
+    fontConfig: {
+      "brevia-bold": {
+        100: {
+          normal: "brevia-bold",
+          bold: "brevia-bold",
+        },
+        200: {
+          normal: "brevia-bold",
+          bold: "brevia-bold",
+        },
+        300: {
+          normal: "brevia-bold",
+          bold: "brevia-bold",
+        },
+        400: {
+          normal: "brevia-bold",
+          bold: "brevia-bold",
+        },
+	 500: {
+          normal: "brevia-bold",
+          bold: "brevia-bold",
+        },
+        600: {
+          normal: "brevia-bold",
+          bold: "brevia-bold",
+        },
+      },
+    },
+
+    // Make sure values below matches any of the keys in `fontConfig`
+    fonts: {
+      heading: "brevia-bold",
+      body: "brevia-bold",
+      mono: "brevia-bold",
+    },
+  });
+  <NativeBaseProvider theme={theme}></NativeBaseProvider>
+```
+
+# React native: tab navigation
+```javascript
+A simple tab bar on the bottom of the screen that lets you switch between different routes. Routes are lazily initialized -- their screen components are not mounted until they are first focused.
+https://reactnavigation.org/docs/bottom-tab-navigator
+
+
+  const Tab = createBottomTabNavigator();
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+
+<Tab.Navigator
+      initialRouteName="Main"
+      screenOptions={({ route }) => ({
+        tabBarIcon: ({ focused, color, size }) => {
+          if (route.name === "Main") {
+            return (
+              <Ionicons
+                name={focused ? "md-home-sharp" : "home-outline"}
+                size={size}
+                color={"#fff"}
+              />
+            );
+          } else if (route.name === "Settings") {
+            return (
+              <Ionicons
+                name={focused ? "settings-sharp" : "settings-outline"}
+                size={size}
+                color={"#fff"}
+              />
+            );
+          } else if (route.name === "Profile") {
+            return (
+              <FontAwesome5
+                name={focused ? "user-alt" : "user"}
+                size={22}
+                color={"#fff"}
+              />
+            );
+          }
+
+          return <Ionicons name={"null"} size={size} color={"#fff"} />;
+        },
+
+	tabBarStyle: {
+          position: "absolute",
+          backgroundColor: "#000",
+
+          elevation: 0,
+          marginBottom: 20,
+          padding: 10,
+          borderRadius: 40,
+          height: 80,
+          width: "70%",
+          left: 50,
+          right: 50,
+        },
+      })}
+    >
+      <Tab.Screen
+        name="Main"
+        component={MainScreen}
+        options={{
+          tabBarLabel: "",
+          headerShown: false,
+        }}
+      />
+	<Tab.Screen
+        name="Settings"
+        component={SettingsScreen}
+        // options={{
+        //   tabBarLabel: "",
+        //   headerShown: false,
+        // }}
+
+        options={({ navigation }) => ({
+          // headerTitle: (props) => null,
+          tabBarLabel: "",
+
+          headerShadowVisible: false,
+          headerLeft: () => (
+            <Pressable onPress={() => navigation.goBack()}>
+              <Flex
+                w={39}
+                h={39}
+                bg={"#000"}
+                alignItems="center"
+                justifyContent={"center"}
+                borderRadius={50}
+                ml={1}
+              >
+                <SvgXml xml={_CHEVRON_LEFT_ICON} color="#e4e4e4" />
+              </Flex>
+            </Pressable>
+          ),
+        })}
+      />
+	<Tab.Screen
+        name="Profile"
+        component={ProfileScreen}
+        options={({ navigation }) => ({
+          tabBarLabel: "",
+          headerTitle: () => null,
+          headerShadowVisible: false,
+          headerStyle: {
+            backgroundColor: "#ecd853",
+          },
+
+          headerLeft: () => (
+            <Pressable onPress={() => navigation.goBack()}>
+              <BlackCircle noBorder>
+                <SvgXml xml={_CHEVRON_LEFT_ICON} color="#e5e5e5" />
+              </BlackCircle>
+            </Pressable>
+          ),
+        })}
+      />
+    </Tab.Navigator>
+```
+
+# React native: stack navigation
+```javascript
+Stack Navigator provides a way for your app to transition between screens where each new screen is placed on top of a stack.
+https://reactnavigation.org/docs/stack-navigator
+
+
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+const Stack = createNativeStackNavigator();
+
+ <NativeBaseProvider theme={theme}>
+ <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen
+            name="Home"
+            component={HomeScreen}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="MainStack"
+            options={{ headerShown: false }}
+            component={MainStack}
+          />
+
+          <Stack.Screen
+            name="Playing"
+            component={PlayingScreen}
+            options={({ navigation }) => ({
+              headerTitle: (props) => null,
+              headerShadowVisible: false,
+              headerLeft: () => (
+                <Pressable onPress={() => navigation.goBack()}>
+                  <Flex
+                    w={39}
+                    h={39}
+                    bg={"#000"}
+                    alignItems="center"
+                    justifyContent={"center"}
+                    borderRadius={50}
+                  >
+                    <SvgXml xml={_CHEVRON_LEFT_ICON} color="#e4e4e4" />
+                  </Flex>
+                </Pressable>
+              ),
+            })}
+          />
+ 	</Stack.Navigator>
+      </NavigationContainer>
+    </NativeBaseProvider>
+```
+
+
 # React native: Load svg image
 ```javascript
 import { SvgXml } from "react-native-svg";
