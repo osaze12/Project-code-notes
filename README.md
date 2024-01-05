@@ -3,6 +3,13 @@ This is where I document things I have learnt, or found on the internet that are
 https://github.com/30-seconds/30-seconds-of-code
 
 
+# expo project quick start
+```javascript
+ npx create-expo-app my-app
+
+npm run andriod/ios/web
+```
+
 # custom ionic react tab
 ```javascript
 <IonTabButton tab="tab1" href="/tab1">
