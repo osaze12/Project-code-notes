@@ -3,6 +3,36 @@ This is where I document things I have learnt, or found on the internet that are
 https://github.com/30-seconds/30-seconds-of-code
 
 
+# React native: access navigation, to go back or to a different route
+```javascript
+// it is automatically in the props
+function HomeScreen({ navigation }) {...
+
+ <Button
+  onPress={() => navigation.navigate("MainStack", {})}
+>...
+
+```
+
+# React native: safe screen area, so text don't go off the top of the screen
+```javascript
+import { useSafeAreaInsets } from "react-native-safe-area-context";
+
+  const insets = useSafeAreaInsets();
+ <View
+      style={{
+        paddingTop: insets.top,
+        paddingBottom: insets.bottom,
+        paddingLeft: insets.left,
+        paddingRight: insets.right,
+        display: "flex",
+        justifyContent: "space-evenly",
+        alignItems: "center",
+        flex: 1,
+      }}
+    ></View>
+```
+
 # React native: load fonts
 ```javascript
 import { useFonts } from "expo-font";
