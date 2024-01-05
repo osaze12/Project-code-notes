@@ -214,7 +214,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 Stack Navigator provides a way for your app to transition between screens where each new screen is placed on top of a stack.
 https://reactnavigation.org/docs/stack-navigator
 
-
+import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 const Stack = createNativeStackNavigator();
 
