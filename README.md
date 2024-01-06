@@ -3,6 +3,21 @@ This is where I document things I have learnt, or found on the internet that are
 https://github.com/30-seconds/30-seconds-of-code
 
 
+# React native: border radius
+```javascript
+ <Flex
+  mt={5}
+  borderTopLeftRadius={20}
+  borderTopRightRadius={20}
+  borderBottomLeftRadius={20}
+  borderBottomRightRadius={20}
+  backgroundColor={"#F2F9F9"}
+  borderWidth={1}
+  borderColor={"#D6EBEB"}
+  p={10}
+>
+```
+
 # React native: access navigation, to go back or to a different route
 ```javascript
 // it is automatically in the props
