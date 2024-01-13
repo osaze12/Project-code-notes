@@ -2,6 +2,22 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+# loop call function(s), x number of times quietly, not greater than the max tries
+```javascript
+ let count = 0;
+let maxTries = 3;
+
+while (true) {
+  try {
+    leave();
+    // if the function above works, then break out of loop, else try again
+    break;
+  } catch {
+    if (++count === maxTries) break;
+  }
+}
+```
+
 
 # React native: border radius
 ```javascript
