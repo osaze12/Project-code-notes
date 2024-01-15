@@ -2,6 +2,14 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+# install cocoapods with brew and do pod install
+```css
+// install cocoa pod
+https://github.com/aws-samples/aws-sdk-js-tests/issues/62
+// run command to allow us do "pod install"
+https://stackoverflow.com/questions/74134200/xcode-cloud-unable-to-open-configuration-settings-file
+```
+
 # loop call function(s), x number of times quietly, not greater than the max tries
 ```javascript
  let count = 0;
