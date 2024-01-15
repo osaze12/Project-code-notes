@@ -3,11 +3,23 @@ This is where I document things I have learnt, or found on the internet that are
 https://github.com/30-seconds/30-seconds-of-code
 
 # install cocoapods with brew and do pod install
-```css
-// install cocoa pod
-https://github.com/aws-samples/aws-sdk-js-tests/issues/62
-// run command to allow us do "pod install"
-https://stackoverflow.com/questions/74134200/xcode-cloud-unable-to-open-configuration-settings-file
+```
+I love u all!
+I had the same issue on Mac, installing a react-native 0.60 and node 10.24.1 project builded and published on 2019, and nobody made maintenance...
+be sure to install cocoa pods
+$ gem uninstall cocoapods
+$ gem install cocoapods
+And then you can install in ios project folder with pod install
+
+
+
+In my case problem was about cocoapods. I removed old versions,installed from ground and linked, problem solved :)
+
+brew uninstall --cask cocoapods
+
+brew install cocoapods
+
+brew link --overwrite cocoapods
 ```
 
 # loop call function(s), x number of times quietly, not greater than the max tries
