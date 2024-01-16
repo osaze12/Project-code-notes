@@ -2,7 +2,31 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
-# install cocoapods with brew and do pod install
+# add custom drop down arrow on select element
+```javascript
+  let dropDownSvg = `<svg width="18" height="10" viewBox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M7.79943 9.59891C8.51077 10.1328 9.48923 10.1328 10.2006 9.59891L17.1945 4.34957C18.7314 3.19603 17.9156 0.75 15.9939 0.75H2.00606C0.0844002 0.75 -0.731424 3.19603 0.805498 4.34957L7.79943 9.59891Z" fill="#F98614"/>
+    </svg>`;
+
+  let converToBase64 = window.btoa(dropDownSvg);
+
+ <style>
+          {`
+                select {
+                    background: url(data:image/svg+xml;base64,${converToBase64}) no-repeat right #ddd !important;
+                    background-position: calc(100% - 0.75rem) center !important;
+                    -moz-appearance:none; /* Firefox */
+                    -webkit-appearance:none; /* Safari and Chrome */
+                    appearance:none;
+                    
+                  }
+                `}
+        </style>
+
+```
+
+
+# React native: install cocoapods with brew and do pod install
 ```
 I love u all!
 I had the same issue on Mac, installing a react-native 0.60 and node 10.24.1 project builded and published on 2019, and nobody made maintenance...
