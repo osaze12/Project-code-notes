@@ -4031,7 +4031,8 @@ https://css-tricks.com/single-element-loaders-the-dots/
 "aos": "^2.3.4",
 ```javascript
 useEffect(() => {
-  Aos.init({ duration: 1000 })
+  Aos.init({ duration: 1000,  once: false,
+      startEvent: "load" })
 }, [])
   
 <div data-aos="fade-right"></div>
