@@ -26,19 +26,6 @@ https://github.com/30-seconds/30-seconds-of-code
         // year
         parseInt(dayjs(dataDate).format("YYYY")) ===
           new Date(toDate).getFullYear();
-
-      // const compareStartMonthAndYear =
-      //   new Date(fromDate).getMonth() >=
-      //     parseInt(dayjs(data?.date).format("M")) &&
-      //   new Date(fromDate).getFullYear() ===
-      //     parseInt(dayjs(data?.date).format("YYYY"));
-
-      // const compareEndMonthAndYear =
-      //   new Date(toDate).getMonth() <=
-      //     parseInt(dayjs(data?.date).format("M")) &&
-      //   new Date(toDate).getFullYear() ===
-      //     parseInt(dayjs(data?.date).format("YYYY"));
-
       return check1 && check2;
     });
 ```
