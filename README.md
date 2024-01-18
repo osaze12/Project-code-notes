@@ -2,6 +2,46 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+
+# filter by start date and end date
+```javascript
+    const filterByDate = DBdata?.filter((data) => {
+      const dataDate = data?.startDate || data?.date;
+      const check1 =
+        // month
+        parseInt(dayjs(dataDate).format("M")) >=
+          new Date(fromDate).getMonth() + 1 &&
+        // day
+        parseInt(dayjs(dataDate).format("D")) >= new Date(fromDate).getDate() &&
+        // year
+        parseInt(dayjs(dataDate).format("YYYY")) ===
+          new Date(fromDate).getFullYear();
+
+      const check2 =
+        // month
+        parseInt(dayjs(dataDate).format("M")) <=
+          new Date(toDate).getMonth() + 1 &&
+        // day
+        parseInt(dayjs(dataDate).format("D")) <= new Date(toDate).getDate() &&
+        // year
+        parseInt(dayjs(dataDate).format("YYYY")) ===
+          new Date(toDate).getFullYear();
+
+      // const compareStartMonthAndYear =
+      //   new Date(fromDate).getMonth() >=
+      //     parseInt(dayjs(data?.date).format("M")) &&
+      //   new Date(fromDate).getFullYear() ===
+      //     parseInt(dayjs(data?.date).format("YYYY"));
+
+      // const compareEndMonthAndYear =
+      //   new Date(toDate).getMonth() <=
+      //     parseInt(dayjs(data?.date).format("M")) &&
+      //   new Date(toDate).getFullYear() ===
+      //     parseInt(dayjs(data?.date).format("YYYY"));
+
+      return check1 && check2;
+    });
+```
 # add custom drop down arrow on select element
 ```javascript
   let dropDownSvg = `<svg width="18" height="10" viewBox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg">
