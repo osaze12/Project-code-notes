@@ -1103,7 +1103,7 @@ import { BiBowlRice } from "react-icons/bi";
     </>
   );
 ```
-# how to create a circle/round border, pie border, with a div & css
+# how to create a circle/round hole border, pie border, with a div & css
 ```javascript
 
  <style>
