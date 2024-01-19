@@ -3,6 +3,31 @@ This is where I document things I have learnt, or found on the internet that are
 https://github.com/30-seconds/30-seconds-of-code
 
 
+# how to get element width and height without padding, margin , border box
+```javascript
+const innerDimensions = (node) => {
+    var computedStyle = getComputedStyle(node);
+
+    let width = node.clientWidth; // width with padding
+    let height = node.clientHeight; // height with padding
+
+    height -=
+      parseFloat(computedStyle.paddingTop) +
+      parseFloat(computedStyle.paddingBottom);
+    width -=
+      parseFloat(computedStyle.paddingLeft) +
+      parseFloat(computedStyle.paddingRight);
+    return { height, width };
+  };
+
+  useEffect(() => {
+    setTimeout(() => {
+      const dimension = innerDimensions(document.getElementById("x"));
+      setW(dimension.width);
+    }, 500);
+  }, []);
+```
+
 # filter by start date and end date
 ```javascript
     const filterByDate = DBdata?.filter((data) => {
