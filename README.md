@@ -1416,6 +1416,26 @@ const page = searchParams.get("page")
 ```css
 align-items: "initial"
 ```
+# how to filter or get unique items or data, and access object in an object
+```javascript
+$filters={["requestData.truckType", "status", "customerData.name"]}
+
+const unique = (list) => {
+	const unique = [];
+	
+	list.map((x) => {
+	const xx = $filter?.split(".")?.reduce((a, b) => a?.[b], x);
+	
+	return unique.filter((data) => data === xx).length > 0
+	? null
+	: unique.push(xx);
+	});
+	
+	return unique;
+};
+
+console.log( unique([{request:{truckType:""}]).map(...))
+```
 
 # Access object in another object using the dot notation
 ```javascript
