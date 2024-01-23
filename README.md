@@ -1417,6 +1417,8 @@ const page = searchParams.get("page")
 align-items: "initial"
 ```
 # how to filter or get unique items or data, and access object in an object
+<img width="847" alt="Screenshot 2024-01-23 at 1 25 42 PM" src="https://github.com/osaze12/Project-code-notes/assets/68048008/fb7243ba-1fbc-4257-a6e0-c2ff916f9a2e">
+
 ```javascript
 $filters={["requestData.truckType", "status", "customerData.name"]}
 
