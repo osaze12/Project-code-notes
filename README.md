@@ -3,6 +3,11 @@ This is where I document things I have learnt, or found on the internet that are
 https://github.com/30-seconds/30-seconds-of-code
 
 
+# fix SSH git issue
+```css
+https://dev.classmethod.jp/articles/fix-gitgithub-com-permission-denied-publickey-fatal-could-not-read-from-remote-repository/
+```
+
 # React native: how to render svg icons
 ```javascript
 import { createIcon } from 'native-base';
