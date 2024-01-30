@@ -6,7 +6,7 @@ https://github.com/30-seconds/30-seconds-of-code
 # React native: how to render svg icons
 ```javascript
 import { createIcon } from 'native-base';
-import { Path, G } from 'react-native-svg';
+import Svg, { Path, G } from 'react-native-svg';
 
 
 export const Email = createIcon({
@@ -28,6 +28,28 @@ export const Email = createIcon({
     </G>
   ),
 });
+
+// or use this if you want full customization
+export const Email = (props: any) => (
+  <Svg stroke="#" fill="#fff" strokeWidth={3}>
+    <G>
+      <Path
+        d="M21 16.2222V5H3V16.2222C3 17.7563 4.24365 19 5.77778 19H18.2222C19.7563 19 21 17.7563 21 16.2222Z"
+        stroke="#9EA5AD"
+        stroke-width="1.85185"
+        stroke-linecap="round"
+        {...props}
+      />
+      <Path
+        d="M21 7L13.7783 13.0181C12.7482 13.8765 11.2518 13.8765 10.2217 13.0181L3 7"
+        stroke="#9EA5AD"
+        stroke-width="1.85185"
+        stroke-linejoin="round"
+        {...props}
+      />
+    </G>
+  </Svg>
+);
 ```
 
 # how to get element width and height without padding, margin , border box
