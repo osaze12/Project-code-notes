@@ -3,6 +3,29 @@ This is where I document things I have learnt, or found on the internet that are
 https://github.com/30-seconds/30-seconds-of-code
 
 
+# create invoice with html and jspdf
+```javascript
+import { jsPDF } from "jspdf";
+
+const download = () => {
+    var doc = new jsPDF();
+
+    // Source HTMLElement or a string containing HTML.
+    var elementHTML = document.querySelector("#pdf-container");
+
+    doc.html(elementHTML, {
+      callback: function (doc) {
+        // Save the PDF
+        doc.save("sample-document.pdf");
+      },
+      x: 15,
+      y: 15,
+      width: 170, //target width in the PDF document
+      windowWidth: 650, //window width in CSS pixels
+    });
+  };
+```
+
 # fix SSH git issue
 ```css
 https://dev.classmethod.jp/articles/fix-gitgithub-com-permission-denied-publickey-fatal-could-not-read-from-remote-repository/
