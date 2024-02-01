@@ -3383,6 +3383,29 @@ Kind regards,
 
 console.log(getTimes('7:00 am', '10:00 am', "30"))
 ```
+# convert 12 hrs to 24 hrs
+```javascript
+const convertTime12to24 = (time12h) => {
+  const [time, modifier] = time12h.split(' ');
+
+  let [hours, minutes] = time.split(':');
+
+  if (hours === '12') {
+    hours = '00';
+  }
+
+  if (modifier === 'PM') {
+    hours = parseInt(hours, 10) + 12;
+  }
+
+  return `${hours}:${minutes}`;
+}
+
+console.log(convertTime12to24('01:02 PM'));
+console.log(convertTime12to24('05:06 PM'));
+console.log(convertTime12to24('12:00 PM'));
+console.log(convertTime12to24('12:00 AM'));
+```
 
 # CONVERT 24 HRS TO 12 HRS
 
