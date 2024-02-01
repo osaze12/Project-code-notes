@@ -3,6 +3,13 @@ This is where I document things I have learnt, or found on the internet that are
 https://github.com/30-seconds/30-seconds-of-code
 
 
+# git error: RPC failed; curl transfer closed with outstanding read data remaining
+```
+git clone https://github.com/Zillight-Innovation-Labs/fixmeet.git --depth 1
+https://stackoverflow.com/questions/38618885/error-rpc-failed-curl-transfer-closed-with-outstanding-read-data-remaining
+```
+
+
 # create invoice with html and jspdf
 ```javascript
 import { jsPDF } from "jspdf";
