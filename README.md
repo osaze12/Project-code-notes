@@ -3,6 +3,13 @@ This is where I document things I have learnt, or found on the internet that are
 https://github.com/30-seconds/30-seconds-of-code
 
 
+
+# fix react native path issue: ReactNative can't locate Android SDK
+```
+https://stackoverflow.com/questions/62797240/reactnative-cant-locate-android-sdk
+https://kashanhaider.com/set-up-android-environment-variables-on-macos/
+```
+
 # git error: RPC failed; curl transfer closed with outstanding read data remaining
 ```
 git clone https://github.com/Zillight-Innovation-Labs/fixmeet.git --depth 1
