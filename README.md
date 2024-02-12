@@ -4,7 +4,7 @@ https://github.com/30-seconds/30-seconds-of-code
 
 
 
-# hot to remove/clear all git commit history
+# how to remove/clear all git commit history
 ```
 https://xebia.com/blog/deleting-your-commit-history/
 ```
