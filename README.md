@@ -4,6 +4,12 @@ https://github.com/30-seconds/30-seconds-of-code
 
 
 
+# hot to remove/clear all git commit history
+```
+https://xebia.com/blog/deleting-your-commit-history/
+```
+
+
 # fix react native path issue: ReactNative can't locate Android SDK
 ```
 https://stackoverflow.com/questions/62797240/reactnative-cant-locate-android-sdk
