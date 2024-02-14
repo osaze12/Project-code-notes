@@ -4,22 +4,25 @@ https://github.com/30-seconds/30-seconds-of-code
 
 #  how to remove large file from local .git/cache git
 ###  add the folder location => remove every jar extension it the folder
-```
+```javascript
+//get list of huge files, default list length is 10, can be increased
+git rev-list --objects --all | grep -f <(git verify-pack -v  .git/objects/pack/*.idx| sort -k 3 -n | cut -f 1 -d " " | tail -10)
+
 git filter-branch --index-filter 'git rm --cached --ignore-unmatch android/gradle/caches/jars-9/*jar' --tag-name-filter cat -- --all
 ```
 ### remove the folder and every file/folder inside it
-```
+```javascript
 git filter-branch --index-filter 'git rm -r --cached --ignore-unmatch android/gradle/caches/jars-9' --tag-name-filter cat -- --all
 ```
 ### Once this is done run the following commands to clean up the local repository:
-```
+```javascript
 rm -rf .git/refs/original/
 git reflog expire --expire=now --all
 git gc --prune=now
 git gc --aggressive --prune=now
 ```
 ### Now push all the changes to the remote repository:
-```
+```javascript
 git push --all --force
 ```
 
