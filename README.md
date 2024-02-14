@@ -2,7 +2,26 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
-
+#  how to remove large file from local .git/cache git
+###  add the folder location => remove every jar extension it the folder
+```
+git filter-branch --index-filter 'git rm --cached --ignore-unmatch android/gradle/caches/jars-9/*jar' --tag-name-filter cat -- --all
+```
+### remove the folder and every file/folder inside it
+```
+git filter-branch --index-filter 'git rm -r --cached --ignore-unmatch android/gradle/caches/jars-9' --tag-name-filter cat -- --all
+```
+### Once this is done run the following commands to clean up the local repository:
+```
+rm -rf .git/refs/original/
+git reflog expire --expire=now --all
+git gc --prune=now
+git gc --aggressive --prune=now
+```
+### Now push all the changes to the remote repository:
+```
+git push --all --force
+```
 
 # how to remove/clear all git commit history
 ```
