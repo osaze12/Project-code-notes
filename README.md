@@ -2,6 +2,11 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+# best react native keyboard aware scroll view
+```
+react-native-keyboard-aware-scroll-view npm
+
+```
 
 # fix github, different commit histories
 ```
