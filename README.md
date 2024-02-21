@@ -2,6 +2,12 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+
+# fix github, different commit histories
+```
+git merge develop --allow-unrelated-histories
+```
+
 #  how to remove large file from local .git/cache git
 ###  add the folder location => remove every jar extension it the folder
 ```javascript
