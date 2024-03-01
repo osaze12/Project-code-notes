@@ -2,6 +2,16 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+
+
+# git clone fail:RPC failed; curl 18 transfer closed with outstanding read data remaining
+```
+git clone http://github.com/large-repository --depth 1
+
+https://stackoverflow.com/questions/38618885/error-rpc-failed-curl-transfer-closed-with-outstanding-read-data-remaining
+
+```
+
 # best react native keyboard aware scroll view
 ```
 react-native-keyboard-aware-scroll-view npm
