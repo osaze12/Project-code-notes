@@ -1593,6 +1593,18 @@ import ReactPlayer from "react-player";
 />
 ```
 
+# reduce array of objects into one object
+```javascript
+ const specificationList = [{"Weight": "aaa"}, {"Length": "100mm"}]
+ const object = specificationList.reduce(
+      (obj, item) => ({
+        ...obj,
+        [item.key]: item.value,
+      }),
+      {},
+    );
+```
+
 # filter out duplicate from an array with object
 ```javascript
 info
