@@ -1595,7 +1595,7 @@ import ReactPlayer from "react-player";
 
 # reduce array of objects into one object
 ```javascript
- const specificationList = [{"Weight": "aaa"}, {"Length": "100mm"}]
+ const specificationList =  [{"key": "Weight", "value": "ww"}, {"key": "Length", "value": "12w"}]
  const object = specificationList.reduce(
       (obj, item) => ({
         ...obj,
