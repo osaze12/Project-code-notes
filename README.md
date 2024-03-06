@@ -1010,7 +1010,22 @@ implementing a service worker for caching website resources, enabling offline fu
 https://web.facebook.com/photo/?fbid=323366160542162&set=gm.7144751595576025&idorvanity=411741268877125
 ```
 
-# you can map through object
+# how to remove empty object values from object list
+```javascript
+//{"color": {}, "qwert": {"ed": "e4"}}
+
+ function removeEmpty(obj) {
+    return Object.entries(obj).reduce((acc, [key, val]) => {
+      console.log(val, 'P');
+      if (Object.keys(val).length > 0) acc[key] = val;
+      return acc;
+    }, {});
+  }
+  console.log(removeEmpty(variants), '***');
+// result: {"qwert": {"ed": "e4"}}
+```
+
+# you can map/loop through object
 ```javascript
 
 for (let x in {one: 1, two: 2) {
