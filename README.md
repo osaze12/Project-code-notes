@@ -3,6 +3,34 @@ This is where I document things I have learnt, or found on the internet that are
 https://github.com/30-seconds/30-seconds-of-code
 
 
+# reduce/reformat data
+```javascript
+const data = [
+  { "Length": { "price": "2", "quantity": "5", "value": "1cm" } },
+  { "Length": { "price": "2", "quantity": "5", "value": "2cm" } },
+  { "Length": { "price": "4", "quantity": "4", "value": "3 cm" } }
+];
+
+const reducedData = data.reduce((acc, item) => {
+  const key = Object.keys(item)[0]; // Get the key of the item (e.g., "Length")
+  if (!acc[key]) {
+    acc[key] = []; // Initialize array if it doesn't exist
+  }
+  acc[key].push(item[key]); // Push the value of the key to the corresponding array
+  return acc;
+}, {});
+
+console.log(reducedData);
+
+// returns
+{
+  Length: [
+    { price: "2", quantity: "5", value: "1cm" },
+    { price: "2", quantity: "5", value: "2cm" },
+    { price: "4", quantity: "4", value: "3 cm" }
+  ]
+}
+```
 
 # git clone fail:RPC failed; curl 18 transfer closed with outstanding read data remaining
 ```
