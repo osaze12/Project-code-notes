@@ -2,6 +2,32 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+# you want to convert item value in an object to integer base on the key list
+```javascript
+const itemsToConvert = { "price": true };
+
+const data = {
+  "price": "10",
+  "quantity": "5",
+  "value": "Red"
+};
+
+const convertValuesToInteger = (object, keys) => {
+  const convertedObject = { ...object };
+
+  for (const key in convertedObject) {
+    if (keys[key]) {
+      convertedObject[key] = parseInt(convertedObject[key], 10);
+    }
+  }
+
+  return convertedObject;
+};
+
+const newData = convertValuesToInteger(data, itemsToConvert);
+console.log(newData);
+```
+
 
 # reduce/reformat data
 ```javascript
