@@ -2,6 +2,13 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+
+# how to get props of a child component
+```
+  let r = Children?.map(props?.children, (child) => child?.props);
+  console.log(r?.[0]?.products, '))111');
+```
+
 # add commas to sting price value
 ```javascript
 let text = 
