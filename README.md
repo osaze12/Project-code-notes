@@ -2,6 +2,14 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+# add commas to sting price value
+```javascript
+let text = 
+ onChangeText={(text) => setPrice(text?.replace(',', '').replace(/\B(?=(\d{3})+\b)/g, ','))}
+//text?.replace(',', '') replace the old comma string with nothing, so as not to get comma in the wrong place
+//.replace(/\B(?=(\d{3})+\b)/g, ',') // add comma into every last 3 digits
+```
+
 # you want to convert item value in an object to integer base on the key list
 ```javascript
 const itemsToConvert = { "price": true };
