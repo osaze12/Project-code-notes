@@ -4,7 +4,7 @@ https://github.com/30-seconds/30-seconds-of-code
 
 
 # how to get props of a child component
-```
+```javascript
   let r = Children?.map(props?.children, (child) => child?.props);
   console.log(r?.[0]?.products, '))111');
 ```
