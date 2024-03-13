@@ -4,7 +4,7 @@ https://github.com/30-seconds/30-seconds-of-code
 
 
 
-# React google search location, to get logitude and latitude
+# React google search location, to get logitude and latitude and google location
 
 ### if you're putting it in a modal, these zIndex must be present, else, it would come out, at the back of the modal
 ```javascript
@@ -28,79 +28,27 @@ https://github.com/30-seconds/30-seconds-of-code
 ```
 
 ```javascript
+import { usePlacesWidget } from "react-google-autocomplete";
 
-const loadScript = (url, callback) => {
-  let script = document.createElement("script");
-  script.type = "text/javascript";
-
-  if (script.readyState) {
-    script.onreadystatechange = function () {
-      if (script.readyState === "loaded" || script.readyState === "complete") {
-        script.onreadystatechange = null;
-        callback();
-      }
-    };
-  } else {
-    script.onload = () => callback();
-  }
-
-  script.src = url;
-  document.getElementsByTagName("head")[0].appendChild(script);
-};
-
-const SearchLocationInput = ({ setSelectedLocation, label }) => {
-  const [query, setQuery] = useState("");
-  const autoCompleteRef = useRef(null);
   const placesApiKey = import.meta.env.VITE_GOOGLE_PLACES_API_KEY;
 
-  // console.log("placesApiKey", placesApiKey, query);
-
-  const handlePlaceSelect = useCallback(
-    async (updateQuery) => {
-      const addressObject = await autoComplete.getPlace();
-
-      const query = addressObject.formatted_address;
-      updateQuery(query);
-      console.log({ query }, "BBNN");
-
-      const latLng = {
-        lat: addressObject?.geometry?.location?.lat(),
-        lng: addressObject?.geometry?.location?.lng(),
-      };
-
-      console.log({ latLng }, "Zaa");
-      setSelectedLocation(latLng);
+  const { ref } = usePlacesWidget({
+    apiKey: placesApiKey,
+    onPlaceSelected: async (places) => {
+      const formatted_address = places?.formatted_address;
+      const { lat, lng } = places?.geometry?.location;
+      setGeo({ lat: lat(), lng: lng() });
+      setSelectedLocation(formatted_address);
     },
-    [setSelectedLocation]
-  );
-
-  const handleScriptLoad = useCallback(
-    (updateQuery, autoCompleteRef) => {
-      autoComplete = new window.google.maps.places.Autocomplete(
-        autoCompleteRef.current,
-        {
-          // types: ["(cities)"],
-          // componentRestrictions: { country: "NGN" },
-        }
-      );
-
-      autoComplete.addListener("place_changed", async () => {
-        await handlePlaceSelect(updateQuery);
-      });
+    options: {
+      types: ["(regions)"],
+      componentRestrictions: { country: "ng" },
     },
-    [handlePlaceSelect]
-  );
+  });
 
-  useEffect(() => {
-    const key = "AIzaSyBidE4Hl-f-nSQI-T_2NVl3jiytQFcXHb8";
-    loadScript(
-      `https://maps.googleapis.com/maps/api/js?key=${placesApiKey}&libraries=places`,
-      () => handleScriptLoad(setQuery, autoCompleteRef)
-    );
-  }, [handleScriptLoad]);
-
-  return (
-    <div className="search-location-input">
+ return (
+    <div style={{ width: "100%" }} className={`search-location-input${label}`}>
+// this z-index is very important
       <style>
         {`
           .pac-container {
@@ -108,23 +56,12 @@ const SearchLocationInput = ({ setSelectedLocation, label }) => {
         }
           `}
       </style>
-      <label
-        style={{ fontSize: ".9em", fontWeight: "500", marginBottom: "30px" }}
-      >
-        {label}
-      </label>
-      <Input
-        // bg={_COLORS.white}
-        ref={autoCompleteRef}
-        mt={"5px"}
-        className="form-control"
-        placeholder="Search Places ..."
-        value={query}
-        onChange={(event) => setQuery(event.target.value)}
-      />
+        <Input
+          ref={ref}
+          placeholder="Search Places ..."
+        />
     </div>
   );
-};
 ```
 
 
