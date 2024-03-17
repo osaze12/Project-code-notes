@@ -41,7 +41,8 @@ import { usePlacesWidget } from "react-google-autocomplete";
       setSelectedLocation(formatted_address);
     },
     options: {
-      types: ["(regions)"],
+      //types: ["(regions)"],
+	 types: ["geocode", "establishment"],
       componentRestrictions: { country: "ng" },
     },
   });
