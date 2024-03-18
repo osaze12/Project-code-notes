@@ -6,6 +6,7 @@ https://github.com/30-seconds/30-seconds-of-code
 # get state and cities/city in Nigeria
 ```
 https://github.com/chukaofili/states-cities-db
+yarn add states-cities-db
 ```
 
 # React google search location, to get logitude and latitude and google location
