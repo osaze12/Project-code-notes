@@ -2,6 +2,23 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+# debounce input onChange from rerendering the whole component, for every character added
+```javascript
+import {  useDebouncedCallback } from 'use-debounce';
+
+ const debounced = useDebouncedCallback(
+          (name, value) => {
+            setFieldValue(name, value, true);
+          },
+          // delay in ms
+          2000,
+        );
+
+//do not add value to input prop
+  onChangeText={(value: any) => {
+    debounced('salesChannel', value);
+  }}
+```
 
 # get state and cities/city in Nigeria
 ```
