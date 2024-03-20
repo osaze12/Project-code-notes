@@ -2,6 +2,14 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+# filter data from an array
+```javascript
+//filter product, where you dont want each pro in array2
+  products={data?.findProducts?.data?.filter(
+		(product) => !selectedProducts?.some((sProduct) => product?._id === sProduct?._id),
+  )}
+```
+
 # debounce input onChange from rerendering the whole component, for every character added
 ```javascript
 import {  useDebouncedCallback } from 'use-debounce';
