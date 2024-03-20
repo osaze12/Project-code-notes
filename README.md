@@ -2,7 +2,7 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
-# filter data from an array
+# filter data from another array
 ```javascript
 //filter product, where you dont want each pro in array2
   products={data?.findProducts?.data?.filter(
