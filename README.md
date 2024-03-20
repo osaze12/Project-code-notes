@@ -2,6 +2,12 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+
+# import react component into a different web app
+```
+https://javascript.plainenglish.io/how-to-share-and-reuse-react-components-to-build-apps-faster-4b3b0b542798#:~:text=We%20can%20use%20the%20bit,That's%20it.
+```
+
 # filter data from another array
 ```javascript
 //filter product, where you dont want each pro in array2
