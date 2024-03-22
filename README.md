@@ -2,8 +2,43 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
-# get updated value of html element with contentible="true"
+# change focus of input to another input in an input list array
+```javascript
+  const handleNew = () => {
+    setState((prev) => [...prev, { time: Date.now() }]);
+
+    setTimeout(() => {
+      const inputElement = document.querySelector(`[data-id="1"]`);
+
+      if (inputElement) {
+        inputElement.focus();
+      }
+    }, 200);
+  };
+
+
+<Input
+    placeContent={"Enter Text"}
+    onChange={(e) =>
+      setState((prev) => [
+        ...prev?.map((d, inx) => {
+          if (inx === index) {
+            return { ...d, content: e.target.value };
+          }
+          return d;
+        }),
+      ])
+    }
+// add data id with value only to the last input, so we can focus on it
+    {...(index + 1 === state.length ? { "data-id": "1" } : {})}
+    ref={inputRef}
+    value={list?.content}
+    onKeyDown={(e) => e.key === "Enter" && handleNew()}
+  />
 ```
+
+# get updated value of html element with contentible="true"
+```javascript
   useEffect(() => {
     setTimeout(() => {
       const contentEditableDiv = document.getElementById(
