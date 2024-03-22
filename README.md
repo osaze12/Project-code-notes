@@ -2,6 +2,31 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+# get updated value of html element with contentible="true"
+```
+  useEffect(() => {
+    setTimeout(() => {
+      const contentEditableDiv = document.getElementById(
+        `fake_textarea${index}`
+      );
+
+      // Add event listener for input event
+      contentEditableDiv.addEventListener("input", function () {
+        // Get the updated value using textContent
+        const updatedValue = contentEditableDiv.textContent;
+        console.log(updatedValue);
+      });
+    }, 1000);
+  }, []);
+
+
+ <Box
+	id={`fake_textarea${index}`}
+	contenteditable="true"
+    >
+      {list?.content}
+    </Box>
+```
 
 # import react component into a different web app
 ```
