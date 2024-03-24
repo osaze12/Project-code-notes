@@ -2,7 +2,7 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
-# to parse human readable text to date
+# to parse human readable text to date 
 ```
 https://www.npmjs.com/package/any-date-parser#exhaustive-list-of-date-formats
 npm i any-date-parser
