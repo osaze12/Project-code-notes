@@ -2,6 +2,35 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+# fix: contentible div(input) cursor caret moves to the begining of the text box, when text is updated (state)
+```javascript
+    contentEditableDiv.addEventListener("input", function (event) {
+    
+        const updatedValue = contentEditableDiv.textContent;
+
+        const element = event.target;
+
+        let char = updatedValue?.length,
+          sel;
+
+        if (element.selection) {
+          sel = element.selection.createRange();
+          sel.moveStart("character", char);
+          sel.select();
+        }
+
+        setState((prev) => [
+          ...prev?.map((d, inx) => {
+            if (inx === index) {
+              return { ...d, content: updatedValue };
+            }
+            return d;
+          }),
+        ]);
+      });
+```
+
+
 # change focus of input to another input in an input list array
 ```javascript
   const handleNew = () => {
