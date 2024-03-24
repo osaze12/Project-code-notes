@@ -2,35 +2,27 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+#
+
 # fix: contentible div(input) cursor caret moves to the begining of the text box, when text is updated (state)
 ```javascript
     contentEditableDiv.addEventListener("input", function (event) {
-    
-        const updatedValue = contentEditableDiv.textContent;
+   const updatedValue = contentEditableDiv.textContent;
 
-        const element = event.target;
+     const position = updatedValue?.length;
 
-        let char = updatedValue?.length,
-          sel;
+          const el = contentEditableDiv;
+          const selection = document.getSelection();
 
-          if (element.selection) {
-          sel = element.selection.createRange();
-          sel.moveStart("character", char);
-          sel.select();
-        } else {
-//works here
-          sel = window.getSelection();
-          sel.collapse(element.lastChild, char);
-        }
+          if (!selection || !el) return;
 
-        setState((prev) => [
-          ...prev?.map((d, inx) => {
-            if (inx === index) {
-              return { ...d, content: updatedValue };
-            }
-            return d;
-          }),
-        ]);
+          // Set the caret to the beggining
+          selection.collapse(el, 0);
+
+          // Move the caret to the position
+          for (let index = 0; index < position; index++) {
+            selection.modify("move", "forward", "character");
+          }
       });
 ```
 
