@@ -13,10 +13,14 @@ https://github.com/30-seconds/30-seconds-of-code
         let char = updatedValue?.length,
           sel;
 
-        if (element.selection) {
+          if (element.selection) {
           sel = element.selection.createRange();
           sel.moveStart("character", char);
           sel.select();
+        } else {
+//works here
+          sel = window.getSelection();
+          sel.collapse(element.lastChild, char);
         }
 
         setState((prev) => [
