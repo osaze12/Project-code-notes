@@ -8,7 +8,48 @@ https://www.npmjs.com/package/any-date-parser#exhaustive-list-of-date-formats
 npm i any-date-parser
 ```
 
-# regex expression to get extract date, eg: 1-5 weeks, 1-12 months, 1-5 years, today, and tomorrow, from string
+# count down function from by passing an end date
+```javascript
+function countdown(endDate, callback) {
+    let timeoutId; // Variable to store the timeout ID
+
+    // Define the countdown function
+    function tick() {
+        const now = new Date();
+        const difference = endDate - now;
+
+        // Check if the countdown has ended
+        if (difference <= 0) {
+            callback(); // Call the callback function when the countdown ends
+            clearTimeout(timeoutId); // Clear the timeout
+            return; // Exit the function
+        }
+
+        // Calculate the remaining time in milliseconds
+        const seconds = Math.floor((difference / 1000) % 60);
+        const minutes = Math.floor((difference / 1000 / 60) % 60);
+        const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+
+        // Output the remaining time (optional)
+        console.log(`${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`);
+
+        // Wait for one second and call the tick function recursively
+        timeoutId = setTimeout(tick, 1000);
+    }
+
+    // Start the countdown
+    tick();
+}
+
+// Example usage:
+const endDate = new Date(Date.now() + 5000); // Set the end date 5 seconds from now
+countdown(endDate, () => {
+    console.log("Countdown has ended!"); // This callback will be called when the countdown ends
+});
+```
+
+# regex expression to extract date, eg: 1-5 weeks, 1-12 months, 1-5 years, today, and tomorrow, from string
 ```javascript
   const inputString = "I plan to complete the task in 2 week";
   const regexPattern =
