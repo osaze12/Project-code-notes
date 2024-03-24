@@ -8,6 +8,22 @@ https://www.npmjs.com/package/any-date-parser#exhaustive-list-of-date-formats
 npm i any-date-parser
 ```
 
+# regex expression to get extract date, eg: 1-5 weeks, 1-12 months, 1-5 years, today, and tomorrow, from string
+```javascript
+  const inputString = "I plan to complete the task in 2 week";
+  const regexPattern =
+    /\b((?:(?:1|2|3|4|5)-?[1-4]?\s(?:week|weeks))|([1-5]?\s(?:week|weeks))|([1-9]|1[0-2])\s(?:month|months?)|([1-5]?\s(?:year|years?))|(?:(?:1|2)?[0-9]|3[0-1])\shour(?:s)?|(?:(?:1-5)?[0-9]|60)\sminute(?:s)?|today|tomorrow)\b/g;
+
+  const matches = inputString.match(regexPattern);
+
+  if (matches) {
+    console.log("Matches found:");
+    matches.forEach((match) => console.log(match));
+  } else {
+    console.log("No matches found.");
+  }
+```
+
 # fix: contentible div(input) cursor caret moves to the begining of the text box, when text is updated (state)
 ```javascript
     contentEditableDiv.addEventListener("input", function (event) {
