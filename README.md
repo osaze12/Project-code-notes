@@ -49,11 +49,11 @@ countdown(endDate, () => {
 });
 ```
 
-# regex expression to extract date, eg: 1-5 weeks, 1-12 months, 1-5 years, today, and tomorrow, from string
+# regex expression to extract date, eg: 1-5 weeks, 1-12 months, 1-5 years,1-30 days, today, and tomorrow, from string
 ```javascript
   const inputString = "I plan to complete the task in 2 week";
   const regexPattern =
-    /\b((?:(?:1|2|3|4|5)-?[1-4]?\s(?:week|weeks))|([1-5]?\s(?:week|weeks))|([1-9]|1[0-2])\s(?:month|months?)|([1-5]?\s(?:year|years?))|(?:(?:1|2)?[0-9]|3[0-1])\shour(?:s)?|(?:(?:1-5)?[0-9]|60)\sminute(?:s)?|today|tomorrow)\b/g;
+    /\b((?:(?:1|2|3|4|5)-?[1-4]?\s(?:week|weeks))|(?:1-[1-9]|1[0-2])\s(?:month|months?)|(?:(?:1|2)?[0-9]|30)\sday(?:s)?|(?:(?:1|2)?[0-9]|3[0-1])\shour(?:s)?|(?:(?:1-5)?[0-9]|60)\sminute(?:s)?|1-[1-5]?\s(?:year|years?)|today|tomorrow)\b/g;
 
   const matches = inputString.match(regexPattern);
 
