@@ -8,6 +8,41 @@ https://www.npmjs.com/package/any-date-parser#exhaustive-list-of-date-formats
 npm i any-date-parser
 ```
 
+# react native: scroll to view
+```javascript
+const lastChatRef = useRef<any>(null);
+
+  const [textPos, setTextPos] = useState(0);
+
+  useEffect(() => {
+    setTimeout(() => {
+      if (lastChatRef.current) {
+        lastChatRef.current?.scrollTo?.({ y: textPos + 1000, animated: true });
+      }
+    }, 100);
+  }, [chatList]);
+
+     <ScrollView ref={lastChatRef} style={{ marginBottom: 20 }}>
+          {chatList?.map((chat, index) => (
+            <Stack>
+              <Text
+                {...(index + 1 === chatList?.length
+                  ? {
+                      onLayout: (event) => {
+                        event.target.measure((x, y, width, height, pageX, pageY) => {
+                          setTextPos(y + pageY);
+                        });
+                      },
+                    }
+                  : {})}
+              >
+                {chat?.text}
+              </Text>
+            </Stack>
+          ))}
+        </ScrollView>
+```
+
 # count down function from by passing an end date
 ```javascript
 function countdown(endDate, callback) {
