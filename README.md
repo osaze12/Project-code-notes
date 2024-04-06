@@ -2,6 +2,27 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+
+# prefetch or cache audio in React Native?
+```javascript
+//https://www.npmjs.com/package/rn-fetch-blob This will allow you to save a stream to phone storage, give you a path to the file on the 
+
+//An example from their docs.
+
+RNFetchBlob.config({
+// add this option that makes response data to be stored as a file,
+// this is much more performant.
+fileCache : true,
+})
+.fetch('GET', 'http://www.example.com/file/example.zip', {
+  //some headers ..
+})
+.then((res) => {
+  // the temp file path
+  console.log('The file saved to ', res.path())
+})
+```
+
 # to parse human readable text to date 
 ```
 https://www.npmjs.com/package/any-date-parser#exhaustive-list-of-date-formats
