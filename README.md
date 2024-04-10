@@ -3,6 +3,32 @@ This is where I document things I have learnt, or found on the internet that are
 https://github.com/30-seconds/30-seconds-of-code
 
 
+# react native: best side bar/ drawer to use within a component or page
+
+```javascript
+import Sidebar from 'react-native-sidebar';
+
+ <Pressable
+          onPress={() => {
+            setOpen((prev) => !prev);
+            open ? sidebarRef.current.close() : sidebarRef.current.open('right/left');
+          }}>
+        </Pressable>
+
+  <Sidebar
+        rightSidebarWidth={150}
+        ref={sidebarRef}
+        rightSidebar={<RightSidebarContent />}
+        overlayColor={'#C1C4CD'}
+        style={{ flex: 1, height: '100%' }}>
+        {!Array.isArray(children)
+          ? React.Children.map(children, (child, index) =>
+              React.cloneElement(child, { ...(filteredProducts?.length > 0 ? { products: filteredProducts } : {}) }),
+            )
+          : children}
+      </Sidebar>
+```
+
 # prefetch or cache audio in React Native?
 ```javascript
 //https://www.npmjs.com/package/rn-fetch-blob This will allow you to save a stream to phone storage, give you a path to the file on the 
