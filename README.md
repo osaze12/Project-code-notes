@@ -236,7 +236,7 @@ countdown(endDate, () => {
 https://javascript.plainenglish.io/how-to-share-and-reuse-react-components-to-build-apps-faster-4b3b0b542798#:~:text=We%20can%20use%20the%20bit,That's%20it.
 ```
 
-# filter data from another array
+# filter/ compare data from another array
 ```javascript
 //filter product, where you dont want each pro in array2
   products={data?.findProducts?.data?.filter(
