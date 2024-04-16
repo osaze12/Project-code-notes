@@ -3,6 +3,10 @@ This is where I document things I have learnt, or found on the internet that are
 https://github.com/30-seconds/30-seconds-of-code
 
 
+# add two decimal point to int or float number
+```
+toLocaleString('en', { minimumFractionDigits: 2 })
+```
 
 # remove duplicate object
 ```javascript
