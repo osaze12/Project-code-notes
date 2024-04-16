@@ -3,6 +3,17 @@ This is where I document things I have learnt, or found on the internet that are
 https://github.com/30-seconds/30-seconds-of-code
 
 
+
+# remove duplicate object
+```javascript
+const key = 'place';
+const unique = [...new Map(arr.map(item => [item[key], item])).values()]
+
+//It can be put into a function:
+function getUniqueListBy(arr, key) {
+    return [...new Map(arr.map(item => [item[key], item])).values()]
+}
+```
 # react native: best side bar/ drawer to use within a component or page
 
 ```javascript
