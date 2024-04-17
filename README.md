@@ -8,6 +8,16 @@ https://github.com/30-seconds/30-seconds-of-code
 toLocaleString('en', { minimumFractionDigits: 2 })
 ```
 
+# react native: set text input from ref
+```javascript
+   // update note input
+  useEffect(() => {
+    if (noteInputRef.current) {
+      noteInputRef.current.setNativeProps({ text: note || '' });
+    }
+  }, []);
+```
+
 # remove duplicate object
 ```javascript
 const key = 'place';
