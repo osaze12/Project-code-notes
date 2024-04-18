@@ -434,8 +434,15 @@ https://stackoverflow.com/questions/38618885/error-rpc-failed-curl-transfer-clos
 ```
 
 # best react native keyboard aware scroll view
-```
+```javascript
 react-native-keyboard-aware-scroll-view npm
+
+
+//to stop moving to top when typing, add this prop
+//enableResetScrollToCoords={false}
+
+
+
 
 ```
 
