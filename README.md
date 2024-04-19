@@ -2,6 +2,12 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+# react native: custom shadow
+```javascript
+  shadowOffset: { width: -2, height: 2 },
+                    shadowOpacity: 0.1,
+                    shadowRadius: 2,
+```
 
 # add two decimal point to int or float number
 ```
