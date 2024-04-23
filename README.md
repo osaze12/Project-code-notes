@@ -299,10 +299,15 @@ import {  useDebouncedCallback } from 'use-debounce';
   }}
 ```
 
-# get state and cities/city in Nigeria
+# get all state and cities/city in Nigeria
 ```
 https://github.com/chukaofili/states-cities-db
 yarn add states-cities-db
+
+```
+# get country, state and city in the world
+```
+npm i react-country-state-city
 ```
 
 # React google search location, to get logitude and latitude and google location
