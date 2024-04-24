@@ -3,6 +3,21 @@ This is where I document things I have learnt, or found on the internet that are
 https://github.com/30-seconds/30-seconds-of-code
 
 
+# add country code to phone number
+```javascript
+import { parsePhoneNumberFromString, AsYouType } from 'libphonenumber-js';
+
+// Parse phone number string
+const phoneNumber = parsePhoneNumberFromString('123456789', 'US');
+
+// Create formatter
+const formatter = new AsYouType('US');
+
+// Format phone number without spaces and dashes
+const formattedNumber = formatter.input(phoneNumber.number);
+console.log(formattedNumber); // Output: +1123456789
+
+```
 # react native: good action sheet
 ```
 https://rnas.vercel.app/
