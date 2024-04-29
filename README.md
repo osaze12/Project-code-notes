@@ -23,11 +23,12 @@ console.log(formattedNumber); // Output: +1123456789
 https://rnas.vercel.app/
 ```
 
-# react native: custom shadow
+# react native: custom shadow for ios, for android, use: elevation:2
 ```javascript
-  shadowOffset: { width: -2, height: 2 },
-                    shadowOpacity: 0.1,
-                    shadowRadius: 2,
+   shadowOffset={{ width: -2, height: 1 }}
+                    shadowColor="#000"
+                    shadowOpacity={0.16}
+                    shadowRadius={5}
 ```
 
 # add two decimal point to int or float number
