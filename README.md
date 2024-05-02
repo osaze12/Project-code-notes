@@ -2,7 +2,37 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+# react native: generate apk file
+```
+https://aboutreact.com/generate-debug-android-apk/
 
+
+
+How to Generate APK?
+To generate a debug APK in React Native we need to first bundle our app and then need to build the debug app. But before these two steps, we need to create an index.android for once. Once you create the file then you don’t need to create it again.
+
+1. Create an assets directory using (One Time Step)
+
+mkdir ./android/app/src/main/assets/
+2. create a blank file with the name index.android (One Time Step)
+
+touch ./android/app/src/main/assets/index.android
+3. bundle the app using
+
+npx react-native bundle --dev false --platform android --entry-file index.js --bundle-output ./android/app/src/main/assets/index.android --assets-dest ./android/app/src/main/res/
+react_native_generate_debug_apk1
+
+4. Build the debug APK using
+
+cd android/ && ./gradlew assembleDebug
+react_native_generate_debug_apk2react_native_generate_debug_apk3
+
+Once you see Build Success in the log you can find the app in YourProject/android/app/build/outputs/apk/debug/ with the name app-debug.apk
+
+react_native_generate_debug_apk4
+
+This is how to generate debug APK of the Android project in React Native. #1 and#2 is for the one time only, If you have generated the APK for one time then you just need to run #3 and #4.
+```
 # add country code to phone number
 ```javascript
 import { parsePhoneNumberFromString, AsYouType } from 'libphonenumber-js';
