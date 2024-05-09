@@ -2,6 +2,10 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+# react native: how to resolve simulator error "cannot boot"
+```
+https://stackoverflow.com/questions/77177016/xcode-15-unable-to-boot-the-simulator
+```
 # react native: scroll to the bottom on every new data
 ```javascript
 //https://stackoverflow.com/questions/29310553/is-it-possible-to-keep-a-scrollview-scrolled-to-the-bottom
