@@ -2,7 +2,23 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+# react native: scroll to the bottom on every new data
+```javascript
+//https://stackoverflow.com/questions/29310553/is-it-possible-to-keep-a-scrollview-scrolled-to-the-bottom
 
+import { useRef } from 'react';
+import { ScrollView } from 'react-native';
+
+const ScreenComponent = (props) => {
+  const scrollViewRef = useRef();
+  return (
+    <ScrollView
+      ref={scrollViewRef}
+      onContentSizeChange={() => scrollViewRef.current.scrollToEnd({ animated: true })}
+    />
+  );
+};
+```
 
 # react native: create responsive width, height, font size, etc
 ```javascript
