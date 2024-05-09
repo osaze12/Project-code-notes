@@ -64,6 +64,18 @@ const styles = StyleSheet.create({
 https://aboutreact.com/generate-debug-android-apk/
 
 
+// if the bundle apk is old
+delete old build first, and then run app normally, before following this
+It is because, you have old index.android.bundle file. Follow these steps to update this file and create a new apk:
+
+1. react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res
+2. curl "http://localhost:8081/index.bundle?platform=android" -o "android/app/src/main/assets/index.android.bundle"
+3. cd android && ./gradlew clean assembleDebug
+
+
+
+
+
 
 How to Generate APK?
 To generate a debug APK in React Native we need to first bundle our app and then need to build the debug app. But before these two steps, we need to create an index.android for once. Once you create the file then you don’t need to create it again.
