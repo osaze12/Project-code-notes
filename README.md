@@ -1,7 +1,25 @@
 # Project-code-notes
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
+# react native/ react web: to force to update on navigating to a page/component
+```javascript
+//If you are using React Navigation 5.X, just do the following:
 
+import { useIsFocused } from '@react-navigation/native'
+
+export default function App(){
+
+    const isFocused = useIsFocused()
+
+    useEffect(() => {
+        if(isFocused){
+            //Update the state you want to be updated
+        }
+    }, [isFocused])
+
+}
+
+```
 # react native: how to resolve simulator error "cannot boot"
 ```
 https://stackoverflow.com/questions/77177016/xcode-15-unable-to-boot-the-simulator
