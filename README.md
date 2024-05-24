@@ -4858,6 +4858,9 @@ https://css-tricks.com/single-element-loaders-the-dots/
 # Animation library for react
 "aos": "^2.3.4",
 ```javascript
+
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 useEffect(() => {
   Aos.init({ duration: 1000,  once: false,
       startEvent: "load" })
