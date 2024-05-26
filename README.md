@@ -7,7 +7,7 @@ https://github.com/30-seconds/30-seconds-of-code
 https://medium.com/@bobjunior542/how-to-use-usesearchparams-in-react-router-6-for-url-search-parameters-c35b5d1ac01c
 ```
 
-# react native/ react web: to force to update on navigating to a page/component
+# react native/ react web: to force to update/rerender on navigating to a page/component
 ```javascript
 //If you are using React Navigation 5.X, just do the following:
 
