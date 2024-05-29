@@ -7,6 +7,11 @@ https://github.com/30-seconds/30-seconds-of-code
 https://medium.com/@bobjunior542/how-to-use-usesearchparams-in-react-router-6-for-url-search-parameters-c35b5d1ac01c
 ```
 
+# analytics library that works with any analytics service, with single code (same)
+```
+https://github.com/DavidWells/analytics
+```
+
 # react native/ react web: to force to update/rerender on navigating to a page/component
 ```javascript
 //If you are using React Navigation 5.X, just do the following:
