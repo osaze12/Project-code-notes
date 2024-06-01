@@ -2,6 +2,12 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+
+# React native: scroll item not reaching the bottom
+```javascript
+use flexGrow:1 instead of flex in :<ScrollView contentContainerStyle={{ flexGrow: 1 }}/>
+```
+
 # add params to url
 ```
 https://medium.com/@bobjunior542/how-to-use-usesearchparams-in-react-router-6-for-url-search-parameters-c35b5d1ac01c
