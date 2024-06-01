@@ -8,6 +8,34 @@ https://github.com/30-seconds/30-seconds-of-code
 use flexGrow:1 instead of flex in :<ScrollView contentContainerStyle={{ flexGrow: 1 }}/>
 ```
 
+# remove object with duplicate keys from an array
+```javascript
+const arrayWithDuplicates = [
+  { id: 1, name: 'John' },
+  { id: 2, name: 'Jane' },
+  { id: 1, name: 'John Doe' },
+  { id: 3, name: 'Smith' },
+  { id: 2, name: 'Jane Doe' }
+];
+
+const removeDuplicates = (arr, key) => {
+  const seen = new Set();
+  return arr.reduce((acc, item) => {
+    const keyValue = item[key];
+    if (!seen.has(keyValue)) {
+      seen.add(keyValue);
+      acc.push(item);
+    }
+    return acc;
+  }, []);
+};
+
+const uniqueArray = removeDuplicates(arrayWithDuplicates, 'id');
+
+console.log(uniqueArray);
+
+```
+
 # add params to url
 ```
 https://medium.com/@bobjunior542/how-to-use-usesearchparams-in-react-router-6-for-url-search-parameters-c35b5d1ac01c
