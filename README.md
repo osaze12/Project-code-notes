@@ -2,6 +2,22 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+# How to convert array to object
+```javascript
+const list = [
+  { name: "Abi" },
+  { age: 25 },
+  { location: "New York" },
+  { name: "John" } // this will overwrite "Abi" if merged directly
+];
+
+const ob = list.reduce((acc, curr) => {
+  return { ...acc, ...curr };
+}, {});
+
+console.log(ob); // { name: "John", age: 25, location: "New York" }
+
+```
 
 # React native: scroll item not reaching the bottom
 ```javascript
