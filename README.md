@@ -2,6 +2,82 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+
+# timeline
+```
+     <Box pt="20px">
+              {[0, 1, 2].map((status, index) => (
+                <HStack key={index} alignItems="flex-start" spacing="20px">
+                  <VStack alignItems="center" spacing={0}>
+                    <Box position="relative" width="20px" height="20px">
+                      <Box
+                        as={motion.div}
+                        width="10px"
+                        height="10px"
+                        rounded="full"
+                        bg={orderStatus >= status ? Colors.purple : Colors.gray}
+                        zIndex="1"
+                        position="absolute"
+                        top="50%"
+                        left="50%"
+                        transform="translate(-50%, -50%)"
+                      ></Box>
+                      <Box
+                        position="absolute"
+                        top="50%"
+                        left="50%"
+                        width="20px"
+                        height="20px"
+                        border="2px solid"
+                        borderColor={
+                          orderStatus >= status ? Colors.purple : Colors.gray
+                        }
+                        borderRadius="50%"
+                        transform="translate(-50%, -50%)"
+                      ></Box>
+                    </Box>
+                    {index < 2 && (
+                      <Box
+                        width="2px"
+                        height="90px"
+                        bg={orderStatus > status ? Colors.purple : Colors.gray}
+                        backgroundImage={
+                          index === 1
+                            ? `linear-gradient(${Colors.white} 50%, transparent 50%)`
+                            : "none"
+                        }
+                        backgroundSize="2px 8px"
+                      ></Box>
+                    )}
+                  </VStack>
+                  <Stack spacing={1}>
+                    <Text
+                      fontSize="18px"
+                      fontWeight="semibold"
+                      color={orderStatus >= status ? Colors.black : Colors.gray}
+                    >
+                      {status === 0
+                        ? "Order Placed"
+                        : status === 1
+                        ? "Order Pending"
+                        : "Order Confirmed"}
+                    </Text>
+                    <Text
+                      fontSize="14px"
+                      color={orderStatus >= status ? Colors.black : Colors.gray}
+                      fontWeight="light"
+                    >
+                      {status === 0
+                        ? "You’ve successfully placed your order on the website."
+                        : status === 1
+                        ? "Your order has been received but is waiting for further action, such as store confirmation."
+                        : "The physical store has confirmed your order and is ready to proceed with fulfilment."}
+                    </Text>
+                  </Stack>
+                </HStack>
+              ))}
+            </Box>
+```
 # How to convert array to object
 ```javascript
 const list = [
