@@ -3,6 +3,22 @@ This is where I document things I have learnt, or found on the internet that are
 https://github.com/30-seconds/30-seconds-of-code
 
 
+
+
+# convert date to my local time zone in date-fns
+```javascript
+const transformDateToTimezone = (date: Date, timeZone: string) => {
+  const targetTimezoneOffset = getTimezoneOffset(timeZone);
+  return new Date(date.getTime() - date.getTimezoneOffset() + targetTimezoneOffset);
+};
+
+
+    // Get the time zone of the local environment
+    const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+  const startOfToday = transformDateToTimezone( startOfDay(today), timeZone);
+```
+
 # timeline
 ```
      <Box pt="20px">
