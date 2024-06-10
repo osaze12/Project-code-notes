@@ -3,7 +3,48 @@ This is where I document things I have learnt, or found on the internet that are
 https://github.com/30-seconds/30-seconds-of-code
 
 
+# screenshot and save html element
+```javascript
+  const ToCaptureRef = React.useRef();
 
+const captureScreenshot = () => {
+    var canvasPromise = html2canvas(ToCaptureRef.current, {
+      useCORS: true,
+    });
+    canvasPromise.then((canvas) => {
+      var dataURL = canvas.toDataURL("image/png");
+      // Create an image element from the data URL
+      var img = new Image();
+      img.src = dataURL;
+      img.download = dataURL;
+      // Create a link element
+      var a = document.createElement("a");
+      a.innerHTML = "DOWNLOAD";
+      a.target = "_blank";
+      // Set the href of the link to the data URL of the image
+      a.href = img.src;
+      // Set the download attribute of the link
+      a.download = img.download;
+      // Append the link to the page
+      document.body.appendChild(a);
+      // Click the link to trigger the download
+      a.click();
+    });
+  };
+
+  <Stack
+          flex={1}
+          alignSelf={"stretch"}
+          border="1px solid #7c5dd6"
+          borderRadius={"10px"}
+          overflow={"hidden"}
+          pos={"relative"}
+          justifyContent={"center"}
+          alignItems={"center"}
+          ref={ToCaptureRef}
+        >...
+
+```
 
 # convert date to my local time zone in date-fns
 ```javascript
