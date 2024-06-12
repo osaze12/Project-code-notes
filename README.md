@@ -2,7 +2,10 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
-
+# React native: firebase push notification set up
+```
+https://medium.com/@ashoniaa/react-native-expo-push-notifications-with-fcm-a-step-by-step-guide-fa5cfc0372fd
+```
 # screenshot and save html element
 ```javascript
   const ToCaptureRef = React.useRef();
