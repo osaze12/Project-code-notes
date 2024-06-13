@@ -2,11 +2,11 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
-# React native: firebase push notification set up
+#### React native: firebase push notification set up
 ```
 https://medium.com/@ashoniaa/react-native-expo-push-notifications-with-fcm-a-step-by-step-guide-fa5cfc0372fd
 ```
-# screenshot and save html element
+#### screenshot and save html element
 ```javascript
   const ToCaptureRef = React.useRef();
 
@@ -38,7 +38,7 @@ const captureScreenshot = () => {
   <Stack
           flex={1}
           alignSelf={"stretch"}
-          border="1px solid #7c5dd6"
+          border="1px solid ####7c5dd6"
           borderRadius={"10px"}
           overflow={"hidden"}
           pos={"relative"}
@@ -49,7 +49,7 @@ const captureScreenshot = () => {
 
 ```
 
-# convert date to my local time zone in date-fns
+#### convert date to my local time zone in date-fns
 ```javascript
 const transformDateToTimezone = (date: Date, timeZone: string) => {
   const targetTimezoneOffset = getTimezoneOffset(timeZone);
@@ -63,7 +63,7 @@ const transformDateToTimezone = (date: Date, timeZone: string) => {
   const startOfToday = transformDateToTimezone( startOfDay(today), timeZone);
 ```
 
-# timeline
+#### timeline
 ```
      <Box pt="20px">
               {[0, 1, 2].map((status, index) => (
@@ -138,7 +138,7 @@ const transformDateToTimezone = (date: Date, timeZone: string) => {
               ))}
             </Box>
 ```
-# How to convert array to object
+#### How to convert array to object
 ```javascript
 const list = [
   { name: "Abi" },
@@ -155,12 +155,12 @@ console.log(ob); // { name: "John", age: 25, location: "New York" }
 
 ```
 
-# React native: scroll item not reaching the bottom
+#### React native: scroll item not reaching the bottom
 ```javascript
 use flexGrow:1 instead of flex in :<ScrollView contentContainerStyle={{ flexGrow: 1 }}/>
 ```
 
-# remove object with duplicate keys from an array
+#### remove object with duplicate keys from an array
 ```javascript
 const arrayWithDuplicates = [
   { id: 1, name: 'John' },
@@ -188,17 +188,17 @@ console.log(uniqueArray);
 
 ```
 
-# add params to url
+#### add params to url
 ```
 https://medium.com/@bobjunior542/how-to-use-usesearchparams-in-react-router-6-for-url-search-parameters-c35b5d1ac01c
 ```
 
-# analytics library that works with any analytics service, with single code (same)
+#### analytics library that works with any analytics service, with single code (same)
 ```
 https://github.com/DavidWells/analytics
 ```
 
-# react native/ react web: to force to update/rerender on navigating to a page/component
+#### react native/ react web: to force to update/rerender on navigating to a page/component
 ```javascript
 //If you are using React Navigation 5.X, just do the following:
 
@@ -217,11 +217,11 @@ export default function App(){
 }
 
 ```
-# react native: how to resolve simulator error "cannot boot"
+#### react native: how to resolve simulator error "cannot boot"
 ```
 https://stackoverflow.com/questions/77177016/xcode-15-unable-to-boot-the-simulator
 ```
-# react native: scroll to the bottom on every new data
+#### react native: scroll to the bottom on every new data
 ```javascript
 //https://stackoverflow.com/questions/29310553/is-it-possible-to-keep-a-scrollview-scrolled-to-the-bottom
 
@@ -239,7 +239,7 @@ const ScreenComponent = (props) => {
 };
 ```
 
-# react native: create responsive width, height, font size, etc
+#### react native: create responsive width, height, font size, etc
 ```javascript
 //https://medium.com/simform-engineering/create-responsive-design-in-react-native-f84522a44365
 
@@ -274,7 +274,7 @@ const styles = StyleSheet.create({
 });
 ```
 
-# react native: generate apk file
+#### react native: generate apk file
 ```
 https://aboutreact.com/generate-debug-android-apk/
 
@@ -317,7 +317,7 @@ react_native_generate_debug_apk4
 
 This is how to generate debug APK of the Android project in React Native. #1 and#2 is for the one time only, If you have generated the APK for one time then you just need to run #3 and #4.
 ```
-# add country code to phone number
+#### add country code to phone number
 ```javascript
 import { parsePhoneNumberFromString, AsYouType } from 'libphonenumber-js';
 
@@ -332,12 +332,12 @@ const formattedNumber = formatter.input(phoneNumber.number);
 console.log(formattedNumber); // Output: +1123456789
 
 ```
-# react native: good action sheet
+#### react native: good action sheet
 ```
 https://rnas.vercel.app/
 ```
 
-# react native: custom shadow for ios, for android, use: elevation:2
+#### react native: custom shadow for ios, for android, use: elevation:2
 ```javascript
    shadowOffset={{ width: -2, height: 1 }}
                     shadowColor="#000"
@@ -345,12 +345,12 @@ https://rnas.vercel.app/
                     shadowRadius={5}
 ```
 
-# add two decimal point to int or float number
+#### add two decimal point to int or float number
 ```
 toLocaleString('en', { minimumFractionDigits: 2 })
 ```
 
-# react native: set text input from ref
+#### react native: set text input from ref
 ```javascript
    // update note input
   useEffect(() => {
@@ -360,7 +360,7 @@ toLocaleString('en', { minimumFractionDigits: 2 })
   }, []);
 ```
 
-# remove duplicate object
+#### remove duplicate object
 ```javascript
 const key = 'place';
 const unique = [...new Map(arr.map(item => [item[key], item])).values()]
@@ -370,7 +370,7 @@ function getUniqueListBy(arr, key) {
     return [...new Map(arr.map(item => [item[key], item])).values()]
 }
 ```
-# react native: best side bar/ drawer to use within a component or page
+#### react native: best side bar/ drawer to use within a component or page
 
 ```javascript
 import Sidebar from 'react-native-sidebar';
@@ -396,7 +396,7 @@ import Sidebar from 'react-native-sidebar';
       </Sidebar>
 ```
 
-# prefetch or cache audio in React Native?
+#### prefetch or cache audio in React Native?
 ```javascript
 //https://www.npmjs.com/package/rn-fetch-blob This will allow you to save a stream to phone storage, give you a path to the file on the 
 
@@ -416,13 +416,13 @@ fileCache : true,
 })
 ```
 
-# to parse human readable text to date 
+#### to parse human readable text to date 
 ```
 https://www.npmjs.com/package/any-date-parser#exhaustive-list-of-date-formats
 npm i any-date-parser
 ```
 
-# react native: scroll to view
+#### react native: scroll to view
 ```javascript
 const lastChatRef = useRef<any>(null);
 
@@ -457,7 +457,7 @@ const lastChatRef = useRef<any>(null);
         </ScrollView>
 ```
 
-# count down function from by passing an end date
+#### count down function from by passing an end date
 ```javascript
 function countdown(endDate, callback) {
     let timeoutId; // Variable to store the timeout ID
@@ -498,7 +498,7 @@ countdown(endDate, () => {
 });
 ```
 
-# regex expression to extract date, eg: 1-5 weeks, 1-12 months, 1-5 years,1-30 days, today, and tomorrow, from string
+#### regex expression to extract date, eg: 1-5 weeks, 1-12 months, 1-5 years,1-30 days, today, and tomorrow, from string
 ```javascript
   const inputString = "I plan to complete the task in 2 week";
   const regexPattern =
@@ -514,7 +514,7 @@ countdown(endDate, () => {
   }
 ```
 
-# fix: contentible div(input) cursor caret moves to the begining of the text box, when text is updated (state)
+#### fix: contentible div(input) cursor caret moves to the begining of the text box, when text is updated (state)
 ```javascript
     contentEditableDiv.addEventListener("input", function (event) {
    const updatedValue = contentEditableDiv.textContent;
@@ -537,7 +537,7 @@ countdown(endDate, () => {
 ```
 
 
-# change focus of input to another input in an input list array
+#### change focus of input to another input in an input list array
 ```javascript
   const handleNew = () => {
     setState((prev) => [...prev, { time: Date.now() }]);
@@ -572,7 +572,7 @@ countdown(endDate, () => {
   />
 ```
 
-# get updated value of html element with contentible="true"
+#### get updated value of html element with contentible="true"
 ```javascript
   useEffect(() => {
     setTimeout(() => {
@@ -598,12 +598,12 @@ countdown(endDate, () => {
     </Box>
 ```
 
-# import react component into a different web app
+#### import react component into a different web app
 ```
 https://javascript.plainenglish.io/how-to-share-and-reuse-react-components-to-build-apps-faster-4b3b0b542798#:~:text=We%20can%20use%20the%20bit,That's%20it.
 ```
 
-# filter/ compare data from another array
+#### filter/ compare data from another array
 ```javascript
 //filter product, where you dont want each pro in array2
   products={data?.findProducts?.data?.filter(
@@ -611,7 +611,7 @@ https://javascript.plainenglish.io/how-to-share-and-reuse-react-components-to-bu
   )}
 ```
 
-# debounce input onChange from rerendering the whole component, for every character added
+#### debounce input onChange from rerendering the whole component, for every character added
 ```javascript
 import {  useDebouncedCallback } from 'use-debounce';
 
@@ -629,20 +629,20 @@ import {  useDebouncedCallback } from 'use-debounce';
   }}
 ```
 
-# get all state and cities/city in Nigeria
+#### get all state and cities/city in Nigeria
 ```
 https://github.com/chukaofili/states-cities-db
 yarn add states-cities-db
 
 ```
-# get country, state and city in the world
+#### get country, state and city in the world
 ```
 npm i react-country-state-city
 ```
 
-# React google search location, to get logitude and latitude and google location
+#### React google search location, to get logitude and latitude and google location
 
-### if you're putting it in a modal, these zIndex must be present, else, it would come out, at the back of the modal
+##### if you're putting it in a modal, these zIndex must be present, else, it would come out, at the back of the modal
 ```javascript
  <Modal
 	zIndex="1051 !important"
@@ -702,13 +702,13 @@ import { usePlacesWidget } from "react-google-autocomplete";
 ```
 
 
-# how to get props of a child component
+#### how to get props of a child component
 ```javascript
   let r = Children?.map(props?.children, (child) => child?.props);
   console.log(r?.[0]?.products, '))111');
 ```
 
-# add commas to sting price value
+#### add commas to sting price value
 ```javascript
 let text = 
  onChangeText={(text) => setPrice(text?.replace(',', '').replace(/\B(?=(\d{3})+\b)/g, ','))}
@@ -716,7 +716,7 @@ let text =
 //.replace(/\B(?=(\d{3})+\b)/g, ',') // add comma into every last 3 digits
 ```
 
-# you want to convert item value in an object to integer base on the key list
+#### you want to convert item value in an object to integer base on the key list
 ```javascript
 const itemsToConvert = { "price": true };
 
@@ -743,7 +743,7 @@ console.log(newData);
 ```
 
 
-# reduce/reformat data
+#### reduce/reformat data
 ```javascript
 const data = [
   { "Length": { "price": "2", "quantity": "5", "value": "1cm" } },
@@ -772,7 +772,7 @@ console.log(reducedData);
 }
 ```
 
-# git clone fail:RPC failed; curl 18 transfer closed with outstanding read data remaining
+#### git clone fail:RPC failed; curl 18 transfer closed with outstanding read data remaining
 ```
 git clone http://github.com/large-repository --depth 1
 
@@ -780,7 +780,7 @@ https://stackoverflow.com/questions/38618885/error-rpc-failed-curl-transfer-clos
 
 ```
 
-# best react native keyboard aware scroll view
+#### best react native keyboard aware scroll view
 ```javascript
 react-native-keyboard-aware-scroll-view npm
 
@@ -793,55 +793,55 @@ react-native-keyboard-aware-scroll-view npm
 
 ```
 
-# fix github, different commit histories
+#### fix github, different commit histories
 ```
 git merge develop --allow-unrelated-histories
 ```
 
-#  how to remove large file from local .git/cache git
-###  add the folder location => remove every jar extension it the folder
+####  how to remove large file from local .git/cache git
+#####  add the folder location => remove every jar extension it the folder
 ```javascript
 //get list of huge files, default list length is 10, can be increased
 git rev-list --objects --all | grep -f <(git verify-pack -v  .git/objects/pack/*.idx| sort -k 3 -n | cut -f 1 -d " " | tail -10)
 
 git filter-branch --index-filter 'git rm --cached --ignore-unmatch android/gradle/caches/jars-9/*jar' --tag-name-filter cat -- --all
 ```
-### remove the folder and every file/folder inside it
+##### remove the folder and every file/folder inside it
 ```javascript
 git filter-branch --index-filter 'git rm -r --cached --ignore-unmatch android/gradle/caches/jars-9' --tag-name-filter cat -- --all
 ```
-### Once this is done run the following commands to clean up the local repository:
+##### Once this is done run the following commands to clean up the local repository:
 ```javascript
 rm -rf .git/refs/original/
 git reflog expire --expire=now --all
 git gc --prune=now
 git gc --aggressive --prune=now
 ```
-### Now push all the changes to the remote repository:
+##### Now push all the changes to the remote repository:
 ```javascript
 git push --all --force
 ```
 
-# how to remove/clear all git commit history
+#### how to remove/clear all git commit history
 ```
 https://xebia.com/blog/deleting-your-commit-history/
 ```
 
 
-# fix react native path issue: ReactNative can't locate Android SDK
+#### fix react native path issue: ReactNative can't locate Android SDK
 ```
 https://stackoverflow.com/questions/62797240/reactnative-cant-locate-android-sdk
 https://kashanhaider.com/set-up-android-environment-variables-on-macos/
 ```
 
-# git error: RPC failed; curl transfer closed with outstanding read data remaining
+#### git error: RPC failed; curl transfer closed with outstanding read data remaining
 ```
 git clone https://github.com/Zillight-Innovation-Labs/fixmeet.git --depth 1
 https://stackoverflow.com/questions/38618885/error-rpc-failed-curl-transfer-closed-with-outstanding-read-data-remaining
 ```
 
 
-# create invoice with html and jspdf
+#### create invoice with html and jspdf
 ```javascript
 import { jsPDF } from "jspdf";
 
@@ -864,12 +864,12 @@ const download = () => {
   };
 ```
 
-# fix SSH git issue
+#### fix SSH git issue
 ```css
 https://dev.classmethod.jp/articles/fix-gitgithub-com-permission-denied-publickey-fatal-could-not-read-from-remote-repository/
 ```
 
-# React native: how to render svg icons
+#### React native: how to render svg icons
 ```javascript
 import { createIcon } from 'native-base';
 import { Path, G } from 'react-native-svg';
@@ -904,7 +904,7 @@ export const Email = (props: any) => {
 );
 ```
 
-# how to get element width and height without padding, margin , border box
+#### how to get element width and height without padding, margin , border box
 ```javascript
 const innerDimensions = (node) => {
     var computedStyle = getComputedStyle(node);
@@ -929,7 +929,7 @@ const innerDimensions = (node) => {
   }, []);
 ```
 
-# filter by start date and end date
+#### filter by start date and end date
 ```javascript
     const filterByDate = DBdata?.filter((data) => {
       const dataDate = data?.startDate || data?.date;
@@ -955,7 +955,7 @@ const innerDimensions = (node) => {
       return check1 && check2;
     });
 ```
-# add custom drop down arrow on select element
+#### add custom drop down arrow on select element
 ```javascript
   let dropDownSvg = `<svg width="18" height="10" viewBox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M7.79943 9.59891C8.51077 10.1328 9.48923 10.1328 10.2006 9.59891L17.1945 4.34957C18.7314 3.19603 17.9156 0.75 15.9939 0.75H2.00606C0.0844002 0.75 -0.731424 3.19603 0.805498 4.34957L7.79943 9.59891Z" fill="#F98614"/>
@@ -979,7 +979,7 @@ const innerDimensions = (node) => {
 ```
 
 
-# React native: install cocoapods with brew and do pod install
+#### React native: install cocoapods with brew and do pod install
 ```
 I love u all!
 I had the same issue on Mac, installing a react-native 0.60 and node 10.24.1 project builded and published on 2019, and nobody made maintenance...
@@ -999,7 +999,7 @@ brew install cocoapods
 brew link --overwrite cocoapods
 ```
 
-# loop call function(s), x number of times quietly, not greater than the max tries
+#### loop call function(s), x number of times quietly, not greater than the max tries
 ```javascript
  let count = 0;
 let maxTries = 3;
@@ -1016,7 +1016,7 @@ while (true) {
 ```
 
 
-# React native: border radius
+#### React native: border radius
 ```javascript
  <Flex
   mt={5}
@@ -1031,7 +1031,7 @@ while (true) {
 >
 ```
 
-# React native: access navigation, to go back or to a different route
+#### React native: access navigation, to go back or to a different route
 ```javascript
 // it is automatically in the props
 function HomeScreen({ navigation }) {...
@@ -1042,7 +1042,7 @@ function HomeScreen({ navigation }) {...
 
 ```
 
-# React native: safe screen area, so text don't go off the top of the screen
+#### React native: safe screen area, so text don't go off the top of the screen
 ```javascript
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
@@ -1061,7 +1061,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
     ></View>
 ```
 
-# React native: load fonts
+#### React native: load fonts
 ```javascript
 import { useFonts } from "expo-font";
 
@@ -1119,7 +1119,7 @@ const [fontsLoaded] = useFonts({
   <NativeBaseProvider theme={theme}></NativeBaseProvider>
 ```
 
-# React native: tab navigation
+#### React native: tab navigation
 ```javascript
 A simple tab bar on the bottom of the screen that lets you switch between different routes. Routes are lazily initialized -- their screen components are not mounted until they are first focused.
 https://reactnavigation.org/docs/bottom-tab-navigator
@@ -1237,7 +1237,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
     </Tab.Navigator>
 ```
 
-# React native: stack navigation
+#### React native: stack navigation
 ```javascript
 Stack Navigator provides a way for your app to transition between screens where each new screen is placed on top of a stack.
 https://reactnavigation.org/docs/stack-navigator
@@ -1288,7 +1288,7 @@ const Stack = createNativeStackNavigator();
 ```
 
 
-# React native: Load svg image
+#### React native: Load svg image
 ```javascript
 import { SvgXml } from "react-native-svg";
 
@@ -1301,7 +1301,7 @@ import { SvgXml } from "react-native-svg";
 
 
 ```
-# React native: tab navigation
+#### React native: tab navigation
 ```javascript
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
@@ -1418,7 +1418,7 @@ const Tab = createBottomTabNavigator();
     </Tab.Navigator>
 ```
 
-# React native: load lottie animation
+#### React native: load lottie animation
 ```javascript
 import LottieAnimate from "./LottieAnimate";
 
@@ -1482,14 +1482,14 @@ function LottieAnimate({ play = null, source, ...props }) {
 export default memo(LottieAnimate);
 ```
 
-# expo project quick start
+#### expo project quick start
 ```javascript
  npx create-expo-app my-app
 
 npm run andriod/ios/web
 ```
 
-# custom ionic react tab
+#### custom ionic react tab
 ```javascript
 <IonTabButton tab="tab1" href="/tab1">
             <IonIcon icon={home} className="selected"></IonIcon>
@@ -1511,7 +1511,7 @@ npm run andriod/ios/web
 }
 ```
 
-# business logic to check if it's the scheduled date and also check if the scheduled date/time has elapsed/passed
+#### business logic to check if it's the scheduled date and also check if the scheduled date/time has elapsed/passed
 ```javascript
 //checking date and time, if it is the scheduled date
   const isScheduledDate = () => {
@@ -1546,7 +1546,7 @@ const scheduleDateHasPassed = () => {
   };
 ```
 
-# show changing/updating time, in real time
+#### show changing/updating time, in real time
 ```javascript
 const timeElement = document.getElementById("clock");
 
@@ -1567,7 +1567,7 @@ updateTime();
 setInterval(updateTime, 1000);
 ```
 
-# auto play video, with/without controls
+#### auto play video, with/without controls
 ```javascript
   <video
     className="video-showcase"
@@ -1589,16 +1589,16 @@ setInterval(updateTime, 1000);
 ```
 
 
-# Embed a dropbox video, using embed code
+#### Embed a dropbox video, using embed code
 ```css
 https://support.whatfix.com/docs/embedding-a-dropbox-video-using-embed-code
 
 Helpful, but what worked for me was to leave text after the ? and add ?raw=1
 ```
 
-# login, register/sign up, forgot/reset password code, for Firebase
+#### login, register/sign up, forgot/reset password code, for Firebase
 
-## frontend code
+##### frontend code
 ```javascript
   const [formValues, setFormValues] = useState({});
   const { fullName, email, password, confirmPassword } = formValues || {};
@@ -1655,7 +1655,7 @@ Helpful, but what worked for me was to leave text after the ? and add ?raw=1
     }
   };
 ```
-## backend code
+##### backend code
 ```javascript
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
@@ -1735,14 +1735,14 @@ const logout = () => {
 };
 ```
 
-# linear gradient on text
+#### linear gradient on text
 ```css
    background="linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(115,230,202,1) 58%)"
     backgroundClip="text"
    textFillColor="transparent"
 ```
 
-# scroll down to bottom of div when text/chat/<p/> is added
+#### scroll down to bottom of div when text/chat/<p/> is added
 ```javascript
   const [chatBoxRef, setChatBoxRef] = useState(null);
 
@@ -1778,14 +1778,14 @@ const logout = () => {
 </Stack>
 ```
 
-# cache website resources
+#### cache website resources
 ```javascript
 implementing a service worker for caching website resources, enabling offline functionality and improved performance for returning visitors
 
 https://web.facebook.com/photo/?fbid=323366160542162&set=gm.7144751595576025&idorvanity=411741268877125
 ```
 
-# how to remove empty object values from object list
+#### how to remove empty object values from object list
 ```javascript
 //{"color": {}, "qwert": {"ed": "e4"}}
 
@@ -1800,7 +1800,7 @@ https://web.facebook.com/photo/?fbid=323366160542162&set=gm.7144751595576025&ido
 // result: {"qwert": {"ed": "e4"}}
 ```
 
-# you can map/loop through object
+#### you can map/loop through object
 ```javascript
 
 for (let x in {one: 1, two: 2) {
@@ -1808,14 +1808,14 @@ for (let x in {one: 1, two: 2) {
     }
 ```
 
-# Add one month to date to get the future end date (subscription)
+#### Add one month to date to get the future end date (subscription)
 ```javascript
 import { addMonths } from "https://cdn.jsdelivr.net/npm/date-fns/+esm";
 
   const FutureSubscriptionEndDate = addMonths(new Date(created_at),1);
 ```
 
-# to convert data url to image
+#### to convert data url to image
 ```javascript
  const imgUrl = `data:image/png;base64, ${preview}`;
 
@@ -1823,7 +1823,7 @@ import { addMonths } from "https://cdn.jsdelivr.net/npm/date-fns/+esm";
 
 ```
 
-# base64 string to image file
+#### base64 string to image file
 ```javascript
 
   var reader = new FileReader();
@@ -1837,7 +1837,7 @@ import { addMonths } from "https://cdn.jsdelivr.net/npm/date-fns/+esm";
 ```
 
 
-# How to get browser width, when user resizes his/her browser
+#### How to get browser width, when user resizes his/her browser
 ```javascript
   const [windowSize, setWindowSize] = useState<number | null>(null);
 
@@ -1850,7 +1850,7 @@ import { addMonths } from "https://cdn.jsdelivr.net/npm/date-fns/+esm";
   }, []);
 ```
 
-# How to create custom element width length
+#### How to create custom element width length
 ```css
 //also apply to custom height
 
@@ -1861,7 +1861,7 @@ import { addMonths } from "https://cdn.jsdelivr.net/npm/date-fns/+esm";
     border-image: linear-gradient(to right, #000 50%, rgba(0,0,0,0) 50%); // to (right/top), then increase/reduce 50%
     border-image-slice: 1;
 ```
-# How to create a custom progress pie round border with custom fill background color
+#### How to create a custom progress pie round border with custom fill background color
 ```javascript
 
 import {
@@ -1965,7 +1965,7 @@ import { BiBowlRice } from "react-icons/bi";
 
 ```
 
-# How to create a progress pie round border with Rechart
+#### How to create a progress pie round border with Rechart
 ```javascript
 
   const data = [{ name: "L1", value: 49 }];
@@ -2044,7 +2044,7 @@ import { BiBowlRice } from "react-icons/bi";
     </>
   );
 ```
-# how to create a circle/round hole border, pie border, with a div & css
+#### how to create a circle/round hole border, pie border, with a div & css
 ```javascript
 
  <style>
@@ -2086,7 +2086,7 @@ import { BiBowlRice } from "react-icons/bi";
    </div>
 
 ```
-# logic to group message in chat, by hiding the avatar
+#### logic to group message in chat, by hiding the avatar
 ```javascript
   {/* if the author of the previous message is same with the current one, then hide the avatar,
              we have the same user then, and only show the chat */}
@@ -2100,7 +2100,7 @@ import { BiBowlRice } from "react-icons/bi";
           <Stack ml="35px" />
         )}
 ```
-# copy to clip board
+#### copy to clip board
 ```javascript
 const copyToClipboard = (text) => {
   navigator.clipboard.writeText(text).then(
@@ -2115,7 +2115,7 @@ const copyToClipboard = (text) => {
 };
 ```
 
-# To center an element both vertically and horizontally:
+#### To center an element both vertically and horizontally:
 ```javascript
  position: absolute;
   left: 0;
@@ -2125,7 +2125,7 @@ const copyToClipboard = (text) => {
   margin: auto;
 ```
 
-# to animate the recently added item/object in an array
+#### to animate the recently added item/object in an array
 ```javascript
 /you must give the object an id, so react would know which to update, and not rerender everything
   <motion.div
@@ -2139,7 +2139,7 @@ animate={{ scale: 1 }}
  <p key={i}>{l}</p>
 </motion.div>
 ```
-# to render just enough to fill the viewport, and not all the list, (virtualized list)
+#### to render just enough to fill the viewport, and not all the list, (virtualized list)
 ```javascript
 //React window works by only rendering part of a large data set (just enough to fill the viewport).
 https://react-window.vercel.app/#/examples/list/fixed-size
@@ -2176,7 +2176,7 @@ const Example = () => (
 );
 ```
 
-#  dynamically import font 
+####  dynamically import font 
 ```javascript
   {/* dynamically import font.
       map font list and return url string, without commas (by using the join(" ")).
@@ -2205,7 +2205,7 @@ const Example = () => (
       />
 ```
 
-# to get html element by position/x/y axis
+#### to get html element by position/x/y axis
 ```javascript
 
   // use effect is so that after component has mounted else you will get null or undefined from currentPosition
@@ -2229,11 +2229,11 @@ const Example = () => (
 
 ```
 
-# best react native chart library
+#### best react native chart library
 ```javascript
 https://gifted-charts.web.app/barchart
 ```
-# to revert to pervious commit
+#### to revert to pervious commit
 ```javascript
 git log --oneline  // shows all your commit with their unique IDs
 
@@ -2241,7 +2241,7 @@ git reset 5914db0  // to revert back to code with a commit of ID 5914db0
 
 ```
 
-# filtering table data
+#### filtering table data
 ```javascript
  <Filter
   filters={["name", "tel", "add"]} // data you want to filter
@@ -2313,8 +2313,8 @@ export const filterFunc = (data, filterBy) =>
 ```
 
 
-# to use the url for state management to avoid prop drilling
-## https://localhost:3000/movies?page=3&rowsCount=10
+#### to use the url for state management to avoid prop drilling
+##### https://localhost:3000/movies?page=3&rowsCount=10
 
 ```javascript
 const [searchParams, setSearchParams]= useSearchParams()
@@ -2322,17 +2322,17 @@ const rowCount = searchParams.get("rowsCount")
 const page = searchParams.get("page")
 ```
 
-# to get next page (pagination) from backend,
+#### to get next page (pagination) from backend,
 ```javascript
   const page = skip * limit=20;
 ```
 
 
-# to fix flex box items (children) with different heights (fitting the content)
+#### to fix flex box items (children) with different heights (fitting the content)
 ```css
 align-items: "initial"
 ```
-# how to filter or get unique items or data, and access object in an object
+#### how to filter or get unique items or data, and access object in an object
 <img width="847" alt="Screenshot 2024-01-23 at 1 25 42 PM" src="https://github.com/osaze12/Project-code-notes/assets/68048008/fb7243ba-1fbc-4257-a6e0-c2ff916f9a2e">
 
 ```javascript
@@ -2355,7 +2355,7 @@ const unique = (list) => {
 console.log( unique([{request:{truckType:""}]).map(...))
 ```
 
-# Access object in another object using the dot notation
+#### Access object in another object using the dot notation
 ```javascript
 var r = { a:1, b: {b1:11, b2: 99}};
 var s = "b.b2";
@@ -2365,7 +2365,7 @@ var value = s.split('.').reduce((a, b) => a[b], r);
 console.log(value);
 ```
 
-# to customize React video player
+#### to customize React video player
 ```javascript
 //Use the playIcon prop for the play button. This can be a JSX element.
 //Pass the poster image URL to light prop.
@@ -2383,7 +2383,7 @@ import ReactPlayer from "react-player";
 />
 ```
 
-# reduce array of objects into one object
+#### reduce array of objects into one object
 ```javascript
  const specificationList =  [{"key": "Weight", "value": "ww"}, {"key": "Length", "value": "12w"}]
  const object = specificationList.reduce(
@@ -2395,7 +2395,7 @@ import ReactPlayer from "react-player";
     );
 ```
 
-# filter out duplicate from an array with object
+#### filter out duplicate from an array with object
 ```javascript
 info
 .filter(
@@ -2407,19 +2407,19 @@ info
 ))
 
 ```
-# center element with transform
+#### center element with transform
 ```css
     transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
 ```
 
-# stop height value from being more than the view height number(100vh++) on any screen size
+#### stop height value from being more than the view height number(100vh++) on any screen size
 ```css
    maxHeight: `calc(screen.height.toString() - ${(screen.height - 100).toString()})`,
 ```
 
-# Generate random values from list without duplicate
+#### Generate random values from list without duplicate
 ```javascript
 let _COLORS =['#e6194b', '#3cb44b', '#ffe119', '#4363d8', '#f58231', '#911eb4', '#46f0f0', '#f032e6', '#bcf60c', '#fabebe', '#008080', '#e6beff', '#9a6324', '#fffac8', '#800000', '#aaffc3', '#808000', '#ffd8b1', '#000075', '#808080', '#ffffff', '#000000']
 
@@ -2457,7 +2457,7 @@ _COLORS?.[generateUniqueRandom()];
 console.log('Unique random numbers:' ,haveIt);
 ```
 
-# How to make un-equal image's width and height equal
+#### How to make un-equal image's width and height equal
 ```css
 .photos img {
 	width: 15%;
@@ -2466,7 +2466,7 @@ console.log('Unique random numbers:' ,haveIt);
 	mix-blend-mode: color-burn;
 }
 ```
-# best easy web worker library
+#### best easy web worker library
 ```javascript
 import workerize from "workerize";
 
@@ -2496,7 +2496,7 @@ let worker = workerize(`
     })();
   }, []);
 ```
-# mobile hambuger navigation
+#### mobile hambuger navigation
 ```javascript
 import { Box, Flex, Text } from "@chakra-ui/react";
 import { useState } from "react";
@@ -2562,7 +2562,7 @@ export default MobileHamBugerNav;
 
 ```
 
-# scroll to top
+#### scroll to top
 ```javascript
   useEffect(() => {
     document.body.scrollTop = 0; // For Safari
@@ -2570,7 +2570,7 @@ export default MobileHamBugerNav;
   }, []);
 ```
 
-# truncate text
+#### truncate text
 ```javascript
 export const trunc = (text, length = 10, showDot = true) => {
   if (!text) return "";
@@ -2580,9 +2580,9 @@ export const trunc = (text, length = 10, showDot = true) => {
 
 ```
 
-# to add font family to react app from asset folder/google font
+#### to add font family to react app from asset folder/google font
 
-# from asset folder
+#### from asset folder
 ```javascript
 @font-face {
   font-family: Trenda-regular;
@@ -2608,7 +2608,7 @@ body {
 }
 ```
 
-# from google font
+#### from google font
 ```html
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
@@ -2616,7 +2616,7 @@ body {
     />
 ```
 
-# Add font family to chakra provider
+#### Add font family to chakra provider
 ```javascript
 const theme = extendTheme({
   initialColorMode: "light",
@@ -2632,7 +2632,7 @@ const theme = extendTheme({
 });
 ```
 
-# to get the title or text or option name of the select option
+#### to get the title or text or option name of the select option
 ```javascript
   onChange={(e) => {
   console.log(
@@ -2641,7 +2641,7 @@ const theme = extendTheme({
   );
 ```
 
-# set up google analytics
+#### set up google analytics
 ```javascript
 import ReactGA from "react-ga";
 
@@ -2691,7 +2691,7 @@ const handleClickPhone = () => {
 </Button>
 ```
 
-# Add csv button and functionality
+#### Add csv button and functionality
 ```javascript
 import { creatCsvFile, downloadFile } from "download-csv";
 
@@ -2718,7 +2718,7 @@ import { creatCsvFile, downloadFile } from "download-csv";
   };
 ```
 
-# Area chart customization (REChart)
+#### Area chart customization (REChart)
 ```javascript
 const data = [
   {
@@ -2799,7 +2799,7 @@ export default function App() {
     </AreaChart>
   );
 ```
-# more chart customization with shadow, custom tooltip (Rechart)
+#### more chart customization with shadow, custom tooltip (Rechart)
 ```javascript
 
  <LineChart
@@ -2922,12 +2922,12 @@ export const CustomToolbarContent = ({ payload }) => {
 };
 ```
 
-# how to undo merge
+#### how to undo merge
 ```html
 https://www.freecodecamp.org/news/git-undo-merge-how-to-revert-the-last-merge-commit-in-git/
 ```
 
-# download file from link
+#### download file from link
 ```javascript
   const downloadURI = async (url, filename) => {
     const data = await fetch(url);
@@ -2948,7 +2948,7 @@ https://www.freecodecamp.org/news/git-undo-merge-how-to-revert-the-last-merge-co
   };
 ```
 
-# cover letter
+#### cover letter
 ```html
 Hello,
 I am applying for this job because I met some criteria, and our mission or goals align.
@@ -2960,22 +2960,22 @@ I've built a product, called In-cert, which helps people generate 100s of digita
 I've also built a react library, which helps developers create a fully functional form with just 5 lines of code, here's a link, https://www.npmjs.com/package/@osaze12/bootstrapped-form
 ```
 
-# if you're having issues with react showing error when it tries building the app on AWS/other platform
-# add --openssl-legacy-provider to your package.json file
+#### if you're having issues with react showing error when it tries building the app on AWS/other platform
+#### add --openssl-legacy-provider to your package.json file
 ```javascript
   "start": "react-scripts start --openssl-legacy-provider",
 ```
-# Clone from a specific branch on github
+#### Clone from a specific branch on github
 ```javascipt
 git clone --branch <branchname> <remote-repo-url>
 or git clone -b <branchname> <remote-repo-url>
 ```
 
-# Good stripe tutorial
+#### Good stripe tutorial
 ```
 https://linguinecode.com/post/integrate-stripe-payment-form-with-react
 ```
-# Make ids from just alphabeth
+#### Make ids from just alphabeth
 ```javascript
 function makeid(length) {
     let result = '';
@@ -2991,7 +2991,7 @@ function makeid(length) {
 //makeid(5)
 ```
 
-# Format bytes
+#### Format bytes
 ```javascript
 function formatBytes(bytes, decimals = 2) {
     if (!+bytes) return '0 Bytes'
@@ -3014,7 +3014,7 @@ formatBytes(1234, 3)    // 1.205 KB
 formatBytes(0)          // 0 Bytes
 formatBytes('0')        // 0 Bytes
 ```
-# remove array of array
+#### remove array of array
 ```javascript
 var arrays = [
   ["$6"],
@@ -3031,7 +3031,7 @@ console.log(merged);
 
 ```
 
-# Remove duplicate from an array
+#### Remove duplicate from an array
 ```javascript
 // usage example:
 var myArray = ['a', 1, 'a', 2, '1'];
@@ -3039,7 +3039,7 @@ var unique = myArray.filter((v, i, a) => a.indexOf(v) === i);
 
 console.log(unique); // unique is ['a', 1, 2, '1']
 ```
-# Plot graph with custom numbers
+#### Plot graph with custom numbers
 ```javascript
 export const MyGraph = ({ data }) => {
   const { labels, datasets } = data || {};
@@ -3105,7 +3105,7 @@ export const MyGraph = ({ data }) => {
   );
 };
 ```
-## BarChart.jsx
+##### BarChart.jsx
 ```javascript
 const BarChart = ({ doctorEarningByService }) => {
 
@@ -3201,7 +3201,7 @@ const BarChart = ({ doctorEarningByService }) => {
 };
 ```
 
-# Respond when a user leaves the screen
+#### Respond when a user leaves the screen
 ```javascript
   useEffect(() => {
     document.addEventListener("visibilitychange", () => {
@@ -3209,7 +3209,7 @@ const BarChart = ({ doctorEarningByService }) => {
     });
   }, []);
 ```
-# Take a live photo from webcam and save photo file
+#### Take a live photo from webcam and save photo file
 
 ```javascript
  useEffect(() => {
@@ -3311,7 +3311,7 @@ const BarChart = ({ doctorEarningByService }) => {
     </Stack>
 ```
 
-# Record a live video with a stop timer & save video file 
+#### Record a live video with a stop timer & save video file 
 ```javascript
  useEffect(() => {
     if (!props?.openModal?.open) return;
@@ -3458,7 +3458,7 @@ const BarChart = ({ doctorEarningByService }) => {
     </Stack>
 ```
 
-# How to add svg image directly to css
+#### How to add svg image directly to css
 ```javascript
 
 link to icons https://fontawesomeicons.com/svg/icons/circle-chevron-left
@@ -3483,17 +3483,17 @@ link to icons https://fontawesomeicons.com/svg/icons/circle-chevron-left
   background: url(data:image/svg+xml;base64,${p});
  `
 ```
-# Dots animations
+#### Dots animations
 ```
 https://codepen.io/nzbin/pen/GGrXbp
 ```
 
-# Center an absolute item
+#### Center an absolute item
 ```
 https://stackoverflow.com/questions/7720730/how-to-align-absolutely-positioned-element-to-center#:~:text=If%20you%20set%20both%20left,center%20an%20absolutely%20positioned%20element.
 ```
 
-# Convert Blob to file
+#### Convert Blob to file
 ```javascript
 function blobToFile(theBlob, fileName){
     //A Blob() is almost a File() - it's just missing the two properties below which we will add
@@ -3509,7 +3509,7 @@ var myBlob = new Blob();
 var myFile = blobToFile(myBlob, "my-image.png");
 ```
 
-# take live photo
+#### take live photo
 Link to tutorial (video) == https://usefulangle.com/post/354/javascript-record-video-from-camera
 Link to tutorial (photo) == https://usefulangle.com/post/352/javascript-capture-image-from-camera
 
@@ -3559,7 +3559,7 @@ Link to tutorial (photo) == https://usefulangle.com/post/352/javascript-capture-
   
  
 ```
-### the html code
+#### the html code
 ```html
  <video
             style={{ border: "1px solid red", height: "300px" }}
@@ -3598,7 +3598,7 @@ Link to tutorial (photo) == https://usefulangle.com/post/352/javascript-capture-
 ```
 
 
-# Formatting number to have 1k, 2.5M
+#### Formatting number to have 1k, 2.5M
 ```javascript
   function nFormatter(num) {
     if (num >= 1000000000) {
@@ -3614,7 +3614,7 @@ Link to tutorial (photo) == https://usefulangle.com/post/352/javascript-capture-
   }
 ```
 
-# Do something when video has loaded
+#### Do something when video has loaded
 ```javascript
  useEffect(() => {
     if (isVideo === false) return;
@@ -3634,7 +3634,7 @@ Link to tutorial (photo) == https://usefulangle.com/post/352/javascript-capture-
   }, [isVideo]);
 ```
 
-# My details
+#### My details
 ```
 My name is Osaze Agbi, I’m from Nigeria
 I’m a frontend engineer, focused in react library, I have been building frontend app/ library for 4 years now, all through the years I have gain skill and tricks that many people are not aware of, and may not be easily find on the internet, which I will be teaching if I’m chosen
@@ -3650,24 +3650,24 @@ This is a link to my portfolio where you would be able to see what I have create
 ```
 
 
-# How to preserve line breaks from text areas to p tag, just add that to p tag
+#### How to preserve line breaks from text areas to p tag, just add that to p tag
 ```css
 white-space: pre-wrap;
 ```
 
-# Add dark background on image
+#### Add dark background on image
 ```css
   background:`linear-gradient(90deg, rgb(0 0 0 / 63%) 0%, rgb(0 0 0 / 63%) 51%), url(${previewImg})`
 ```
 
-# if .gitignore isnt ignoring your file/folders
+#### if .gitignore isnt ignoring your file/folders
 ```
 Just remove the initial git configuration from your folder by rm -rf .git. 
 Use the created .gitignore file and add all the file you want to add. 
 Then reinitialize the git configuration in your folder with git init. This will solve your problem.
 ```
 
-# error with socket IO chat failing 
+#### error with socket IO chat failing 
 ```
 WebSocket connection failed: Error during WebSocket handshake: Unexpected response code: 400
 ______
@@ -3677,7 +3677,7 @@ https://stackoverflow.com/questions/41381444/websocket-connection-failed-error-d
 
 ```
 
-# play a sound when notification arrives
+#### play a sound when notification arrives
 ```javascript
    socketClient.on("in-app-notification", (data) => {
       //play sound when a new notification comes in
@@ -3686,7 +3686,7 @@ https://stackoverflow.com/questions/41381444/websocket-connection-failed-error-d
     });
 ```
 
-# how to get the width of an html element
+#### how to get the width of an html element
 ```javascript
   useEffect(() => {
     let p = document.getElementsByClassName("zz")[0];
@@ -3695,14 +3695,14 @@ https://stackoverflow.com/questions/41381444/websocket-connection-failed-error-d
 
 ```
 
-# convert px to number
+#### convert px to number
 ```javascript
  parseFloat("12px")
  parseInt("12px")
 ```
 
 
-# Customize website's scrollbar like Mac OS (doesnt hide scroll on leave)
+#### Customize website's scrollbar like Mac OS (doesnt hide scroll on leave)
 ```css
 body::-webkit-scrollbar-track, .scroll-container::-webkit-scrollbar-track {
   border-radius: 10px;
@@ -3720,7 +3720,7 @@ body::-webkit-scrollbar-thumb, .scroll-container::-webkit-scrollbar-thumb {
 }
 ```
 
-# scroll to bottom smoothly
+#### scroll to bottom smoothly
 ```javascript
   //auto scroll to bottom
   document
@@ -3751,7 +3751,7 @@ observer.observe(someElement, config);
     setInterval(updateScroll, 100);
 ```
 
-#  Customize website's scrollbar like Mac OS (hide scroll on leave)
+####  Customize website's scrollbar like Mac OS (hide scroll on leave)
 ```css
 
  body{
@@ -3797,7 +3797,7 @@ body::-webkit-scrollbar-track-piece:start, .scroll-container::-webkit-scrollbar-
 ```
 
 
-# project you have built
+#### project you have built
 ```
 I've built software solutions that cut across Education, E-commerce, Health care, e.t.c for companies.
 
@@ -3841,7 +3841,7 @@ Lead
 And many other project...
 ```
 
-# To observe changes of an html element, e.g the div width
+#### To observe changes of an html element, e.g the div width
 ```javascript
 
   useEffect(() => {
@@ -3865,7 +3865,7 @@ And many other project...
   }, []);
 ```
 
-# convert image file e.target.files[0] to a base url
+#### convert image file e.target.files[0] to a base url
 ```javascript
 
  onChange={async (e) => {
@@ -3885,7 +3885,7 @@ const readURL = file => {
 };
 ```
 
-# scroll to a particular position/box using the id
+#### scroll to a particular position/box using the id
 ```javascript
 import { ScrollMenu} from "react-horizontal-scrolling-menu";
 
@@ -3945,7 +3945,7 @@ import { ScrollMenu} from "react-horizontal-scrolling-menu";
 ```
 
 
-# Cover letter
+#### Cover letter
 ```
 I've built software solutions that cut across Ecommerce, Healthcare, etc. 
 I've gained the required experience to add value to the company, the following below are some of the project i've worked on:
@@ -3956,7 +3956,7 @@ And i've also attached my CV
 Hope to hear from you soon
 ```
 
-# If you have problem converting string to object using JSON.parse()
+#### If you have problem converting string to object using JSON.parse()
 ```javascript
 
   let jsonStr = String(r).replace(/(\w+:)|(\w+ :)/g, function (matchedStr) {
@@ -3966,7 +3966,7 @@ Hope to hear from you soon
     JSON.parse(jsonStr)
 ```
 
-# Convering string to array/object
+#### Convering string to array/object
 
 ```javascript
 let object = {"name": "osas"}
@@ -3975,9 +3975,9 @@ use eval(object) if JSON.parse(object) doesnt work
 ```
 
 
-# Create a persistent count down timer (store/save count down time to session/localstorage)
+#### Create a persistent count down timer (store/save count down time to session/localstorage)
 
-### Install react-countdown library
+#### Install react-countdown library
 ```javascript
 import Countdown from "react-countdown";
 ```
@@ -4096,7 +4096,7 @@ export default PersistentCountdownTimer;
 ```
 
 
-# WHEN IDLE FOR X SECONDS, SHOW A VIDEO, & WHEN THERE'S A MOUSE EVENT, RESTART THE COUNTER
+#### WHEN IDLE FOR X SECONDS, SHOW A VIDEO, & WHEN THERE'S A MOUSE EVENT, RESTART THE COUNTER
 ```javascript
   useEffect(() => {
     var IDLE_TIMEOUT = 15; //seconds
@@ -4121,9 +4121,9 @@ export default PersistentCountdownTimer;
   }, [isIdle]);
 ```
 
-# ASK USER FOR PERMISSION & SUBSCRIBE FOR PUSH NOTIFICATION SERVICE
+#### ASK USER FOR PERMISSION & SUBSCRIBE FOR PUSH NOTIFICATION SERVICE
 
-### In public folder, a created sw.js file
+##### In public folder, a created sw.js file
 ```javascript
 self.addEventListener("push", e => {
   const { title, description } = e?.data?.json() || {}
@@ -4139,7 +4139,7 @@ self.addEventListener("push", e => {
 
 ```
 
-### In App.js 
+##### In App.js 
 ```javascript
   //register service worker
   useEffect(() => {
@@ -4188,7 +4188,7 @@ self.addEventListener("push", e => {
     });
 ```
 
-# REACT CLONING REACT COMPONENT AND INJECTING DATA INTO IT
+#### REACT CLONING REACT COMPONENT AND INJECTING DATA INTO IT
 ```javascript
   <Box>
     {!Array.isArray(children)
@@ -4204,7 +4204,7 @@ self.addEventListener("push", e => {
   </Box>
 ```
 
-# SENDING CV FORMAT TO HR
+#### SENDING CV FORMAT TO HR
 ```
 Dear Hiring Manager,
 
@@ -4223,7 +4223,7 @@ Kind regards,
 (full name)
 ```
 
-# ["7:00 AM - 7:30 AM","7:30 AM - 8:00 AM","8:00 AM - 8:30 AM","8:30 AM - 9:00 AM","9:00 AM - 9:30 AM","9:30 AM - 10:00 AM"]
+#### ["7:00 AM - 7:30 AM","7:30 AM - 8:00 AM","8:00 AM - 8:30 AM","8:30 AM - 9:00 AM","9:00 AM - 9:30 AM","9:30 AM - 10:00 AM"]
 ```javascript
  const getTimes = (start, end, step = 30) => {
     const dt = new Date(`December 17, 1995 ${start}`);
@@ -4241,7 +4241,7 @@ Kind regards,
 
 console.log(getTimes('7:00 am', '10:00 am', "30"))
 ```
-# convert 12 hrs to 24 hrs
+#### convert 12 hrs to 24 hrs
 ```javascript
 const convertTime12to24 = (time12h) => {
   const [time, modifier] = time12h.split(' ');
@@ -4265,7 +4265,7 @@ console.log(convertTime12to24('12:00 PM'));
 console.log(convertTime12to24('12:00 AM'));
 ```
 
-# CONVERT 24 HRS TO 12 HRS
+#### CONVERT 24 HRS TO 12 HRS
 
 ```javascript
 function tConvert (time) {
@@ -4284,7 +4284,7 @@ tConvert ('18:00:00');
 ```
 
 
-# —CHANGING REACT-CALENDAR DAY VIEW & CUSTOM CONTROL LINK
+#### —CHANGING REACT-CALENDAR DAY VIEW & CUSTOM CONTROL LINK
 
 ```javascript
 <Calendar
@@ -4308,7 +4308,7 @@ tConvert ('18:00:00');
    
 ```
 
-# —TO GET ALL DAYS IN A MONTH
+#### —TO GET ALL DAYS IN A MONTH
 
   
   ```javascript
@@ -4339,7 +4339,7 @@ tConvert ('18:00:00');
 
 
 
-# —TO GET TIMES BASED ON THE START TIME AND END TIME, BUT NOT LESS THAN THE CURRENT TIME
+#### —TO GET TIMES BASED ON THE START TIME AND END TIME, BUT NOT LESS THAN THE CURRENT TIME
 
 //the last parameter, make sure users dont select time that is less than the specified datetime
 
@@ -4394,7 +4394,7 @@ tConvert ('18:00:00');
   ```
 —————————————————————————————————
 
-# —TO GET TIMES BASED ON THE START TIME AND END TIME
+#### —TO GET TIMES BASED ON THE START TIME AND END TIME
 
 ```javascript
   // const getTimes = (start, end, step = "30") => {
@@ -4411,7 +4411,7 @@ tConvert ('18:00:00');
 
 
 ————————————————————————————————————
-# — TO GROUP SIMILAR VALUES IN AN ARRAY
+#### — TO GROUP SIMILAR VALUES IN AN ARRAY
 
 ```javascript
 var cars = [{date: "2022-06-27"},{date: "2022-06-27"}, {date: "2022-06-28"}],
@@ -4431,18 +4431,18 @@ response=>
 ```
 
 ————————————————————————————————————
-# CUSTOM MONTH NAVIGATION RENDERER FOR REACT-DAY-PICKER
+#### CUSTOM MONTH NAVIGATION RENDERER FOR REACT-DAY-PICKER
 
 https://github.com/hypeserver/react-date-range/issues/222
 
 
-# selecting multiple dates on react calendar
+#### selecting multiple dates on react calendar
 ```javascript
 https://stackoverflow.com/questions/60446117/how-to-mark-particular-dates-in-react-calender
 ```
 ————————————————————————————————————
 
-# CHANGE NAV BACKGROUND COLOR WHEN SCROLL POSITION IS GREATER THAN X VALUE
+#### CHANGE NAV BACKGROUND COLOR WHEN SCROLL POSITION IS GREATER THAN X VALUE
 
 ```javascript
 
@@ -4461,7 +4461,7 @@ https://stackoverflow.com/questions/60446117/how-to-mark-particular-dates-in-rea
 
 ————————————————————————————————————
 
-# Base64 string to image file
+#### Base64 string to image file
 
 ```javascript
 
@@ -4476,19 +4476,19 @@ fetch(image)
 
 ————————————————————————————————————
 
-# Tutorial on web push
+#### Tutorial on web push
 10:58
 https://itnext.io/react-push-notifications-with-hooks-d293d36f4836
 
 ————————————————————————————————————
 
-# Good tutorial on push notification
+#### Good tutorial on push notification
 
  https://www.youtube.com/watch?v=HlYFW2zaYQM
 
 ————————————————————————————————————
 
-# Loading an image and getting width and height
+#### Loading an image and getting width and height
 
 ```javascript
 let image = new Image()
@@ -4505,14 +4505,14 @@ let image = new Image()
 
 ————————————————————————————————————
 
-# Good React Calendar library
+#### Good React Calendar library
 
 https://mmehdinasiri.github.io/react-calendar-datetime-picker/docs/examples/
 
 
 ————————————————————————————————————
 
-# Having cors issues, add  "Access-Control-Allow-Headers": "Content-Type" to =>
+#### Having cors issues, add  "Access-Control-Allow-Headers": "Content-Type" to =>
 
  ```javascript
 headers: {
@@ -4525,7 +4525,7 @@ headers: {
 
 ————————————————————————————————————
 
-# From 1200 to 12:00 code =>
+#### From 1200 to 12:00 code =>
 ```javascript
 
 mystring = mystring.replace(/(..)/g, '$1:').slice(0,-1)
@@ -4534,7 +4534,7 @@ mystring = mystring.replace(/(..)/g, '$1:').slice(0,-1)
 
 ————————————————————————————————————
 
-# To get range of fromTime toTime
+#### To get range of fromTime toTime
 
 ["9:30 AM","10:0 AM","10:30 AM","11:0 AM","11:30 AM","12:0 PM","12:30 PM","1:0 PM","1:30 PM","2:0 PM","2:30 PM","3:0 PM","3:30 PM","4:0 PM","4:30 PM","5:0 PM","5:30 PM","6:0 PM","6:30 PM","7:0 PM","7:30 PM","8:0 PM","8:30 PM","9:0 PM","9:30 PM","10:0 PM","10:30 PM"]
 
@@ -4555,7 +4555,7 @@ https://www.tutorialguruji.com/javascript/javascript-generate-an-array-of-times-
 
 ————————————————————————————————————
 
-# Check if user is authenticated
+#### Check if user is authenticated
 
 ```javascript
 useEffect(() => {
@@ -4586,7 +4586,7 @@ useEffect(() => {
 ```
 ————————————————————————————————————
 
-# How to implement web workers
+#### How to implement web workers
 
 https://blog.logrocket.com/real-time-processing-web-workers/
 
@@ -4594,7 +4594,7 @@ https://blog.logrocket.com/real-time-processing-web-workers/
 
 ————————————————————————————————————
 
-# HOW TO SET UP WEB WORKERS
+#### HOW TO SET UP WEB WORKERS
 
 ```javascript
 // in App.js
@@ -4643,7 +4643,7 @@ self.addEventListener("message", event => {
 ```
 ————————————————————————————————————
 
-# Updated web worker code 1
+#### Updated web worker code 1
 
 ```javascript
 
@@ -4684,7 +4684,7 @@ self.addEventListener("message", event => {
 
 ————————————————————————————————————
 
-# Updated web worker code 2
+#### Updated web worker code 2
 ```javascript
 
 async function getNotificationsData(obj) {
@@ -4724,14 +4724,14 @@ self.addEventListener("message", event => {
 
 ————————————————————————————————————
 
-# To remove error from eslint on hook dependency
+#### To remove error from eslint on hook dependency
 
 
 // eslint-disable-next-line react-hooks/exhaustive-deps
 
 ————————————————————————————————————
 
-# To get last day of month
+#### To get last day of month
 ```javascript
 
 dayjs().endOf("month").date(),  of the month
@@ -4739,7 +4739,7 @@ dayjs().endOf("month").date(),  of the month
 
 ————————————————————————————————————
 
-# To get the current month dates, eg= [2021-01-01, 2021-01-02, 2021-01-03]
+#### To get the current month dates, eg= [2021-01-01, 2021-01-02, 2021-01-03]
 ```javascript
 
 const getAllDatesForCurrentMonth = () => {
@@ -4776,7 +4776,7 @@ const getAllDatesForCurrentMonth = () => {
 
 ————————————————————————————————————
 
-# Better and optimised
+#### Better and optimised
 ["9:00 AM","12:00 PM","3:00 PM","6:00 PM","9:00 PM"]
 
 ```javascript
@@ -4796,14 +4796,14 @@ console.log(generateTime("9:00", "23:00", 180))
 
 ————————————————————————————————————
 
-# To have a lighter color
+#### To have a lighter color
 ```javascript
 
  _hover={{ bg: `${bg}80` }}
 ```
 ————————————————————————————————————
 
-# Display something else when screen is idle for 15 seconds
+#### Display something else when screen is idle for 15 seconds
 ```javascript
 
 const [isIdle, setIsIdle] = useState(false)
@@ -4830,7 +4830,7 @@ useEffect(() => {
 
 ————————————————————————————————————
 
-# To have 3 box in a row
+#### To have 3 box in a row
 
 ```css
 .Row {
@@ -4854,7 +4854,7 @@ useEffect(() => {
 
 ————————————————————————————————————
 
-# To  auto play video, in a loop, in react
+#### To  auto play video, in a loop, in react
 ```javascript
 
 <video autoPlay loop muted playsInline style={{ width: "100vw" }}>
@@ -4864,7 +4864,7 @@ useEffect(() => {
 ```
 ————————————————————————————————————
 
-# Javascript convert to boolean, doesn't work, eg: Boolean("false") === true
+#### Javascript convert to boolean, doesn't work, eg: Boolean("false") === true
 
 //right way \|/
 ```javascript
@@ -4880,7 +4880,7 @@ const bool =
 
 ————————————————————————————————————
 
-# Create .zip files using JavaScript.
+#### Create .zip files using JavaScript.
 
 
 https://stuk.github.io/jszip/
@@ -4891,7 +4891,7 @@ Create .zip files using JavaScript. Provides a simple API to place any content g
 
 ————————————————————————————————————
 
-# An HTML5 saveAs() FileSaver 
+#### An HTML5 saveAs() FileSaver 
 
 https://github.com/eligrey/FileSaver.js
 
@@ -4905,7 +4905,7 @@ https://eligrey.com/blog/saving-generated-files-on-the-client-side/
 
 ————————————————————————————————————
 
-# To remove time icon from input
+#### To remove time icon from input
 
  ```javascript
 const OVERRIDE_TIME_STYLE = `input[type="time"]::-webkit-calendar-picker-indicator {
@@ -4915,7 +4915,7 @@ const OVERRIDE_TIME_STYLE = `input[type="time"]::-webkit-calendar-picker-indicat
 ```
 ————————————————————————————————————
 
-# JavaScript program to run a function in a separate thread by using a Web Worker, allowing long running functions to not block the UI.
+#### JavaScript program to run a function in a separate thread by using a Web Worker, allowing long running functions to not block the UI.
 
 ```javascript
 //https://www.w3resource.com/javascript-exercises/fundamental/javascript-fundamental-exercise-151.php
@@ -4955,7 +4955,7 @@ runAsync(() => typeof outsideVariable).then(console.log); // 'undefined'
 ```
 ————————————————————————————————————
 
-# Best web worker to use in react
+#### Best web worker to use in react
 
 ```javascript
 //https://www.npmjs.com/package/web-worker-hooks#installation
@@ -4988,7 +4988,7 @@ const [tableValues, setTableValues] = useState([])
 ```
 ————————————————————————————————————
 
-# To remove white background from favicon
+#### To remove white background from favicon
 
 ```html
 add type="image/x-icon"
@@ -4998,7 +4998,7 @@ add type="image/x-icon"
 ```
 ————————————————————————————————————
 
-# Change nav bar color when user scroll to x position
+#### Change nav bar color when user scroll to x position
 
 
 ```javascript
@@ -5019,7 +5019,7 @@ useEffect(() => {
 
 ————————————————————————————————————
 
-# Overlay text on an image using css grid
+#### Overlay text on an image using css grid
 ```html
    <div
       display="grid"
@@ -5045,14 +5045,14 @@ useEffect(() => {
     
 ————————————————————————————————————
 
-# Dot loading animation svg
+#### Dot loading animation svg
 
 https://codepen.io/nikhil8krishnan/pen/rVoXJa
 https://css-tricks.com/single-element-loaders-the-dots/
 
  ————————————————————————————————————
 
-# Animation library for react
+#### Animation library for react
 "aos": "^2.3.4",
 ```javascript
 
@@ -5067,8 +5067,8 @@ useEffect(() => {
 ```
 
  ————————————————————————————————————
- # scroll on Drag for users with older laptops
- ### index.css
+ #### scroll on Drag for users with older laptops
+ ##### index.css
  ```css
  .items {
   display: flex;
@@ -5076,7 +5076,7 @@ useEffect(() => {
   /* scroll-behavior: smooth; */
 }
  ```
- ### index.html
+ ##### index.html
  ```
  <div class="items">
     <div class="item item1"></div>
@@ -5087,7 +5087,7 @@ useEffect(() => {
   </div>
  ```
  
- ### index.js
+ ##### index.js
  
  ```javascript
  const slider = document.querySelector(".items");
@@ -5121,7 +5121,7 @@ slider.addEventListener("mousemove", (e) => {
  ```
  
 
-# Hide Scrollbars But Keep Functionality
+#### Hide Scrollbars But Keep Functionality
 ```css
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -5139,7 +5139,7 @@ slider.addEventListener("mousemove", (e) => {
 
  ————————————————————————————————————
 
-# Scroll forward/backward with a button/arrow
+#### Scroll forward/backward with a button/arrow
 
 ```javascript
 
@@ -5163,7 +5163,7 @@ const scrollRight = () => {
   
  ————————————————————————————————————
 
-# allow html formatting in a string, inner html
+#### allow html formatting in a string, inner html
 ```javascript
   
   const App = () => {
@@ -5178,7 +5178,7 @@ const scrollRight = () => {
 ```
  ————————————————————————————————————
 
-# TYPES OF COMMENTS
+#### TYPES OF COMMENTS
 
 // ! critical comment
 // * hightlighted comment
@@ -5190,7 +5190,7 @@ const scrollRight = () => {
 
  ————————————————————————————————————
 
-# ADD DAYS TO DATE, 1 Mon 2022 => 2 Tue 2022 => 3 Wed 2022
+#### ADD DAYS TO DATE, 1 Mon 2022 => 2 Tue 2022 => 3 Wed 2022
 
 ```javascript
 function addDays(date, days) {
@@ -5204,7 +5204,7 @@ function addDays(date, days) {
 
  ————————————————————————————————————
 
-# Ux for mobile keyboard to the next input
+#### Ux for mobile keyboard to the next input
 
 ```
 enterKeyhint="next"
@@ -5212,7 +5212,7 @@ enterKeyhint="done"
 ```
 
 
-# Paginated table code
+#### Paginated table code
 ```javascript
 const limit = DATA_ROWS.LIMIT;
 
