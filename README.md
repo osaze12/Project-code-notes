@@ -2,6 +2,30 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+
+#### Graphql useQuery fetch more items as you scroll down functionality
+```javascript
+ fetchMore({
+    variables: {
+      data: {
+	page: {
+	  offset: PAGINATION_LIMIT, // Pass the current total number of items as offset
+	},
+	query: {
+	  storeId,
+	},
+      },
+    },
+
+    updateQuery: (prev: any, { fetchMoreResult }: any) => {
+      if (!fetchMoreResult) return prev;
+      const incomingData = fetchMoreResult?.findProducts?.data?.slice(1);
+    
+      setProducts([...prev?.findProducts?.data, ...incomingData]);
+    },
+  });
+```
+
 #### React native: firebase push notification set up
 ```
 https://medium.com/@ashoniaa/react-native-expo-push-notifications-with-fcm-a-step-by-step-guide-fa5cfc0372fd
