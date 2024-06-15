@@ -3,6 +3,11 @@ This is where I document things I have learnt, or found on the internet that are
 https://github.com/30-seconds/30-seconds-of-code
 
 
+#### Get nigeria state and all local government
+```
+https://www.npmjs.com/package/naija-state-local-government
+```
+
 #### Graphql useQuery fetch more items as you scroll down functionality
 ```javascript
  fetchMore({
