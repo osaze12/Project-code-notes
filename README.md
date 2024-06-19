@@ -3684,6 +3684,11 @@ This is a link to my portfolio where you would be able to see what I have create
 white-space: pre-wrap;
 ```
 
+#### add dark background on Image in react native
+```
+https://stackoverflow.com/questions/68754443/how-add-dark-gradient-on-bottom-of-an-image-in-react-native
+```
+
 #### Add dark background on image
 ```css
   background:`linear-gradient(90deg, rgb(0 0 0 / 63%) 0%, rgb(0 0 0 / 63%) 51%), url(${previewImg})`
