@@ -870,7 +870,7 @@ https://stackoverflow.com/questions/38618885/error-rpc-failed-curl-transfer-clos
 ```
 
 
-#### create invoice with html and jspdf
+#### create invoice with html and jspdf (screen shot and save as pdf)
 ```javascript
 import { jsPDF } from "jspdf";
 
