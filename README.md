@@ -1,6 +1,14 @@
 # Project-code-notes
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
+#### React Native: why hide/show password input isnt working
+```
+secureTextEntry works if you set autoCapitalize={'none'}.
+
+https://github.com/facebook/react-native/issues/30148#issuecomment-748288773
+
+https://stackoverflow.com/questions/54684814/react-native-securetextentry-not-working-on-android
+```
 
 #### Android/IOS app change icons
 ```
