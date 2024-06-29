@@ -1,6 +1,12 @@
 # Project-code-notes
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
+
+#### React Native: add scroll to a fixed height 
+```
+https://stackoverflow.com/questions/65815131/flatlist-set-height-and-scroll
+```
+
 #### React Native: why hide/show password input isnt working
 ```
 secureTextEntry works if you set autoCapitalize={'none'}.
