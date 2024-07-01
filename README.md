@@ -2,6 +2,18 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+#### Boost/Increase React Native Performance
+```javascript
+https://sugandsingh5566.medium.com/boosting-react-native-performance-with-lazy-loading-and-code-splitting-f7d0f7268e7e
+
+//Lazyly load the screens
+const HomeScreen = React.lazy(() => import('./HomeScreen'));
+const ProfileScreen = React.lazy(() => import('./ProfileScreen'));
+
+
+<React.Suspense fallback={<Text>Loading...</Text>}>
+ </React.Suspense>
+```
 
 #### How to change select input dropdown
 ```css
