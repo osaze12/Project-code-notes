@@ -4,15 +4,22 @@ https://github.com/30-seconds/30-seconds-of-code
 
 
 #### How to change select input dropdown
-```
+```css
 .filter-select{
+	-webkit-appearance: none;
+   	-moz-appearance: none;
+   	appearance: none;       /* Remove default arrow */
 	color: #0F1519 !important;
 	background:url(${getAsset('images/chevron-down.png')}) no-repeat right #ffffff;
 
 }
 
+//or
 .filter-select{
- background: #5A71E1 url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'><path fill='%23ffffff' d='M2 0L0 2h4zm0 5L0 3h4z'/></svg>") right .75rem center/8px 10px no-repeat!important;
+	-webkit-appearance: none;
+   	-moz-appearance: none;
+   	appearance: none;       /* Remove default arrow */
+ 	background: #5A71E1 url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'><path fill='%23ffffff' d='M2 0L0 2h4zm0 5L0 3h4z'/></svg>") right .75rem center/8px 10px no-repeat!important;
  }
 
 ```
