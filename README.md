@@ -6,6 +6,8 @@ https://github.com/30-seconds/30-seconds-of-code
 ```javascript
 https://sugandsingh5566.medium.com/boosting-react-native-performance-with-lazy-loading-and-code-splitting-f7d0f7268e7e
 
+https://legacy.reactjs.org/docs/code-splitting.html
+
 //Lazyly load the screens
 const HomeScreen = React.lazy(() => import('./HomeScreen'));
 const ProfileScreen = React.lazy(() => import('./ProfileScreen'));
