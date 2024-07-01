@@ -2,6 +2,21 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+
+#### How to change select input dropdown
+```
+.filter-select{
+	color: #0F1519 !important;
+	background:url(${getAsset('images/chevron-down.png')}) no-repeat right #ffffff;
+
+}
+
+.filter-select{
+ background: #5A71E1 url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'><path fill='%23ffffff' d='M2 0L0 2h4zm0 5L0 3h4z'/></svg>") right .75rem center/8px 10px no-repeat!important;
+ }
+
+```
+
 #### React Native: add scroll to a fixed height 
 ```
 https://stackoverflow.com/questions/65815131/flatlist-set-height-and-scroll
