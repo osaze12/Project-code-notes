@@ -196,7 +196,7 @@ const transformDateToTimezone = (date: Date, timeZone: string) => {
   const startOfToday = transformDateToTimezone( startOfDay(today), timeZone);
 ```
 
-#### timeline
+#### Timeline UI and logic (dots arrow, horizontal line)
 ```
      <Box pt="20px">
               {[0, 1, 2].map((status, index) => (
