@@ -7,6 +7,8 @@ https://github.com/30-seconds/30-seconds-of-code
 //https://dev.to/sundarbadagala081/javascript-chaining-3h6g
 //Example
 
+
+// after calling this on your app, reload so you dont see one instace updated in multple places in your app
 export const BRAND_BORDER_STYLE = {
   styles: {
     borderTopLeftRadius: 0 as any,
