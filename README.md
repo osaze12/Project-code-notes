@@ -2,6 +2,11 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+#### Chaining(chain) Function
+```
+https://dev.to/sundarbadagala081/javascript-chaining-3h6g
+```
+
 #### React Native: how to change react native icon
 ```
 1. Go to https://icon.kitchen
