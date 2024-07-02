@@ -3,8 +3,29 @@ This is where I document things I have learnt, or found on the internet that are
 https://github.com/30-seconds/30-seconds-of-code
 
 #### Chaining(chain) Function
-```
-https://dev.to/sundarbadagala081/javascript-chaining-3h6g
+```javascript
+//https://dev.to/sundarbadagala081/javascript-chaining-3h6g
+//Example
+
+export const BRAND_BORDER_STYLE = {
+  styles: {
+    borderTopLeftRadius: 0 as any,
+    borderTopRightRadius: 0 as any,
+  },
+
+  addBlackBackgroundColor: function () {
+    this.styles = {
+      ...this.styles,
+      backgroundColor: '#000',
+    };
+    return this; // to expose every func in this object back with the specific object we just updated
+  },
+  spread: function () { // use function instead of ()=>, not to return errors
+    return this.styles;
+  },
+};
+
+console.log(BRAND_BORDER_STYLE.addBlackBackgroundColor().spread())
 ```
 
 #### React Native: how to change react native icon
