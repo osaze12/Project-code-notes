@@ -2,6 +2,28 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+#### React Native: how to change react native icon
+```
+1. Go to https://icon.kitchen
+ 2. Update AndroidManifest.xml (android)
+<application
+    android:icon="@mipmap/ic_launcher"
+    android:roundIcon="@mipmap/ic_launcher_round"
+    ... >
+    ...
+</application>
+
+3.  Clean and Rebuild the Project(android)
+cd android
+./gradlew clean
+
+4. start server
+
+For IOS, it easier, go to xcode, and select image folder, to update it
+
+
+```
+
 #### Boost/Increase React Native Performance
 ```javascript
 https://sugandsingh5566.medium.com/boosting-react-native-performance-with-lazy-loading-and-code-splitting-f7d0f7268e7e
