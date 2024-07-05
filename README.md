@@ -58,6 +58,8 @@ https://sugandsingh5566.medium.com/boosting-react-native-performance-with-lazy-l
 
 https://legacy.reactjs.org/docs/code-splitting.html
 
+//USE MEMO(COMPONENT) & USE_MEMO, SO THAT CHILD COMPONENT THAT HAVE NO BUSINESS RERENDERING, DOESNT RERENDER, AND CAUSE THE APP TO BE SLOW
+
 //Lazyly load the screens
 const HomeScreen = React.lazy(() => import('./HomeScreen'));
 const ProfileScreen = React.lazy(() => import('./ProfileScreen'));
