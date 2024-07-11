@@ -52,7 +52,55 @@ For IOS, it easier, go to xcode, and select image folder, to update it
 
 ```
 
-#### Boost/Increase React Native Performance
+#### Better Lazy Load(loading) Image, only show when in view port
+```javascript
+//https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
+
+const LazyImage=({id})=> {
+
+const [inview, setInView]=useState(false)
+	const ref = useRef()
+
+
+let callback = (entries, observer) => {
+  entries.forEach((entry) => {
+	if (entry.isIntersecting) {
+	 	setInView(true)
+	}
+
+    // Each entry describes an intersection change for one observed
+    // target element:
+    //   entry.boundingClientRect
+    //   entry.intersectionRatio
+    //   entry.intersectionRect
+    //   entry.isIntersecting
+    //   entry.rootBounds
+    //   entry.target
+    //   entry.time
+  });
+};
+
+	
+
+	useEffect(()=> {
+	let observer = new IntersectionObserver(callback, options);
+	if (ref.current){
+	observer.observe(ref.current)
+	}
+	
+	return ()=> {
+		observer.disconnect()
+	}
+	}, [])
+
+	return inview? <Img src={} /> : (
+
+	<Img id={} ref={ref}  style={{width:"", height:"", backgroundColor:""}}/>
+)
+}
+```
+
+#### Boost/Increase React Native Performance / optimize app
 ```javascript
 https://sugandsingh5566.medium.com/boosting-react-native-performance-with-lazy-loading-and-code-splitting-f7d0f7268e7e
 
@@ -67,6 +115,12 @@ const ProfileScreen = React.lazy(() => import('./ProfileScreen'));
 
 <React.Suspense fallback={<Text>Loading...</Text>}>
  </React.Suspense>
+
+//A Few Functional Uses for Intersection Observer to Know When an Element is in View
+//** https://css-tricks.com/a-few-functional-uses-for-intersection-observer-to-know-when-an-element-is-in-view/
+
+// For Intersection Observer in React Native, it's flat list, below is a tutorial
+// https://suelan.github.io/2020/01/21/onViewableItemsChanged/
 ```
 
 #### How to change select input dropdown
