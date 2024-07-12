@@ -19,7 +19,7 @@ https://github.com/30-seconds/30-seconds-of-code
 
 	return () => {
       	  parent?.setOptions({
-          tabBarStyle: { display: 'flex' },
+          tabBarStyle: { display: 'flex' , ...with_the_style_back},
       	});
     };
   }, []);
