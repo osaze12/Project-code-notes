@@ -2,6 +2,19 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+#### React Native: to hide bottom tab bar on a particular screen/component/UI
+```
+  const { getParent } = useNavigation();
+
+  useEffect(() => {
+    const parent = getParent();
+
+    parent?.setOptions({
+      tabBarStyle: { display: 'none' },
+    });
+  }, []);
+```
+
 #### Chaining(chain) Function
 ```javascript
 //https://dev.to/sundarbadagala081/javascript-chaining-3h6g
