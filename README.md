@@ -5,13 +5,23 @@ https://github.com/30-seconds/30-seconds-of-code
 #### React Native: to hide bottom tab bar on a particular screen/component/UI
 ```javascript
   const { getParent } = useNavigation();
+or, get the navigation from the props, like props?.navigation.getParent();
 
   useEffect(() => {
     const parent = getParent();
-
-    parent?.setOptions({
+setTimeOut(()=> {
+ parent?.setOptions({
       tabBarStyle: { display: 'none' },
     });
+
+},100)
+   
+
+return () => {
+      parent?.setOptions({
+        tabBarStyle: { display: 'flex' },
+      });
+    };
   }, []);
 ```
 
