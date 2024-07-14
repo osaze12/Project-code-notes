@@ -9,12 +9,12 @@ https://github.com/30-seconds/30-seconds-of-code
 
   useLayoutEffect(() => {
        const parent = getParent();
-	setTimeOut(()=> {
+	
  	parent?.setOptions({
       	tabBarStyle: { display: 'none' },
     	});
 
-	},100)
+
    
 
 	return () => {
