@@ -7,7 +7,7 @@ https://github.com/30-seconds/30-seconds-of-code
   const { getParent } = useNavigation();
 //or, get the navigation from the props, like props?.navigation.getParent();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
        const parent = getParent();
 	setTimeOut(()=> {
  	parent?.setOptions({
