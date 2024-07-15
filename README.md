@@ -191,27 +191,29 @@ https://icon.kitchen
 https://www.npmjs.com/package/naija-state-local-government
 ```
 
-#### Graphql useQuery fetch more items as you scroll down functionality
+#### Graphql pagination useQuery fetch more items as you scroll down functionality
 ```javascript
  fetchMore({
-    variables: {
-      data: {
-	page: {
-	  offset: PAGINATION_LIMIT, // Pass the current total number of items as offset
-	},
-	query: {
-	  storeId,
-	},
-      },
-    },
+            variables: {
+              data: {
+                page: {
+                  limit: PAGINATION_LIMIT,
+                  offset: orders?.length, // Pass the current total number of items as offset
+                },
+                query: {
+                  storeId,
+                  ...(onlyShowKey && onlyShowValue ? { [onlyShowKey]: onlyShowValue } : {}),
+                },
+              },
+            },
 
-    updateQuery: (prev: any, { fetchMoreResult }: any) => {
-      if (!fetchMoreResult) return prev;
-      const incomingData = fetchMoreResult?.findProducts?.data?.slice(1);
-    
-      setProducts([...prev?.findProducts?.data, ...incomingData]);
-    },
-  });
+            updateQuery: (prev: any, { fetchMoreResult }: any) => {
+              if (!fetchMoreResult) return prev;
+              const incomingData = fetchMoreResult?.getOrders?.data;
+
+              setOrders((prev: any) => [...prev, ...incomingData]);
+            },
+          });
 ```
 
 #### React native: firebase push notification set up
