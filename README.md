@@ -4,7 +4,7 @@ https://github.com/30-seconds/30-seconds-of-code
 
 #### Raact Native: Best Date Picker
 ```
-https://www.npmjs.com/package/react-native-ui-datepicker
+https://www.npmjs.com/package/react-native-date-picker
 ```
 
 #### Best email template creation using react 
