@@ -133,11 +133,13 @@ let callback = (entries, observer) => {
 }
 ```
 
-#### Boost/Increase React Native Performance / optimize app
+#### Boost/Increase React Native Performance / optimize app, solve rerender issue
 ```javascript
 https://sugandsingh5566.medium.com/boosting-react-native-performance-with-lazy-loading-and-code-splitting-f7d0f7268e7e
 
 https://legacy.reactjs.org/docs/code-splitting.html
+
+// avoid creating more than one component in a single file, so that it doesnt cause the whole Ui from rerendering, causing you to start the process of getting to that particular UI again
 
 //USE MEMO(COMPONENT) & USE_MEMO, SO THAT CHILD COMPONENT THAT HAVE NO BUSINESS RERENDERING, DOESNT RERENDER, AND CAUSE THE APP TO BE SLOW
 
