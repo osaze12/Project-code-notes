@@ -139,7 +139,7 @@ https://sugandsingh5566.medium.com/boosting-react-native-performance-with-lazy-l
 
 https://legacy.reactjs.org/docs/code-splitting.html
 
-// avoid creating more than one component in a single file, so that it doesnt cause the whole Ui from rerendering, causing you to start the process of getting to that particular UI again
+// avoid creating more than one component in a single file, so that it doesnt cause the whole Ui from rerendering, causing you to start the process of getting to that particular UI again, which saves your battery 
 
 //USE MEMO(COMPONENT) & USE_MEMO, SO THAT CHILD COMPONENT THAT HAVE NO BUSINESS RERENDERING, DOESNT RERENDER, AND CAUSE THE APP TO BE SLOW
 
