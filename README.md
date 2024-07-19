@@ -3824,7 +3824,7 @@ Link to tutorial (photo) == https://usefulangle.com/post/352/javascript-capture-
 ```
 
 
-#### Formatting number to have 1k, 2.5M
+#### Formatting number to have 1k, 2.5M, (convert million/thousand to M, K)
 ```javascript
   function nFormatter(num) {
     if (num >= 1000000000) {
