@@ -2,6 +2,11 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+#### javascript library that provides easy functions to solve real word logic, without writing too many codes
+```javacsript
+https://immutable-js.com/docs/v4.3.7/hasIn()/
+```
+
 #### Raact Native: Best Date Picker
 ```
 https://www.npmjs.com/package/react-native-date-picker
