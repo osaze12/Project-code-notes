@@ -2,6 +2,18 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+#### generate random alphanumeric values/ids 
+```javascript
+export const randomId = function (length = 6) {
+  return Math.random()
+    .toString(36)
+    .substring(2, length + 2);
+};
+
+  const theCode = randomId(10);
+  // result => G0F2MOFP4C
+```
+
 #### javascript library that provides easy functions to solve real word logic, without writing too many codes
 ```javacsript
 https://immutable-js.com/docs/v4.3.7/hasIn()/
