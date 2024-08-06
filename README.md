@@ -15,7 +15,7 @@ export const randomId = function (length = 6) {
 ```
 
 #### how to check an array against/in another array 
-```javacsript
+```javascript
 let arr1 = [1, 2, 3];
 let arr2 = [2, 3];
 
