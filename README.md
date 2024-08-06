@@ -14,6 +14,18 @@ export const randomId = function (length = 6) {
   // result => G0F2MOFP4C
 ```
 
+#### how to check an array against/in another array 
+```javacsript
+let arr1 = [1, 2, 3];
+let arr2 = [2, 3];
+
+let isFound = arr1.some( ai => arr2.includes(ai) );
+
+Alternatively, if must contain all values:
+
+let allFound = arr2.every( ai => arr1.includes(ai) );
+```
+
 #### javascript library that provides easy functions to solve real word logic, without writing too many codes
 ```javacsript
 https://immutable-js.com/docs/v4.3.7/hasIn()/
