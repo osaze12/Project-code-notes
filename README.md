@@ -71,7 +71,15 @@ https://react.email
 
 
 // after calling this on your app, reload so you dont see one instace updated in multple places in your app
-export const BRAND_BORDER_STYLE = {
+
+//the type here returns/bring suggestions when using/chaining the functions
+type FeatureLimit = {
+  noOfProduct(): Promise<FeatureLimit>;
+
+  proceed: FeatureLimit | boolean;
+  canProceed: FeatureLimit;
+};
+export const BRAND_BORDER_STYLE:FeatureLimit = {
   styles: {
     borderTopLeftRadius: 0 as any,
     borderTopRightRadius: 0 as any,
