@@ -153,6 +153,11 @@ export class Walker {
    this.doTask(() => "stuff");
    return this;
  }
+ //to get the response from "then", do this:
+ new Walker()
+        .noOfProductWithinLimit()
+        .canProceed()
+        .then(async (res) => res.then((r) => console.log(r, '*')));
 
  //...
 // console.log(await walker.returnStuff()); // "stuff"
