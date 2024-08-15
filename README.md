@@ -104,6 +104,8 @@ console.log(BRAND_BORDER_STYLE.addBlackBackgroundColor().spread())
 ```
 #### to chain async functions (let one finish running before running the rest (typescript)
 ```javascript
+//https://stackoverflow.com/questions/55413162/how-to-use-function-chaining-with-async-function
+
 // typescript
 export class Walker {
   private task: Promise<void>;
@@ -153,13 +155,15 @@ export class Walker {
    this.doTask(() => "stuff");
    return this;
  }
+
  //to get the response from "then", do this:
  new Walker()
         .noOfProductWithinLimit()
         .canProceed()
         .then(async (res) => res.then((r) => console.log(r, '*')));
 
- //...
+
+
 // console.log(await walker.returnStuff()); // "stuff"
 // console.log(await walker.returnStuff().goToMainPage()); // undefined, result gets lo
 //example
