@@ -98,6 +98,79 @@ export const BRAND_BORDER_STYLE:FeatureLimit = {
 };
 
 console.log(BRAND_BORDER_STYLE.addBlackBackgroundColor().spread())
+
+
+
+```
+#### to chain async functions (let one finish running before running the rest (typescript)
+```javascript
+// typescript
+export class Walker {
+  private task: Promise<void>;
+
+  constructor() {
+    // Initialize the task queue
+    this.task = Promise.resolve();
+  }
+
+  // Schedules a callback into the task queue
+  // The callback is expected to return a Promise
+  doTask(cb: () => Promise<void>): this {
+    // Schedule the callback to be run after the current task
+    this.task = this.task.then(cb).catch((error) => {
+      // TODO: Handle errors
+      console.error('Error in task:', error);
+    });
+    return this;
+  }
+
+  // Allows using this like a promise, e.g. "await walker"
+  then(onFulfilled: (value: Promise<void>) => void): void {
+    this.task.then(() => onFulfilled(this.task));
+  }
+
+  // Example method to demonstrate chaining
+  goToMainPage(): this {
+    this.doTask(async () => {
+      console.log('goToMainPage started');
+      await new Promise<void>((resolve) => setTimeout(resolve, 1000));
+      console.log('goToMainPage done');
+    });
+    return this;
+  }
+}
+//example
+   await new Walker().goToMainPage().goToMainPage();
+```
+##### non typescript
+```javascript
+
+class Walker {
+   constructor(t) {
+     this.t = t;
+     // set up a task queue for chaining
+     this.task = Promise.resolve();
+    }
+
+    // shedules a callback into the task queue
+    doTask(cb) {
+       // TODO: error handling
+       return this.task = this.task.then(cb);
+    }
+
+    // allows to use this like a promise, e.g. "await walker";
+    then(cb) { cb(this.task); }
+
+    goToMainPage () {
+      this.doTask(async () => { // shedule to chain
+        await t.goTo('url/main')
+      });
+      return this; // return walker for chaining
+   }
+
+ }
+//example
+  await new Walker().goToMainPage().goToMainPage();
 ```
 
 #### React Native: how to change react native icon
