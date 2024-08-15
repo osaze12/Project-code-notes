@@ -139,8 +139,26 @@ export class Walker {
     return this;
   }
 }
+
+
+
+
+//That allows you to do:
+
+ //await walker.goToMainPage();
+ //await walker.goToMainPage().goToMainPage();
+//If you return something from inside doTask, awaiting it will resolve to that:
+
+ //returnStuff() {
+   this.doTask(() => "stuff");
+   return this;
+ }
+
+ //...
+// console.log(await walker.returnStuff()); // "stuff"
+// console.log(await walker.returnStuff().goToMainPage()); // undefined, result gets lo
 //example
-   await new Walker().goToMainPage().goToMainPage();
+//   await new Walker().goToMainPage().goToMainPage();
 ```
 ##### non typescript
 ```javascript
