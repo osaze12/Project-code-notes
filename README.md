@@ -3,8 +3,8 @@ This is where I document things I have learnt, or found on the internet that are
 https://github.com/30-seconds/30-seconds-of-code
 
 #### React Native: remove spacing/space around text by the line height
-```
-change the line height:
+```javascript
+//change the line height:
 <Text lineHeight={...} >...</Text> 
 ```
 
