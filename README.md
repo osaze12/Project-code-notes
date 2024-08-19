@@ -2,6 +2,12 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+#### React Native: remove spacing/space around text by the line height
+```
+change the line height:
+<Text lineHeight={...} >...</Text> 
+```
+
 #### generate random alphanumeric values/ids 
 ```javascript
 export const randomId = function (length = 6) {
