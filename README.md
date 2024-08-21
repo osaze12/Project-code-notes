@@ -2,6 +2,12 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+#### An easy swap an element/div library
+<img width="916" alt="Screenshot 2024-08-21 at 11 52 31 PM" src="https://github.com/user-attachments/assets/74382d2f-f2ff-45ea-b86b-be052ebfe22b">
+
+````
+https://swapy.tahazsh.com/
+````
 
 #### Add animation to react app with a single line of code
 ```
