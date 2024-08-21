@@ -2,6 +2,12 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+
+#### Add animation to react app with a single line of code
+```
+https://auto-animate.formkit.com/#examples
+```
+
 #### React Native: remove spacing/space around text by the line height
 ```javascript
 //change the line height:
