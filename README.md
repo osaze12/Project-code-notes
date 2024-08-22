@@ -62,6 +62,8 @@ let allFound = arr2.every( ai => arr1.includes(ai) );
 
 #### javascript library that provides easy functions to solve real word logic, without writing too many codes
 ```javacsript
+https://lodash.com/docs/4.17.15#every
+
 https://immutable-js.com/docs/v4.3.7/hasIn()/
 ```
 
