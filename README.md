@@ -131,6 +131,8 @@ console.log(BRAND_BORDER_STYLE.addBlackBackgroundColor().spread())
 
 ```
 #### to chain async functions (let one finish running before running the rest (typescript)
+<img width="1440" alt="Screenshot 2024-08-22 at 1 57 49 AM" src="https://github.com/user-attachments/assets/b06c97a2-721e-4964-9324-84af29e0735a">
+
 ```javascript
 //https://stackoverflow.com/questions/55413162/how-to-use-function-chaining-with-async-function
 
