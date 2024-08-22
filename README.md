@@ -2,6 +2,12 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+
+#### Chrome extension framework
+```
+https://github.com/PlasmoHQ/plasmo
+```
+
 #### react interaction animation components
 ```
 https://animata.design/
