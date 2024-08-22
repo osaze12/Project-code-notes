@@ -2,6 +2,10 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+#### react interaction animation components
+```
+https://animata.design/
+```
 
 #### pack of react native animation codes (to buy liecence soon)
 ```
