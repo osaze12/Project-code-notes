@@ -744,7 +744,7 @@ const formattedNumber = formatter.input(phoneNumber.number);
 console.log(formattedNumber); // Output: +1123456789
 
 ```
-#### react native: good/best action sheet
+#### react native: good/best action/bottom/draw sheet
 ```
 https://rnas.vercel.app/
 ```
