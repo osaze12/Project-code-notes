@@ -3,7 +3,8 @@ This is where I document things I have learnt, or found on the internet that are
 https://github.com/30-seconds/30-seconds-of-code
 
 #### React native: Animated pricing slide/carousel
-![Simulator Screenshot - iPhone 15 Pro Max - 2024-08-27 at 23 44 54](https://github.com/user-attachments/assets/2d7c3f86-6717-4f65-a794-b1e793d56453)
+<img width="343" alt="Screenshot 2024-08-27 at 11 47 01 PM" src="https://github.com/user-attachments/assets/e6621692-3156-40af-a7a7-1057a8f2db82">
+
 
 ```javascript
 
