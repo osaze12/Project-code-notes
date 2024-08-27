@@ -3,6 +3,54 @@ This is where I document things I have learnt, or found on the internet that are
 https://github.com/30-seconds/30-seconds-of-code
 
 
+#### Format payment card number/expiry date
+```javascript
+//https://stackoverflow.com/questions/40237150/react-native-how-to-format-payment-in-mm-yy-and-spaced-16-digit-card-number-in
+_handlingCardNumber(number) {
+  this.setState({
+    cardNumber: number.replace(/\s?/g, '').replace(/(\d{4})/g, '$1 ').trim()
+  });
+}
+
+  <TextInput
+    onChangeText={(text) => this._handlingCardNumber(text)}
+    placeholder='0000 0000 0000 0000'
+    value={this.state.cardNumber}
+  />
+
+
+
+_handlingCardExpiry(text) {
+    if (text.indexOf('.') >= 0 || text.length > 5) {
+        // Since the keyboard will have a decimal and we don't want
+        // to let the user use decimals, just exit if they add a decimal
+        // Also, we only want 'MM/YY' so if they try to add more than
+        // 5 characters, we want to exit as well
+        return;
+    }
+
+    if (text.length === 2 && this.state.cardExpiry.length === 1) {
+        // This is where the user has typed 2 numbers so far
+        // We can manually add a slash onto the end
+        // We check to make sure the current value was only 1 character
+        // long so that if they are backspacing, we don't add on the slash again
+        text += '/'
+    }
+
+    // Update the state, which in turns updates the value in the text field
+    this.setState({
+        cardExpiry: text
+    });
+}
+
+<TextInput
+    onChangeText={this._handlingCardExpiry.bind(this)}
+    placeholder='MM/YY'
+    keyboardType={'numeric'}
+    value={this.state.cardExpiry}
+   />
+```
+
 #### Chrome extension framework
 ```
 https://github.com/PlasmoHQ/plasmo
