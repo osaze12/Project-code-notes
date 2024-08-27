@@ -2,7 +2,136 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+#### React native: Animated pricing slide/carousel
+![Simulator Screenshot - iPhone 15 Pro Max - 2024-08-27 at 23 44 54](https://github.com/user-attachments/assets/2d7c3f86-6717-4f65-a794-b1e793d56453)
 
+```javascript
+
+export default function MonthlyPlanCards() {
+  const scrollX = useSharedValue(0);
+
+  const onScrollHandler = useAnimatedScrollHandler({
+    onScroll: (e) => {
+      scrollX.value = e.contentOffset.x;
+    },
+  });
+
+  return (
+    <KeyboardAwareScrollView
+      contentContainerStyle={{ flexGrow: 1 }}
+      enableResetScrollToCoords={false}
+      showsVerticalScrollIndicator={false}>
+      <Animated.FlatList
+        showsHorizontalScrollIndicator={false}
+        horizontal={true}
+        scrollEnabled={true}
+        onScroll={onScrollHandler}
+        data={[1, 2, 3, 4, 5, 6, 7, 8, 9]}
+        pagingEnabled
+        renderItem={({ item, index }) => {
+          return <SlideItem index={index} scrollX={scrollX} />;
+        }}
+        keyExtractor={(item: any) => item}
+      />
+    </KeyboardAwareScrollView>
+  );
+}
+
+const SlideItem = (props: any) => {
+  const { index, scrollX } = props;
+
+  const { width } = Dimensions.get('screen');
+
+  const rnAnimatedStyle = useAnimatedStyle(() => {
+    return {
+      transform: [
+        {
+          translateX: interpolate(
+            scrollX.value,
+            [(index - 1) * width, index * width, (index + 1) * width],
+            [-width * 0.12, 0, width * 0.12],
+            Extrapolation.CLAMP,
+          ),
+        },
+        {
+          scale: interpolate(
+            scrollX.value,
+            [(index - 1) * width, index * width, (index + 1) * width],
+            [0.9, 1, 0.9],
+            Extrapolation.CLAMP,
+          ),
+        },
+      ],
+    };
+  });
+
+  const featureList = [
+    'Create a free online store with your logo',
+    'Customise your own .storejars link',
+    'Upload up to 20 Products with 3 Variants each',
+    'Create custom product categories & collections',
+    'Manage and track your inventory with ease',
+    'Manually create up to 5 orders monthly',
+    'Manage orders & customers',
+    'Send up to 10 invoices and receipts monthly',
+    'Create discounts & coupons',
+    'Basic sales, products and customer analytics',
+    'Get automated order status updates for your customers',
+  ];
+  return (
+    <Animated.View
+      style={[rnAnimatedStyle]}
+      width={Dimensions.get('window').width}
+      flexDir={'row'}
+      alignItems={'center'}
+      overflow={'hidden'}>
+      <Stack
+        {...inputStyle({ normal: true })}
+        borderWidth={0}
+        borderBottomLeftRadius={moderateScale(10)}
+        borderBottomRightRadius={moderateScale(10)}
+        borderTopLeftRadius={moderateScale(10)}
+        borderTopRightRadius={moderateScale(10)}
+        py={'8%'}
+        p={moderateScale(15)}
+        maxW={'88%'}
+        space={1}
+        justifyContent={'center'}
+        bg="#00273E">
+        <Stack>
+          <Text color="#fff" fontWeight={500} fontSize={moderateScale(15)}>
+            Storejars Starter
+          </Text>
+          <Flex flexDir={'row'} alignItems={'flex-end'}>
+            <Text color="#fff" fontWeight={500} fontSize={moderateScale(25)}>
+              ₦3,000.00/
+            </Text>
+            <Text color="#fff" fontWeight={300} fontSize={moderateScale(15)}>
+              mth
+            </Text>
+          </Flex>
+          <Text color="#fff" fontWeight={300} fontSize={moderateScale(15)}>
+            Next billing date is 10 May, 2024
+          </Text>
+        </Stack>
+
+        <Stack space={4}>
+          {featureList.map((d) => (
+            <Flex gap={moderateScale(7)} flexDir={'row'} alignItems={'center'}>
+              <Stack bg="#32AB8126" p={2} borderRadius={'50'} justifyContent={'center'} alignItems={'center'}>
+                <CheckIcon color="#32AB81" size={moderateScale(12)} />
+              </Stack>
+              <Text maxW={350} color="#fff" fontWeight={400} fontSize={moderateScale(14)}>
+                {d}
+              </Text>
+            </Flex>
+          ))}
+        </Stack>
+      </Stack>
+    </Animated.View>
+  );
+};
+```
 #### Format payment card number/expiry date
 ```javascript
 //https://stackoverflow.com/questions/40237150/react-native-how-to-format-payment-in-mm-yy-and-spaced-16-digit-card-number-in
