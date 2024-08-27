@@ -8,6 +8,12 @@ https://github.com/30-seconds/30-seconds-of-code
 
 ```javascript
 
+//make sure 👇🏽👇🏽
+<Stack position={'absolute'} left={-20} right={-20} top={20} flex={1}>
+            <YearlyPlanCards />
+          </Stack>
+//👆🏽👆🏽
+
 export default function MonthlyPlanCards() {
   const scrollX = useSharedValue(0);
 
