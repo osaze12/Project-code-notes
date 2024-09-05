@@ -4,6 +4,10 @@ https://github.com/30-seconds/30-seconds-of-code
 
 #### React native cli best push notification
 ```
+👇🏽👇🏽👇🏽👇🏽
+https://www.npmjs.com/package/react-native-push-notification
+👆🏽👆🏽👆🏽👆🏽👆🏽
+
 https://medium.com/@abbasradio1234.ar/react-native-push-notifications-your-ultimate-guide-44d11009bb76
 https://javascript.plainenglish.io/how-to-add-firebase-push-notifications-on-your-react-native-app-for-ios-369806ea8c04
 ```
