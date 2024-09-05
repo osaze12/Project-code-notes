@@ -12,6 +12,11 @@ https://medium.com/@abbasradio1234.ar/react-native-push-notifications-your-ultim
 https://javascript.plainenglish.io/how-to-add-firebase-push-notifications-on-your-react-native-app-for-ios-369806ea8c04
 ```
 
+#### push notification icon generator
+```
+https://romannurik.github.io/AndroidAssetStudio/icons-notification.html#source.type=image&source.space.trim=0&source.space.pad=0&name=ic_notification
+```
+
 #### React native: Animated pricing slide/carousel
 <img width="343" alt="Screenshot 2024-08-27 at 11 47 01 PM" src="https://github.com/user-attachments/assets/e6621692-3156-40af-a7a7-1057a8f2db82">
 
