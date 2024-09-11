@@ -2,6 +2,11 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+#### To implement package/library payment/purchase to use like that of react-native-google-signin
+```
+https://react-native-google-signin.github.io
+```
+
 #### React native cli best push notification
 ```
 👇🏽👇🏽👇🏽👇🏽
