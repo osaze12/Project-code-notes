@@ -3,6 +3,11 @@ This is where I document things I have learnt, or found on the internet that are
 https://github.com/30-seconds/30-seconds-of-code
 
 
+#### Google Sign-in to Your React Native App with AWS Cognito
+```
+https://rkscloud.com/blogs/google-sign-in-react-native-aws-cognito/
+```
+
 #### fix slow android/ios app in react native cli
 ```javascript
 //remove console.log calls
