@@ -2,6 +2,23 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+#### React native: how to fix a spoilt navigation flow by reset
+```javascript
+// doing this from outside a stack, spoils the navigation flow
+     navigation.navigate(routes.stack.more, {
+          screen: routes.more.paymentWallet,
+        }),
+
+//you fix by pushing and resetting the stack history
+ onPress={() => {
+    navigation.reset({
+      index: 0,
+      routes: [{ name: routes.stack.more }],
+    });
+
+  }}
+
+```
 
 #### Google Sign-in to Your React Native App with AWS Cognito
 ```
