@@ -2,6 +2,60 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+#### How to achieve a standard working barchart, by getting the highest amount/value
+<img width="332" alt="Screenshot 2024-09-13 at 3 48 35 PM" src="https://github.com/user-attachments/assets/4d076050-dd1f-4ac5-aacb-c9ddd886759b">
+
+```javascript
+  const highestValue = (data: any) => data.reduce((max: any, obj: any) => (obj.value > max.value ? obj : max), data[0]);
+
+  <LineChart
+    curved
+    hideDataPoints
+    thickness={3}
+    color="#32AB81"
+    areaChart
+    data={barList}
+    startFillColor="#00FFA6"
+    startOpacity={0.01}
+    yAxisThickness={0}
+    endOpacity={0.3}
+    xAxisLabelTextStyle={{
+      // textAlign: 'center',
+      color: '#4A4B4D',
+      fontFamily: 'MazzardM-Light',
+      fontSize: 11,
+      marginTop: 4,
+      fontWeight: 300,
+
+      // width: 20,
+    }}
+    // thickness={2}
+    endFillColor="#fff"
+    hideRules
+    stepValue={
+      type === 'Total Revenue'
+	? parseInt(`${highestValue(barList)?.value / 4}`)
+	: parseInt(
+	    `${
+	      highestValue(barList)?.value >= 4
+		? highestValue(barList)?.value / 4
+		: highestValue(barList)?.value
+	    }`,
+	  )
+    }
+    maxValue={type === 'Total Revenue' ? highestValue(barList)?.value || 2000 : highestValue(barList)?.value}
+    stepHeight={type === 'Total Revenue' ? 40 : 40}
+    xAxisThickness={0}
+    formatYLabel={formatYLabel}
+    yAxisTextStyle={{
+      color: '#4A4B4D',
+      fontFamily: 'MazzardM-Light',
+      fontSize: moderateScale(11),
+      fontWeight: 300,
+    }}
+          />
+```
+
 #### update react native on the air, update app without reinstalling
 ```
 https://github.com/Microsoft/react-native-code-push/blob/master/Examples/CodePushDemoApp/App.js
