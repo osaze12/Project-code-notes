@@ -2,6 +2,11 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+#### update react native on the air, update app without reinstalling
+```
+https://github.com/Microsoft/react-native-code-push/blob/master/Examples/CodePushDemoApp/App.js
+https://stackoverflow.com/questions/44585839/update-state-on-successful-update-with-code-push
+```
 #### React native: how to fix a spoilt navigation flow by reset
 ```javascript
 // doing this from outside a stack, spoils the navigation flow
