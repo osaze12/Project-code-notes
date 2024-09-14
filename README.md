@@ -2,6 +2,11 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+#### Crawl a website using cloud based headless browser
+```
+https://www.browsercat.com/docs
+```
+
 #### How to achieve a standard working barchart, by getting the highest amount/value
 <img width="332" alt="Screenshot 2024-09-13 at 3 48 35 PM" src="https://github.com/user-attachments/assets/4d076050-dd1f-4ac5-aacb-c9ddd886759b">
 
