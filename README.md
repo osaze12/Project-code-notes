@@ -10,6 +10,10 @@ https://www.browsercat.com/docs
 #### How to achieve a standard working barchart, by getting the highest amount/value
 <img width="332" alt="Screenshot 2024-09-13 at 3 48 35 PM" src="https://github.com/user-attachments/assets/4d076050-dd1f-4ac5-aacb-c9ddd886759b">
 
+
+https://github.com/user-attachments/assets/3468f768-fb6b-49cb-bd5c-51d51917bd6e
+
+
 ```javascript
   const highestValue = (data: any) => data.reduce((max: any, obj: any) => (obj.value > max.value ? obj : max), data[0]);
 
