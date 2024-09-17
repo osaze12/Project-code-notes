@@ -37,18 +37,22 @@ https://www.browsercat.com/docs
     // thickness={2}
     endFillColor="#fff"
     hideRules
-    stepValue={
+     stepValue={
       type === 'Total Revenue'
-	? parseInt(`${highestValue(barList)?.value / 4}`)
-	: parseInt(
-	    `${
-	      highestValue(barList)?.value >= 4
-		? highestValue(barList)?.value / 4
-		: highestValue(barList)?.value
-	    }`,
+	? Math.round(parseInt(`${highestValue(barList)?.value / 4}`))
+	: Math.round(
+	    parseInt(
+	      `${
+		highestValue(barList)?.value >= 4
+		  ? highestValue(barList)?.value / 4
+		  : highestValue(barList)?.value
+	      }`,
+	    ),
 	  )
     }
-    maxValue={type === 'Total Revenue' ? highestValue(barList)?.value || 2000 : highestValue(barList)?.value}
+    maxValue={
+      type === 'Total Revenue' ? highestValue(barList)?.value * 1.3 || 2000 : highestValue(barList)?.value * 1.3 // 1.3 is to add more //value at the top
+    }
     stepHeight={type === 'Total Revenue' ? 40 : 40}
     xAxisThickness={0}
     formatYLabel={formatYLabel}
