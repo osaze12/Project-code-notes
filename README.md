@@ -4,7 +4,7 @@ https://github.com/30-seconds/30-seconds-of-code
 
 
 
-#### Fix [CodePush] Android issue
+#### Fix [CodePush] (code push) Android issue
 
 
 https://github.com/user-attachments/assets/324f4ea5-0a9c-4b50-b9ee-cf39cdff4d26
@@ -15,7 +15,7 @@ https://github.com/user-attachments/assets/324f4ea5-0a9c-4b50-b9ee-cf39cdff4d26
 
 ```
 
-#### Code push hook for android & IOS
+#### CodePush (code push) hook for android & IOS
 ```javascript
 import { useEffect, useState } from 'react';
 
