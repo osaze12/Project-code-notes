@@ -17,6 +17,7 @@ https://github.com/user-attachments/assets/324f4ea5-0a9c-4b50-b9ee-cf39cdff4d26
 
 #### CodePush (code push) hook for android & IOS
 ```javascript
+//https://medium.com/innovance-company-blog/usage-of-codepush-in-react-native-0887676ec7bf
 import { useEffect, useState } from 'react';
 
 import codePush, { DownloadProgress } from 'react-native-code-push';
