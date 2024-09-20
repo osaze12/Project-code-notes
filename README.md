@@ -164,7 +164,7 @@ https://www.browsercat.com/docs
     }
     maxValue={
      //better one is
-     //  highestValue(barList)?.value
+     //  highestValue(barList)?.value < 4 ? 4 : highestValue(barList)?.value
       type === 'Total Revenue' ? highestValue(barList)?.value * 1.3 || 2000 : highestValue(barList)?.value * 1.3 // 1.3 is to add more //value at the top
     }
     stepHeight={type === 'Total Revenue' ? 40 : 40}
