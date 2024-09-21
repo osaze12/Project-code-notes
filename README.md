@@ -2,7 +2,19 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+#### loop that really waits if await is included in the statement
+```
+for (const i of states) {
+    // const context2 = await browser2.newContext();
 
+    const page2 = await context.newPage();
+    await page2.goto(`https://postcode.com.ng/page/1/?s=Abia`, {
+      waitUntil: "networkidle",
+    });
+    await page2.close();
+    //       await page2.waitForLoadState("domcontentloaded");
+  }
+```
 
 #### Fix [CodePush] (code push) Android issue
 
