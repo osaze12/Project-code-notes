@@ -3,7 +3,7 @@ This is where I document things I have learnt, or found on the internet that are
 https://github.com/30-seconds/30-seconds-of-code
 
 #### loop that really waits if await is included in the statement
-```
+```javascript
 for (const i of states) {
     // const context2 = await browser2.newContext();
 
