@@ -320,15 +320,6 @@ https://stackoverflow.com/questions/44585839/update-state-on-successful-update-w
 https://rkscloud.com/blogs/google-sign-in-react-native-aws-cognito/
 ```
 
-#### fix slow android/ios app in react native cli
-```javascript
-//remove console.log calls
-if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'development') {
-  console.log = console.warn = console.error = function () {};
-}
-
-//https://reactnative.dev/docs/performance
-```
 #### To implement package/library payment/purchase to use like that of react-native-google-signin
 ```
 https://react-native-google-signin.github.io
@@ -841,17 +832,25 @@ let callback = (entries, observer) => {
 
 #### Boost/Increase React Native Performance / optimize app, solve rerender issue
 ```javascript
-https://sugandsingh5566.medium.com/boosting-react-native-performance-with-lazy-loading-and-code-splitting-f7d0f7268e7e
 
-https://legacy.reactjs.org/docs/code-splitting.html
+//AVOID PROP DRILLING, MAKE USE OF GLOBAL STATE, BECAUSE ANY CHANGE YOU MAKE ON THE PARENT COMPONENT, RERENDERS ALL THE CHILD COMPONENT
 
 // avoid creating more than one component in a single file, so that it doesnt cause the whole Ui from rerendering, causing you to start the process of getting to that particular UI again, which saves your battery 
 
 //USE MEMO(COMPONENT) & USE_MEMO, SO THAT CHILD COMPONENT THAT HAVE NO BUSINESS RERENDERING, DOESNT RERENDER, AND CAUSE THE APP TO BE SLOW
 
+https://sugandsingh5566.medium.com/boosting-react-native-performance-with-lazy-loading-and-code-splitting-f7d0f7268e7e
+https://legacy.reactjs.org/docs/code-splitting.html
 //Lazyly load the screens
 const HomeScreen = React.lazy(() => import('./HomeScreen'));
 const ProfileScreen = React.lazy(() => import('./ProfileScreen'));
+
+
+//remove console.log calls
+if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'development') {
+  console.log = console.warn = console.error = function () {};
+}
+//https://reactnative.dev/docs/performance
 
 
 <React.Suspense fallback={<Text>Loading...</Text>}>
