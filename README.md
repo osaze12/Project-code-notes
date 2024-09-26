@@ -3,7 +3,7 @@ This is where I document things I have learnt, or found on the internet that are
 https://github.com/30-seconds/30-seconds-of-code
 
 
-#### React native: scroll to index using flatlist
+#### React native: scroll to index using flatlist (with snap)
 ```javascript
 const flatListRef = useRef<any>(null);
 
