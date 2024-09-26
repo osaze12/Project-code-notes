@@ -2,6 +2,68 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+
+#### React native: scroll to index using flatlist
+```javascript
+const flatListRef = useRef<any>(null);
+
+  const scrollToIndexOnFlatList = (index: number) => {
+    flatListRef?.current?.scrollToIndex({
+      animated: true,
+      index: index,
+    });
+  };
+
+  const [flatListWidth, setFlatListWidth] = useState(0);
+
+
+  <FlatList
+              ref={flatListRef}
+              onLayout={(event) => {
+                const { width } = event.nativeEvent.layout;
+                setFlatListWidth(width);
+              }}
+              scrollEnabled={false}
+              showsHorizontalScrollIndicator={false}
+              horizontal={true}
+              data={x}
+              bg={'#fff'}
+              borderRadius={5}
+		//snap props
+		   snapToInterval={Dimensions.get('window').width}
+		      decelerationRate={'fast'}
+		      snapToAlignment="start"
+		//end of snap props
+              renderItem={({ item, index }) => (
+                <Stack
+                  w={flatListWidth}>
+
+                  <Flex w="100%" position={'relative'} flexDir={'row'} alignItems={'center'} justifyContent={'center'}>
+                    {/* left text */}
+                    {x?.[index - 1] && (
+                      <Pressable left={-10} position={'absolute'} onPress={() => scrollToIndexOnFlatList(index - 1)}>
+                        <Text color="#CCD4D8" fontSize={'sm'} fontWeight={500}>
+                          {x?.[index - 1]}
+                        </Text>
+                      </Pressable>
+                    )}
+                    {/* right text */}
+                    {x?.[index + 1] && (
+                      <Pressable position={'absolute'} right={-10} onPress={() => scrollToIndexOnFlatList(index + 1)}>
+                        <Text color="#CCD4D8" fontSize={'sm'} fontWeight={500}>
+                          {x?.[index + 1]}
+                        </Text>
+                      </Pressable>
+                    )}
+                  </Flex>
+                </Stack>
+              )}
+              keyExtractor={(item: any) => item}
+            />
+
+
+```
+
 #### loop that really waits if await is included in the statement
 ```javascript
 for (const i of states) {
