@@ -2,6 +2,10 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+#### quick context api setup
+```
+https://www.freecodecamp.org/news/react-context-api-explained-with-examples/#:~:text=To%20start%20using%20the%20Context,the%20context%20to%20be%20available.
+```
 
 #### React native: scroll to index using flatlist (with snap)
 ```javascript
