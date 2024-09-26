@@ -5,6 +5,10 @@ https://github.com/30-seconds/30-seconds-of-code
 
 #### React native: scroll to index using flatlist (with snap)
 ```javascript
+
+  const childrenLength = React.Children.map(children, (child, index) => child)?.length;
+
+
 const flatListRef = useRef<any>(null);
 
   const scrollToIndexOnFlatList = (index: number) => {
@@ -15,6 +19,10 @@ const flatListRef = useRef<any>(null);
   };
 
   const [flatListWidth, setFlatListWidth] = useState(0);
+
+  const onViewableItemsChanged = ({ viewableItems }: any) => {
+    setActiveIndex(viewableItems?.[0]?.index || 0);
+  };
 
 
   <FlatList
@@ -59,7 +67,38 @@ const flatListRef = useRef<any>(null);
                 </Stack>
               )}
               keyExtractor={(item: any) => item}
+// to get active index
+ onViewableItemsChanged={onViewableItemsChanged}
+        viewabilityConfig={{
+          itemVisiblePercentThreshold: 50,
+        }}
+//end
             />
+
+
+   <Flex
+        position={'absolute'}
+        bottom={moderateScale(25)}
+        bg="transparent"
+        gap="2"
+        flexDir={'row'}
+        alignItems={'center'}
+        justifyContent={'center'}
+        alignSelf={'center'}>
+        {[...Array(childrenLength || 0)]?.map((_, index) => (
+          <Box
+            key={index}
+            borderRadius={10}
+            {...(activeIndex === index
+              ? {
+                  bg: '#00273E',
+                }
+              : { bg: 'gray.200' })}
+            w={moderateScale(7)}
+            h={moderateScale(7)}
+          />
+        ))}
+      </Flex>
 
 
 ```
