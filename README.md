@@ -2,6 +2,47 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+#### React native: select multiple images and crop each one of them
+```javascript
+import ImagePicker from 'react-native-image-crop-picker';
+
+  try {
+      const image = await ImagePicker.openPicker({
+        // width: 300,
+        // height: 200,
+        // cropping: true,
+        multiple: true,
+        mediaType: 'photo',
+
+        // freeStyleCropEnabled: false,
+        // freeStyleCropEnabled:
+      });
+
+      let croppedImages = [];
+
+      for (const im of image) {
+        try {
+          const croppedImage = await ImagePicker.openCropper({
+            path: im.path,
+            width: 32,
+            height: 18,
+            mediaType: 'photo',
+            freeStyleCropEnabled: false,
+            cropperRotateButtonsHidden: true,
+            cropping: false,
+          });
+          console.log('Cropped image:', croppedImage);
+
+          croppedImages.push(croppedImage);
+
+          // Do something with the cropped image, like uploading it to a server
+        } catch (cropError) {
+          errorNotifier(cropError);
+          console.error('Error cropping image:', cropError);
+          break;
+        }
+      }
+```
 
 #### utility functions
 <img width="1096" alt="Screenshot 2024-09-27 at 12 29 24 PM" src="https://github.com/user-attachments/assets/c6cc5369-25b8-47dd-8882-f8371adea527">
