@@ -2,6 +2,14 @@
 This is where I document things I have learnt, or found on the internet that are not easily findable
 https://github.com/30-seconds/30-seconds-of-code
 
+
+#### utility functions
+<img width="1440" alt="Screenshot 2024-09-27 at 12 23 02 PM" src="https://github.com/user-attachments/assets/3c9b0d30-a5b9-49f4-ab9f-e56d5483b5b5">
+
+```
+https://radash-docs.vercel.app/docs/getting-started
+```
+
 #### quick context api setup
 ```
 https://www.freecodecamp.org/news/react-context-api-explained-with-examples/#:~:text=To%20start%20using%20the%20Context,the%20context%20to%20be%20available.
