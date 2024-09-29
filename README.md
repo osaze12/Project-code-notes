@@ -155,6 +155,29 @@ const flatListRef = useRef<any>(null);
 
 
 ```
+#### React native: scroll to index using scrollView
+```javascript
+
+const scrollToIndexOnScrollView = (index: number) => {
+// scroll to the center/middle of the screen
+    const screenWidth = Dimensions.get('window').width; // Get screen width
+    const cardWidth = 100;
+    const offset = index * cardWidth - screenWidth / 2 + cardWidth / 2;
+    scrollViewtRef?.current?.scrollTo({
+      animated: true,
+      // index: index,
+      x: offset,
+    });
+  };
+
+
+ <ScrollView
+        ref={scrollViewtRef}
+...
+/>
+
+
+```
 
 #### loop that really waits if await is included in the statement
 ```javascript
