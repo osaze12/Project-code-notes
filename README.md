@@ -909,8 +909,37 @@ let callback = (entries, observer) => {
 #### Boost/Increase React Native Performance / optimize app, solve rerender issue
 ```javascript
 
+//FOR GRAPH QL Apollo, clear cache when user logs out or closes the app
+   useEffect(() => {
+    const handleAppStateChange = async (nextAppState: string) => {
+      console.log(nextAppState);
+      if (nextAppState === 'background') {
+        // Use the specific key used by apollo-cache-persist to store the cache
+	//clear data from storage
+        await AsyncStorage.removeItem('apollo-cache-persist');
 
-// DO CLEAN UPS
+        // App is going into the background, clear the cache
+        globalClient.clearStore().then((res) => console.log('cleared', res));
+      }
+
+      if (nextAppState === 'inactive') {
+        // Use the specific key used by apollo-cache-persist to store the cache
+        await AsyncStorage.removeItem('apollo-cache-persist');
+        // App is going into the background, clear the cache
+        globalClient.clearStore().then((res) => console.log('cleared', res));
+      }
+    };
+
+    // Subscribe to app state changes
+    const subscription = AppState.addEventListener('change', handleAppStateChange);
+
+    // Cleanup the event listener when component unmounts
+    return () => {
+      subscription.remove();
+    };
+  }, [globalClient]);
+
+// DO CLEAN UPS (event listeners, subscriptions)
 //EXAMPLE
 useEffect(() => {
   const interval = setInterval(() => {
