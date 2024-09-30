@@ -909,6 +909,17 @@ let callback = (entries, observer) => {
 #### Boost/Increase React Native Performance / optimize app, solve rerender issue
 ```javascript
 
+
+// DO CLEAN UPS
+//EXAMPLE
+useEffect(() => {
+  const interval = setInterval(() => {
+    // some repeated action
+  }, 1000);
+  
+  return () => clearInterval(interval); // Cleanup
+}, []);
+
 //AVOID PROP DRILLING, MAKE USE OF GLOBAL STATE, BECAUSE ANY CHANGE YOU MAKE ON THE PARENT COMPONENT, RERENDERS ALL THE CHILD COMPONENT
 
 // avoid creating more than one component in a single file, so that it doesnt cause the whole Ui from rerendering, causing you to start the process of getting to that particular UI again, which saves your battery 
