@@ -909,6 +909,8 @@ let callback = (entries, observer) => {
 #### Boost/Increase React Native Performance / optimize app, solve rerender issue
 ```javascript
 
+// IMPORTANT!!! you must create child components as much as you can, and use memo, so not every child renders when there is a change in state
+
 //FOR GRAPH QL Apollo, clear cache when user logs out or closes the app
    useEffect(() => {
     const handleAppStateChange = async (nextAppState: string) => {
