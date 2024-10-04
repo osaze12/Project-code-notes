@@ -909,6 +909,31 @@ let callback = (entries, observer) => {
 #### Boost/Increase React Native Performance / optimize app, solve rerender issue
 ```javascript
 
+// IMPORTANT!!!! Use InteractionManager (REACT NATIVE) to run the following code after interactions (ANIMATION, BUTTON CLICKS) complete
+// USE IN USE_EFFECT, ON_PRESS, 
+    InteractionManager.runAfterInteractions(() => {
+      // Code to run after text input interactions are done
+      console.log('Input completed:', newText);
+      // Perform any additional logic here, like an API call or updating UI
+    });
+
+// IF THE FORM FIELDS ARE A LOT (MORE THAT 6) USE FORMIK "FAST FIELD" TO STOP THE FIELD FROM RERENDERING WHEN YOU TYPE INTO OTHER INPUT FIELD
+  <FastField name="address">
+          {({ field }) => (
+            <CustomInputField
+              name="address"
+              value={address}
+              onBlur={props.handleBlur('address')}
+              onChangeText={(value: any) => {
+                debounced('addressId', null);
+                debounced('address', value);
+              }}
+              label="Address"
+              {...field}
+            />
+          )}
+        </FastField>
+
 // IMPORTANT!!! you must create child components as much as you can, and use memo, so not every child renders when there is a change in state
 
 
