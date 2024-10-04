@@ -911,6 +911,83 @@ let callback = (entries, observer) => {
 
 // IMPORTANT!!! you must create child components as much as you can, and use memo, so not every child renders when there is a change in state
 
+
+// DONT LOAD ALL COMPONENT UI AT ONES, LOAD IN BATCHES
+
+import React, { useEffect, useRef, useState } from 'react';
+import { InteractionManager } from 'react-native';
+
+const BATCH_SIZE = 1;
+
+export default function ChunkView({ children }) {
+  const [batchIndex, setBatchIndexRaw] = useState(1);
+  const focusedRef = useRef(true);
+  const batchIndexRef = useRef(1);
+  const reachedEndRef = useRef(false);
+
+  const childrenChunk = reachedEndRef.current ? children : children.slice(0, BATCH_SIZE * batchIndex);
+
+  const setBatchIndex = (index) => {
+    batchIndexRef.current = index;
+    setBatchIndexRaw(index);
+  };
+
+  const loadNextBatch = (timeout = 800) => {
+    InteractionManager?.runAfterInteractions(() => {
+      setTimeout(() => {
+        if (focusedRef.current) {
+          const nextBatchIndex = batchIndexRef.current + 1;
+          if (nextBatchIndex * BATCH_SIZE >= children.length) {
+            reachedEndRef.current = true;
+          } else {
+            loadNextBatch();
+          }
+          setBatchIndex(nextBatchIndex);
+        }
+      }, timeout);
+    });
+    return () => (focusedRef.current = true);
+  };
+
+  useEffect(() => {
+    loadNextBatch(1000);
+  }, []);
+
+  return <>{childrenChunk}</>;
+}
+
+//OR USE A LIBRARY TO GET MORE FEATURES
+// yarn add @th3rdwave/react-native-incremental
+
+import { Incremental, IncrementalGroup } from '@th3rdwave/react-native-incremental';
+
+ <IncrementalGroup>
+        {items.map((item, index) => (
+          <Incremental
+            key={index}
+            name={`Item ${index}`} // Optional: useful for debugging
+            onDone={() => console.log(`Rendered: Item ${index}`)} // Callback after rendering
+          >
+            <View style={styles.item}>
+              <Text>{item}</Text>
+            </View>
+          </Incremental>
+        ))}
+
+
+	 <Incremental
+            key={index}
+            name={`Item ${index}`} // Optional: useful for debugging
+            onDone={() => console.log(`Rendered: Item ${index}`)} // Callback after rendering
+          >
+	<Text> Another text component</Text>
+	</Incremental>
+
+	
+      </IncrementalGroup>
+
+
+
 //FOR GRAPH QL Apollo, clear cache when user logs out or closes the app
    useEffect(() => {
     const handleAppStateChange = async (nextAppState: string) => {
