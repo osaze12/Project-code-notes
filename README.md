@@ -909,13 +909,43 @@ let callback = (entries, observer) => {
 #### Boost/Increase React Native Performance / optimize app, solve rerender issue
 ```javascript
 
+// IMPORTANT: TO STOP UPDATING THE UI (PAINTING) IMMEDIATELY (MAKES THE APP SLOW) AFTER AFTER AN UPDATE TO STATE HAS BEEN MADE,
+// THEN HIDE THE UI BLOCK AND SHOW AFTER SOMETIME
+
+onSelectValue={async (value: any, youCanContinue: any, wantsToUncheckBox: boolean = false) => {
+        combinationRef.current.setNativeProps({
+          style: { display: 'none' },
+        });
+
+  	const interactionHandle = InteractionManager.createInteractionHandle(); // MAKE PRIORITY (RUN QUICKLY)
+	// LOGIC HERE...
+	InteractionManager.clearInteractionHandle(interactionHandle);
+
+
+	
+	   InteractionManager.runAfterInteractions(() => {
+	          setTimeout(() => {
+	            combinationRef.current.setNativeProps({
+	              style: { display: 'block' },
+	            });
+	          }, 5000);
+	        });
+
+
 // IMPORTANT!!!! Use InteractionManager (REACT NATIVE) to run the following code after interactions (ANIMATION, BUTTON CLICKS) complete
-// USE IN USE_EFFECT, ON_PRESS, 
+// USE IN USE_EFFECT, 
     InteractionManager.runAfterInteractions(() => {
       // Code to run after text input interactions are done
       console.log('Input completed:', newText);
       // Perform any additional logic here, like an API call or updating UI
     });
+
+// TO MAKE ON_PRESS FUNC RUN FASTER
+// ALLOW ALL INTERATION/ANIMATION/OTHER ON PRESS/ TOUCH WAIT (THIS ACTION PRIORITY)
+
+  const interactionHandle = InteractionManager.createInteractionHandle();
+	//... LOGIC TO RUN
+   InteractionManager.clearInteractionHandle(interactionHandle);
 
 // IF THE FORM FIELDS ARE A LOT (MORE THAT 6) USE FORMIK "FAST FIELD" TO STOP THE FIELD FROM RERENDERING WHEN YOU TYPE INTO OTHER INPUT FIELD
   <FastField name="address">
