@@ -909,6 +909,11 @@ let callback = (entries, observer) => {
 #### Boost/Increase React Native Performance / optimize app, solve rerender issue
 ```javascript
 
+
+//File Size and Bundle Size
+
+//Importing a large file that contains many unused exports or logic can increase the initial bundle size, leading to slightly slower load //times, especially if not tree-shaken correctly. Keeping your files focused on their specific responsibilities helps with maintainability //and performance.
+
 // IMPORTANT: TO STOP UPDATING THE UI (PAINTING) IMMEDIATELY (MAKES THE APP SLOW) AFTER AFTER AN UPDATE TO STATE HAS BEEN MADE,
 // THEN HIDE THE UI BLOCK AND SHOW AFTER SOMETIME
 
