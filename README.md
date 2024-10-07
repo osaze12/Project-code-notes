@@ -909,6 +909,7 @@ let callback = (entries, observer) => {
 #### Boost/Increase React Native Performance / optimize app, solve rerender issue
 ```javascript
 
+// to stop fast refresh that takes you to the initial page when you save any changes, create a single dedication react component file, 
 
 //File Size and Bundle Size
 
