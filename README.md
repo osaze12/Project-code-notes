@@ -909,6 +909,41 @@ let callback = (entries, observer) => {
 #### Boost/Increase React Native Performance / optimize app, solve rerender issue
 ```javascript
 
+// UPDATE STATE AFTER SOME TIME, SO USER OPERATION ISNT SLOW/HANGS (SMOOTH)
+  const RUN_LATER = (timeoutRef:any, updateState:any, operation:any) => {
+    batchUpdateRef.current = [...batchUpdateRef.current, operation];
+
+    console.log(batchUpdateRef.current, 'CCFF');
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+
+    timeoutRef.current = setTimeout(() => {
+      updateState(operation); // Update state after a 3-second delay
+
+      //user has stopped click/typing, thats why this func ran in the timeout
+      // this func was excecuted, so remove the operation, so we dont run it again in batch later
+      // Remove executed operation from batchUpdateRef
+      let pendingFuncToRun = (batchUpdateRef.current = batchUpdateRef.current?.slice(0, -1)?.reverse());
+
+
+      // now run batch
+      for (const i of pendingFuncToRun) {
+        updateState(i);
+      }
+      batchUpdateRef.current = [];
+
+      console.log(batchUpdateRef.current, 'CCFF2');
+    }, 800); 
+  };
+// CALL LIKE THIS
+  RUN_LATER(timeoutRef, setSeelctedStates, (prev: any) => {
+	  if (prev?.includes(value)) {
+	    return prev?.filter((prevItem: any) => prevItem !== value);
+	  }
+	  return [value, ...(prev || [])];
+   });
+
 // to stop fast refresh that takes you to the initial page when you save any changes, create a single dedication react component file, 
 
 //File Size and Bundle Size
