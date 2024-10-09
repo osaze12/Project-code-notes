@@ -4890,6 +4890,7 @@ white-space: pre-wrap;
 
 #### add dark background on Image in react native
 ```
+//you must also add height, to see it
 https://stackoverflow.com/questions/68754443/how-add-dark-gradient-on-bottom-of-an-image-in-react-native
 ```
 
