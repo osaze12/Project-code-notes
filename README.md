@@ -19,8 +19,18 @@ https://github.com/30-seconds/30-seconds-of-code
       crossorigin=""
     ></script>
 
+// also do npm i leaflet, we only need the marker icon and its shadow from there, thats why
 
 // react code
+import L from "leaflet";
+import icon from "leaflet/dist/images/marker-icon.png";
+import iconShadow from "leaflet/dist/images/marker-shadow.png";
+
+let DefaultIcon = L.icon({
+  iconUrl: icon,
+  shadowUrl: iconShadow,
+});
+
 export default function Map() {
   useEffect(() => {
     var container = L.DomUtil.get("map");
@@ -36,6 +46,7 @@ export default function Map() {
         '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     }).addTo(map);
 
+    L.Marker.prototype.options.icon = DefaultIcon;
     L.marker([6.5244, 3.3792])
       .addTo(map)
       .bindPopup("A pretty CSS popup.<br> Easily customizable.")
@@ -43,6 +54,8 @@ export default function Map() {
   }, []);
   return <div id="map" style={{ height: "100vh" }}></div>;
 }
+
+
 ```
 
 #### React native: select multiple images and crop each one of them
