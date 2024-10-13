@@ -964,6 +964,16 @@ let callback = (entries, observer) => {
 
 #### Boost/Increase React Native Performance / optimize app, solve rerender issue
 ```javascript
+ //ULTIMATE
+//to make parent component not to make children component to rerender
+// make parent component not to do anything, only child component can perform operation/fetch from API, etc
+// to feed other children from a child, use global state context API
+//e.g
+<ParentComponent>
+<Child/> // performing complex update and updating context api
+<Child/> // get data from context api when ready without rerendering this child evertime there's a click on checkbox, input onChange, etc
+</ParentComponent>
+
 
 // UPDATE STATE AFTER SOME TIME, SO USER OPERATION ISNT SLOW/HANGS (SMOOTH)
   const RUN_LATER = (timeoutRef:any, updateState:any, operation:any) => {
