@@ -963,6 +963,11 @@ let callback = (entries, observer) => {
 ```
 
 #### Boost/Increase React Native Performance / optimize app, solve rerender issue
+
+
+https://github.com/user-attachments/assets/5a903475-8139-482c-9ef7-9cdcbac08318
+
+
 ```javascript
  //ULTIMATE
 //to make parent component not to make children component to rerender
