@@ -973,6 +973,19 @@ let callback = (entries, observer) => {
 <Child/> // performing complex update and updating context api
 <Child/> // get data from context api when ready without rerendering this child evertime there's a click on checkbox, input onChange, etc
 </ParentComponent>
+//finish
+
+
+// call func from the parent component on the child component using
+
+  onStartShouldSetResponder={() => selectStoreModalRef.current.closeModal()}
+
+  useImperativeHandle(ref, () => ({
+    closeModal: () => {
+      setOpenDropDown(false);
+    },
+  }));
+//finish
 
 
 // UPDATE STATE AFTER SOME TIME, SO USER OPERATION ISNT SLOW/HANGS (SMOOTH)
@@ -1009,6 +1022,8 @@ let callback = (entries, observer) => {
 	  }
 	  return [value, ...(prev || [])];
    });
+
+//finish
 
 // to stop fast refresh that takes you to the initial page when you save any changes, create a single dedication react component file, 
 
