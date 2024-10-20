@@ -967,7 +967,7 @@ let callback = (entries, observer) => {
 
 https://github.com/user-attachments/assets/5a903475-8139-482c-9ef7-9cdcbac08318
 
-
+https://www.youtube.com/watch?v=7sgBhmLjVws
 ```javascript
  //ULTIMATE
 //to make parent component not to make children component to rerender
