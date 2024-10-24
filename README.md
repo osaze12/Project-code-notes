@@ -971,6 +971,7 @@ https://github.com/user-attachments/assets/5a903475-8139-482c-9ef7-9cdcbac08318
 
 
 https://github.com/user-attachments/assets/ad422298-0361-4a82-a65c-15a896be7259
+<img width="570" alt="Screenshot 2024-10-25 at 12 05 34 AM" src="https://github.com/user-attachments/assets/c589bc0a-a98e-4798-bc00-47fd54a29682">
 
 
 https://javascript.info/settimeout-setinterval
