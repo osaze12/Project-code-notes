@@ -966,6 +966,15 @@ let callback = (entries, observer) => {
 
 
 https://github.com/user-attachments/assets/5a903475-8139-482c-9ef7-9cdcbac08318
+<img width="1440" alt="Screenshot 2024-10-24 at 11 55 33 PM" src="https://github.com/user-attachments/assets/5974c175-1de5-4c26-a79c-a8b2ae34aa97">
+<img width="570" alt="Screenshot 2024-10-24 at 11 57 37 PM" src="https://github.com/user-attachments/assets/50b0fed8-3401-43e7-a3f8-d3cc82602886">
+
+
+https://github.com/user-attachments/assets/ad422298-0361-4a82-a65c-15a896be7259
+
+
+https://javascript.info/settimeout-setinterval
+https://engineering.classpro.in/react-native-how-settimout-saved-my-life-803346bf18a5
 
 https://www.youtube.com/watch?v=7sgBhmLjVws
 ```javascript
